@@ -1,0 +1,24 @@
+= Codion Petclinic Demo
+
+A simple demo application based on the Codion application framework, with only a local JDBC connection option.
+
+== Run
+
+[source,shell]
+----
+gradlew run
+----
+
+=== jlink
+
+[source,shell]
+----
+gradlew jlink
+----
+
+=== jpackage
+
+[source,shell]
+----
+gradlew jpackage
+----
