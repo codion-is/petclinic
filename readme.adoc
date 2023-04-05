@@ -2,6 +2,8 @@
 
 A simple demo application based on the Codion application framework, with only a local JDBC connection option.
 
+image::petclinic-client.png[Petclinic client]
+
 == Run
 
 [source,shell]
