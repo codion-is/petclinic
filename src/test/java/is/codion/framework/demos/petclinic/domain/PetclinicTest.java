@@ -4,21 +4,21 @@
 package is.codion.framework.demos.petclinic.domain;
 
 import is.codion.common.db.exception.DatabaseException;
-import is.codion.framework.demos.petclinic.domain.PetClinic.Owner;
-import is.codion.framework.demos.petclinic.domain.PetClinic.Pet;
-import is.codion.framework.demos.petclinic.domain.PetClinic.PetType;
-import is.codion.framework.demos.petclinic.domain.PetClinic.Specialty;
-import is.codion.framework.demos.petclinic.domain.PetClinic.Vet;
-import is.codion.framework.demos.petclinic.domain.PetClinic.VetSpecialty;
-import is.codion.framework.demos.petclinic.domain.PetClinic.Visit;
+import is.codion.framework.demos.petclinic.domain.Petclinic.Owner;
+import is.codion.framework.demos.petclinic.domain.Petclinic.Pet;
+import is.codion.framework.demos.petclinic.domain.Petclinic.PetType;
+import is.codion.framework.demos.petclinic.domain.Petclinic.Specialty;
+import is.codion.framework.demos.petclinic.domain.Petclinic.Vet;
+import is.codion.framework.demos.petclinic.domain.Petclinic.VetSpecialty;
+import is.codion.framework.demos.petclinic.domain.Petclinic.Visit;
 import is.codion.framework.domain.entity.test.EntityTestUnit;
 
 import org.junit.jupiter.api.Test;
 
-public final class PetClinicTest extends EntityTestUnit {
+public final class PetclinicTest extends EntityTestUnit {
 
-  public PetClinicTest() {
-    super(PetClinic.class.getName());
+  public PetclinicTest() {
+    super(Petclinic.class.getName());
   }
 
   @Test

@@ -19,11 +19,11 @@ import static is.codion.framework.domain.entity.KeyGenerator.identity;
 import static is.codion.framework.domain.entity.OrderBy.ascending;
 import static is.codion.framework.domain.property.Property.*;
 
-public final class PetClinic extends DefaultDomain {
+public final class Petclinic extends DefaultDomain {
 
-  private static final DomainType DOMAIN = DomainType.domainType("PetClinic");
+  private static final DomainType DOMAIN = DomainType.domainType("Petclinic");
 
-  public PetClinic() {
+  public Petclinic() {
     super(DOMAIN);
     vet();
     specialty();

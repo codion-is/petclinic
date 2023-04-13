@@ -3,8 +3,8 @@
  */
 package is.codion.framework.demos.petclinic.ui;
 
-import is.codion.framework.demos.petclinic.domain.PetClinic.Pet;
-import is.codion.framework.demos.petclinic.domain.PetClinic.PetType;
+import is.codion.framework.demos.petclinic.domain.Petclinic.Pet;
+import is.codion.framework.demos.petclinic.domain.Petclinic.PetType;
 import is.codion.swing.common.ui.component.panel.Panels;
 import is.codion.swing.common.ui.control.Control;
 import is.codion.swing.common.ui.layout.Layouts;
