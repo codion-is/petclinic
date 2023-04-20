@@ -7,7 +7,7 @@ import is.codion.common.model.CancelException;
 import is.codion.common.model.table.ColumnConditionModel;
 import is.codion.common.model.table.ColumnConditionModel.AutomaticWildcard;
 import is.codion.common.user.User;
-import is.codion.framework.db.EntityConnectionProvider;
+import is.codion.framework.demos.petclinic.domain.Petclinic;
 import is.codion.framework.demos.petclinic.domain.Petclinic.Owner;
 import is.codion.framework.demos.petclinic.domain.Petclinic.Pet;
 import is.codion.framework.demos.petclinic.domain.Petclinic.PetType;
@@ -32,7 +32,6 @@ import java.util.Locale;
 import static is.codion.swing.common.ui.laf.LookAndFeelProvider.addLookAndFeelProvider;
 import static is.codion.swing.common.ui.laf.LookAndFeelProvider.lookAndFeelProvider;
 import static is.codion.swing.framework.ui.EntityApplicationBuilder.entityApplicationBuilder;
-import static java.util.Arrays.asList;
 
 public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicAppModel> {
 
@@ -68,7 +67,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 
     vetsPanel.addDetailPanel(vetSpecialtiesPanel);
 
-    return asList(ownersPanel, vetsPanel);
+    return List.of(ownersPanel, vetsPanel);
   }
 
   @Override
@@ -82,7 +81,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
                     .editPanelClass(SpecialtyEditPanel.class)
                     .caption("Specialties");
 
-    return asList(petTypePanelBuilder, specialtiesPanelBuilder);
+    return List.of(petTypePanelBuilder, specialtiesPanelBuilder);
   }
 
   public static void main(String[] args) throws CancelException {
@@ -97,10 +96,11 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
             .set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
     ColumnConditionModel.AUTOMATIC_WILDCARD.set(AutomaticWildcard.POSTFIX);
     ColumnConditionModel.CASE_SENSITIVE.set(false);
-    EntityConnectionProvider.CLIENT_DOMAIN_CLASS.set("is.codion.framework.demos.petclinic.domain.PetClinic");
     entityApplicationBuilder(PetclinicAppModel.class, PetclinicAppPanel.class)
             .applicationName("Petclinic")
+            .domainClassName(Petclinic.class.getName())
             .frameSize(Windows.screenSizeRatio(0.6))
+            .displayStartupDialog(false)
             .defaultLookAndFeelClassName(DEFAULT_FLAT_LOOK_AND_FEEL)
             .defaultLoginUser(User.parse("scott:tiger"))
             .start();
