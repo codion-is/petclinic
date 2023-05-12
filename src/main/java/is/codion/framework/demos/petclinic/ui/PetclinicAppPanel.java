@@ -18,6 +18,7 @@ import is.codion.framework.demos.petclinic.domain.Petclinic.Visit;
 import is.codion.framework.demos.petclinic.model.PetclinicAppModel;
 import is.codion.swing.common.ui.Windows;
 import is.codion.swing.common.ui.laf.LookAndFeelComboBox;
+import is.codion.swing.common.ui.laf.LookAndFeelProvider;
 import is.codion.swing.framework.model.SwingEntityModel;
 import is.codion.swing.framework.ui.EntityApplicationPanel;
 import is.codion.swing.framework.ui.EntityPanel;
@@ -29,8 +30,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-import static is.codion.swing.common.ui.laf.LookAndFeelProvider.addLookAndFeelProvider;
-import static is.codion.swing.common.ui.laf.LookAndFeelProvider.lookAndFeelProvider;
 import static is.codion.swing.framework.ui.EntityApplicationBuilder.entityApplicationBuilder;
 
 public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicAppModel> {
@@ -89,8 +88,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
             .setLanguage("EN")
             .setRegion("en")
             .build());
-    Arrays.stream(FlatAllIJThemes.INFOS).forEach(themeInfo ->
-            addLookAndFeelProvider(lookAndFeelProvider(themeInfo.getClassName())));
+    Arrays.stream(FlatAllIJThemes.INFOS).forEach(LookAndFeelProvider::addLookAndFeelProvider);
     LookAndFeelComboBox.CHANGE_ON_SELECTION.set(true);
     ReferentialIntegrityErrorHandling.REFERENTIAL_INTEGRITY_ERROR_HANDLING
             .set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
