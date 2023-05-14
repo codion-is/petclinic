@@ -4,8 +4,6 @@
 package is.codion.framework.demos.petclinic.ui;
 
 import is.codion.common.model.CancelException;
-import is.codion.common.model.table.ColumnConditionModel;
-import is.codion.common.model.table.ColumnConditionModel.AutomaticWildcard;
 import is.codion.common.user.User;
 import is.codion.framework.demos.petclinic.domain.Petclinic;
 import is.codion.framework.demos.petclinic.domain.Petclinic.Owner;
@@ -92,8 +90,6 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
     LookAndFeelComboBox.CHANGE_ON_SELECTION.set(true);
     ReferentialIntegrityErrorHandling.REFERENTIAL_INTEGRITY_ERROR_HANDLING
             .set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
-    ColumnConditionModel.AUTOMATIC_WILDCARD.set(AutomaticWildcard.POSTFIX);
-    ColumnConditionModel.CASE_SENSITIVE.set(false);
     entityApplicationBuilder(PetclinicAppModel.class, PetclinicAppPanel.class)
             .applicationName("Petclinic")
             .domainClassName(Petclinic.class.getName())
