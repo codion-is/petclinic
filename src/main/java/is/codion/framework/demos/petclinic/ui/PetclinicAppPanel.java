@@ -28,8 +28,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-import static is.codion.swing.framework.ui.EntityApplicationBuilder.entityApplicationBuilder;
-
 public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicAppModel> {
 
   private static final String DEFAULT_FLAT_LOOK_AND_FEEL = "com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialDarkerIJTheme";
@@ -90,7 +88,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
     LookAndFeelComboBox.CHANGE_ON_SELECTION.set(true);
     ReferentialIntegrityErrorHandling.REFERENTIAL_INTEGRITY_ERROR_HANDLING
             .set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
-    entityApplicationBuilder(PetclinicAppModel.class, PetclinicAppPanel.class)
+    EntityApplicationPanel.builder(PetclinicAppModel.class, PetclinicAppPanel.class)
             .applicationName("Petclinic")
             .domainClassName(Petclinic.class.getName())
             .frameSize(Windows.screenSizeRatio(0.6))
