@@ -14,7 +14,7 @@ import is.codion.swing.framework.ui.EntityPanel;
 
 import javax.swing.JPanel;
 
-import static is.codion.swing.common.ui.component.panel.Panels.createEastButtonPanel;
+import static is.codion.swing.common.ui.component.button.ButtonPanelBuilder.createEastButtonPanel;
 
 public final class VetSpecialtyEditPanel extends EntityEditPanel {
 
