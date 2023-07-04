@@ -1,5 +1,6 @@
 plugins {
     id "org.beryx.jlink" version "2.26.0"
+    id "com.diffplug.spotless" version "6.19.0"
 }
 
 dependencies {
@@ -24,6 +25,16 @@ dependencies {
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(19)
+    }
+}
+
+spotless {
+    java {
+        licenseHeaderFile("${rootDir}/license_header").yearSeparator(' - ')
+    }
+    format 'javaMisc', {
+        target 'src/**/package-info.java', 'src/**/module-info.java'
+        licenseHeaderFile("${rootDir}/license_header", '\\/\\*\\*').yearSeparator(' - ')
     }
 }
 

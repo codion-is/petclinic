@@ -1,5 +1,3 @@
-import is.codion.framework.demos.petclinic.domain.Petclinic;
-
 /**
  * Petclinic demo.
  */
@@ -13,5 +11,5 @@ module is.codion.framework.demos.petclinic {
           to is.codion.swing.framework.ui;
 
   provides is.codion.framework.domain.Domain
-          with Petclinic;
+          with is.codion.framework.demos.petclinic.domain.Petclinic;
 }
