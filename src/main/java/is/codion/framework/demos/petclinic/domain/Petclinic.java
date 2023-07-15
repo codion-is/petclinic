@@ -18,6 +18,7 @@
  */
 package is.codion.framework.demos.petclinic.domain;
 
+import is.codion.framework.demos.petclinic.domain.Petclinic.Owner.PhoneType;
 import is.codion.framework.domain.DefaultDomain;
 import is.codion.framework.domain.DomainType;
 import is.codion.framework.domain.entity.Attribute;
@@ -26,7 +27,9 @@ import is.codion.framework.domain.entity.EntityType;
 import is.codion.framework.domain.entity.ForeignKey;
 import is.codion.framework.domain.entity.OrderBy;
 import is.codion.framework.domain.entity.StringFactory;
+import is.codion.framework.domain.property.ColumnProperty.ValueConverter;
 
+import java.sql.Statement;
 import java.time.LocalDate;
 
 import static is.codion.framework.domain.entity.EntityDefinition.definition;
@@ -156,6 +159,11 @@ public final class Petclinic extends DefaultDomain {
     Attribute<String> ADDRESS = TYPE.stringAttribute("address");
     Attribute<String> CITY = TYPE.stringAttribute("city");
     Attribute<String> TELEPHONE = TYPE.stringAttribute("telephone");
+    Attribute<PhoneType> PHONE_TYPE = TYPE.attribute("phone_type", PhoneType.class);
+
+    enum PhoneType {
+      MOBILE, HOME, WORK
+    }
   }
 
   private void owner() {
@@ -174,7 +182,9 @@ public final class Petclinic extends DefaultDomain {
             columnProperty(Owner.CITY, "City")
                     .maximumLength(80),
             columnProperty(Owner.TELEPHONE, "Telephone")
-                    .maximumLength(20))
+                    .maximumLength(20),
+            columnProperty(Owner.PHONE_TYPE, "Phone type")
+                    .columnClass(String.class, new PhoneTypeValueConverter()))
             .keyGenerator(identity())
             .caption("Owners")
             .stringFactory(StringFactory.builder()
@@ -246,5 +256,18 @@ public final class Petclinic extends DefaultDomain {
                     .descending(Visit.DATE)
                     .build())
             .caption("Visits"));
+  }
+
+  private static final class PhoneTypeValueConverter implements ValueConverter<PhoneType, String> {
+
+    @Override
+    public String toColumnValue(PhoneType value, Statement statement) {
+      return value.name();
+    }
+
+    @Override
+    public PhoneType fromColumnValue(String columnValue) {
+      return PhoneType.valueOf(columnValue);
+    }
   }
 }
