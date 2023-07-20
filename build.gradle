@@ -68,7 +68,7 @@ asciidoctor {
     inputs.dir("src")
     baseDirFollowsSourceFile()
     asciidoctorj {
-        version = "2.5.7"
+        version = "2.5.10"
         attributes "source-highlighter": "prettify"
     }
 }
