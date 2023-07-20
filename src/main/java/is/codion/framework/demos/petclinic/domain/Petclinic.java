@@ -22,7 +22,6 @@ import is.codion.framework.demos.petclinic.domain.Petclinic.Owner.PhoneType;
 import is.codion.framework.domain.DefaultDomain;
 import is.codion.framework.domain.DomainType;
 import is.codion.framework.domain.entity.Attribute;
-import is.codion.framework.domain.entity.Entity;
 import is.codion.framework.domain.entity.EntityType;
 import is.codion.framework.domain.entity.ForeignKey;
 import is.codion.framework.domain.entity.OrderBy;
@@ -32,14 +31,16 @@ import is.codion.framework.domain.property.ColumnProperty.ValueConverter;
 import java.sql.Statement;
 import java.time.LocalDate;
 
+import static is.codion.framework.domain.DomainType.domainType;
 import static is.codion.framework.domain.entity.EntityDefinition.definition;
 import static is.codion.framework.domain.entity.KeyGenerator.identity;
 import static is.codion.framework.domain.entity.OrderBy.ascending;
 import static is.codion.framework.domain.property.Property.*;
 
+// tag::petclinic[]
 public final class Petclinic extends DefaultDomain {
 
-  private static final DomainType DOMAIN = DomainType.domainType("Petclinic");
+  private static final DomainType DOMAIN = domainType("Petclinic");
 
   public Petclinic() {
     super(DOMAIN);
@@ -51,9 +52,11 @@ public final class Petclinic extends DefaultDomain {
     pet();
     visit();
   }
+  // end::petclinic[]
 
-  public interface Vet extends Entity {
-    EntityType TYPE = DOMAIN.entityType("petclinic.vet", Vet.class);
+  // tag::vet[]
+  public interface Vet {
+    EntityType TYPE = DOMAIN.entityType("petclinic.vet");
 
     Attribute<Integer> ID = TYPE.integerAttribute("id");
     Attribute<String> FIRST_NAME = TYPE.stringAttribute("first_name");
@@ -81,9 +84,11 @@ public final class Petclinic extends DefaultDomain {
             .orderBy(ascending(Vet.LAST_NAME, Vet.FIRST_NAME))
             .smallDataset(true));
   }
+  // end::vet[]
 
-  public interface Specialty extends Entity {
-    EntityType TYPE = DOMAIN.entityType("petclinic.specialty", Specialty.class);
+  // tag::specialty[]
+  public interface Specialty {
+    EntityType TYPE = DOMAIN.entityType("petclinic.specialty");
 
     Attribute<Integer> ID = TYPE.integerAttribute("id");
     Attribute<String> NAME = TYPE.stringAttribute("name");
@@ -101,9 +106,11 @@ public final class Petclinic extends DefaultDomain {
             .stringFactory(Specialty.NAME)
             .smallDataset(true));
   }
+  // end::specialty[]
 
-  public interface VetSpecialty extends Entity {
-    EntityType TYPE = DOMAIN.entityType("petclinic.vet_specialty", VetSpecialty.class);
+  // tag::vet_specialty[]
+  public interface VetSpecialty {
+    EntityType TYPE = DOMAIN.entityType("petclinic.vet_specialty");
 
     Attribute<Integer> VET = TYPE.integerAttribute("vet");
     Attribute<Integer> SPECIALTY = TYPE.integerAttribute("specialty");
@@ -127,9 +134,11 @@ public final class Petclinic extends DefaultDomain {
                     .value(VetSpecialty.SPECIALTY_FK)
                     .build()));
   }
+  // end::vet_specialty[]
 
-  public interface PetType extends Entity {
-    EntityType TYPE = DOMAIN.entityType("petclinic.pet_type", PetType.class);
+  // tag::pet_type[]
+  public interface PetType {
+    EntityType TYPE = DOMAIN.entityType("petclinic.pet_type");
 
     Attribute<Integer> ID = TYPE.integerAttribute("id");
     Attribute<String> NAME = TYPE.stringAttribute("name");
@@ -148,10 +157,11 @@ public final class Petclinic extends DefaultDomain {
             .orderBy(ascending(PetType.NAME))
             .smallDataset(true));
   }
+  // end::pet_type[]
 
-
-  public interface Owner extends Entity {
-    EntityType TYPE = DOMAIN.entityType("petclinic.owner", Owner.class);
+  // tag::owner[]
+  public interface Owner {
+    EntityType TYPE = DOMAIN.entityType("petclinic.owner");
 
     Attribute<Integer> ID = TYPE.integerAttribute("id");
     Attribute<String> FIRST_NAME = TYPE.stringAttribute("first_name");
@@ -195,8 +205,23 @@ public final class Petclinic extends DefaultDomain {
             .orderBy(ascending(Owner.LAST_NAME, Owner.FIRST_NAME)));
   }
 
-  public interface Pet extends Entity {
-    EntityType TYPE = DOMAIN.entityType("petclinic.pet", Pet.class);
+  private static final class PhoneTypeValueConverter implements ValueConverter<PhoneType, String> {
+
+    @Override
+    public String toColumnValue(PhoneType value, Statement statement) {
+      return value.name();
+    }
+
+    @Override
+    public PhoneType fromColumnValue(String columnValue) {
+      return PhoneType.valueOf(columnValue);
+    }
+  }
+  // end::owner[]
+
+  // tag::pet[]
+  public interface Pet {
+    EntityType TYPE = DOMAIN.entityType("petclinic.pet");
 
     Attribute<Integer> ID = TYPE.integerAttribute("id");
     Attribute<String> NAME = TYPE.stringAttribute("name");
@@ -228,13 +253,15 @@ public final class Petclinic extends DefaultDomain {
             .stringFactory(Pet.NAME)
             .orderBy(ascending(Pet.NAME)));
   }
+  // end::pet[]
 
-  public interface Visit extends Entity {
-    EntityType TYPE = DOMAIN.entityType("petclinic.visit", Visit.class);
+  // tag::visit[]
+  public interface Visit {
+    EntityType TYPE = DOMAIN.entityType("petclinic.visit");
 
     Attribute<Integer> ID = TYPE.integerAttribute("id");
     Attribute<Integer> PET_ID = TYPE.integerAttribute("pet_id");
-    Attribute<LocalDate> DATE = TYPE.localDateAttribute("\"date\"");
+    Attribute<LocalDate> VISIT_DATE = TYPE.localDateAttribute("visit_date");
     Attribute<String> DESCRIPTION = TYPE.stringAttribute("description");
 
     ForeignKey PET_FK = TYPE.foreignKey("pet_fk", PET_ID, Pet.ID);
@@ -246,28 +273,16 @@ public final class Petclinic extends DefaultDomain {
             columnProperty(Visit.PET_ID)
                     .nullable(false),
             foreignKeyProperty(Visit.PET_FK, "Pet"),
-            columnProperty(Visit.DATE, "Date")
+            columnProperty(Visit.VISIT_DATE, "Date")
                     .nullable(false),
             columnProperty(Visit.DESCRIPTION, "Description")
                     .maximumLength(255))
             .keyGenerator(identity())
             .orderBy(OrderBy.builder()
                     .ascending(Visit.PET_ID)
-                    .descending(Visit.DATE)
+                    .descending(Visit.VISIT_DATE)
                     .build())
             .caption("Visits"));
   }
-
-  private static final class PhoneTypeValueConverter implements ValueConverter<PhoneType, String> {
-
-    @Override
-    public String toColumnValue(PhoneType value, Statement statement) {
-      return value.name();
-    }
-
-    @Override
-    public PhoneType fromColumnValue(String columnValue) {
-      return PhoneType.valueOf(columnValue);
-    }
-  }
+  // end::visit[]
 }

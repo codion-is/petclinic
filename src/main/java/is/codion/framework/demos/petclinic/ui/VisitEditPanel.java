@@ -41,13 +41,13 @@ public final class VisitEditPanel extends EntityEditPanel {
     setInitialFocusAttribute(Visit.PET_FK);
 
     createForeignKeyComboBox(Visit.PET_FK);
-    createTextField(Visit.DATE);
+    createTextField(Visit.VISIT_DATE);
     createTextArea(Visit.DESCRIPTION)
             .rowsColumns(4, 20);
 
     JPanel northPanel = Components.panel(gridLayout(1, 2))
             .add(createInputPanel(Visit.PET_FK))
-            .add(createInputPanel(Visit.DATE))
+            .add(createInputPanel(Visit.VISIT_DATE))
             .build();
 
     setLayout(borderLayout());

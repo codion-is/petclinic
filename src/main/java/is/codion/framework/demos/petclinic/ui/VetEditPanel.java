@@ -37,7 +37,7 @@ public final class VetEditPanel extends EntityEditPanel {
     createTextField(Vet.FIRST_NAME);
     createTextField(Vet.LAST_NAME);
 
-    setLayout(gridLayout(1, 2));
+    setLayout(gridLayout(2, 1));
 
     addInputPanel(Vet.FIRST_NAME);
     addInputPanel(Vet.LAST_NAME);

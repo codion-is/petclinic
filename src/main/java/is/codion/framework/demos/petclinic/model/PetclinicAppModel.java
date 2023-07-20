@@ -21,7 +21,6 @@ package is.codion.framework.demos.petclinic.model;
 import is.codion.framework.db.EntityConnectionProvider;
 import is.codion.framework.demos.petclinic.domain.Petclinic.Owner;
 import is.codion.framework.demos.petclinic.domain.Petclinic.Pet;
-import is.codion.framework.demos.petclinic.domain.Petclinic.Vet;
 import is.codion.framework.demos.petclinic.domain.Petclinic.Visit;
 import is.codion.swing.framework.model.SwingEntityApplicationModel;
 import is.codion.swing.framework.model.SwingEntityModel;
@@ -43,14 +42,8 @@ public final class PetclinicAppModel extends SwingEntityApplicationModel {
     ownersModel.addDetailModel(petsModel);
     petsModel.addDetailModel(visitModel);
 
-    SwingEntityModel vetsModel = new SwingEntityModel(Vet.TYPE, connectionProvider);
-    SwingEntityModel vetSpecialtiesModel = new SwingEntityModel(new VetSpecialtyEditModel(connectionProvider));
-
-    vetsModel.addDetailModel(vetSpecialtiesModel);
-
     ownersModel.tableModel().refresh();
-    vetsModel.tableModel().refresh();
 
-    addEntityModels(ownersModel, vetsModel);
+    addEntityModel(ownersModel);
   }
 }

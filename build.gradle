@@ -1,6 +1,7 @@
 plugins {
     id "org.beryx.jlink" version "2.26.0"
     id "com.diffplug.spotless" version "6.19.0"
+    id "org.asciidoctor.jvm.convert" version "3.3.2"
 }
 
 dependencies {
@@ -61,6 +62,15 @@ application {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = "UTF-8"
     options.deprecation = true
+}
+
+asciidoctor {
+    inputs.dir("src")
+    baseDirFollowsSourceFile()
+    asciidoctorj {
+        version = "2.5.7"
+        attributes "source-highlighter": "prettify"
+    }
 }
 
 jlink {
