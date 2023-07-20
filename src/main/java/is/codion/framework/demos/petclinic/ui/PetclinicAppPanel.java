@@ -29,7 +29,7 @@ import is.codion.framework.demos.petclinic.domain.Petclinic.Vet;
 import is.codion.framework.demos.petclinic.domain.Petclinic.VetSpecialty;
 import is.codion.framework.demos.petclinic.domain.Petclinic.Visit;
 import is.codion.framework.demos.petclinic.model.PetclinicAppModel;
-import is.codion.swing.common.ui.Windows;
+import is.codion.framework.demos.petclinic.model.VetSpecialtyEditModel;
 import is.codion.swing.common.ui.laf.LookAndFeelComboBox;
 import is.codion.swing.common.ui.laf.LookAndFeelProvider;
 import is.codion.swing.framework.model.SwingEntityModel;
@@ -39,9 +39,12 @@ import is.codion.swing.framework.ui.ReferentialIntegrityErrorHandling;
 
 import com.formdev.flatlaf.intellijthemes.FlatAllIJThemes;
 
+import java.awt.Dimension;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+
+import static java.util.Arrays.asList;
 
 public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicAppModel> {
 
@@ -67,17 +70,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
     ownersPanel.addDetailPanel(petsPanel);
     petsPanel.addDetailPanel(visitsPanel);
 
-    SwingEntityModel vetsModel = applicationModel().entityModel(Vet.TYPE);
-    SwingEntityModel vetSpecialtiesModel = vetsModel.detailModel(VetSpecialty.TYPE);
-
-    EntityPanel vetsPanel = new EntityPanel(vetsModel,
-            new VetEditPanel(vetsModel.editModel()));
-    EntityPanel vetSpecialtiesPanel = new EntityPanel(vetSpecialtiesModel,
-            new VetSpecialtyEditPanel(vetSpecialtiesModel.editModel()));
-
-    vetsPanel.addDetailPanel(vetSpecialtiesPanel);
-
-    return List.of(ownersPanel, vetsPanel);
+    return List.of(ownersPanel);
   }
 
   @Override
@@ -86,12 +79,29 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
             EntityPanel.builder(PetType.TYPE)
                     .editPanelClass(PetTypeEditPanel.class)
                     .caption("Pet types");
-    EntityPanel.Builder specialtiesPanelBuilder =
+    EntityPanel.Builder specialtyPanelBuilder =
             EntityPanel.builder(Specialty.TYPE)
                     .editPanelClass(SpecialtyEditPanel.class)
                     .caption("Specialties");
 
-    return List.of(petTypePanelBuilder, specialtiesPanelBuilder);
+    SwingEntityModel.Builder vetSpecialtyModelBuilder =
+            SwingEntityModel.builder(VetSpecialty.TYPE)
+                    .editModelClass(VetSpecialtyEditModel.class);
+    SwingEntityModel.Builder vetModelBuilder =
+            SwingEntityModel.builder(Vet.TYPE)
+                    .detailModelBuilder(vetSpecialtyModelBuilder);
+
+    EntityPanel.Builder vetSpecialtyPanelBuilder =
+            EntityPanel.builder(vetSpecialtyModelBuilder)
+                    .editPanelClass(VetSpecialtyEditPanel.class)
+                    .caption("Specialty");
+    EntityPanel.Builder vetPanelBuilder =
+            EntityPanel.builder(vetModelBuilder)
+                    .editPanelClass(VetEditPanel.class)
+                    .detailPanelBuilder(vetSpecialtyPanelBuilder)
+                    .caption("Vets");
+
+    return asList(petTypePanelBuilder, specialtyPanelBuilder, vetPanelBuilder);
   }
 
   public static void main(String[] args) throws CancelException {
@@ -106,7 +116,8 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
     EntityApplicationPanel.builder(PetclinicAppModel.class, PetclinicAppPanel.class)
             .applicationName("Petclinic")
             .domainClassName(Petclinic.class.getName())
-            .frameSize(Windows.screenSizeRatio(0.6))
+//            .frameSize(Windows.screenSizeRatio(0.6))
+            .frameSize(new Dimension(1460, 720))
             .displayStartupDialog(false)
             .defaultLookAndFeelClassName(DEFAULT_FLAT_LOOK_AND_FEEL)
             .defaultLoginUser(User.parse("scott:tiger"))
