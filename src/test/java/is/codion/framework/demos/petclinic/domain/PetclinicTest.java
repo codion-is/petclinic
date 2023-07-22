@@ -33,7 +33,7 @@ import org.junit.jupiter.api.Test;
 public final class PetclinicTest extends EntityTestUnit {
 
   public PetclinicTest() {
-    super(Petclinic.class.getName());
+    super(new Petclinic());
   }
 
   @Test

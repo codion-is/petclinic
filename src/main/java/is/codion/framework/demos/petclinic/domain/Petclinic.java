@@ -40,7 +40,7 @@ import static is.codion.framework.domain.property.Property.*;
 // tag::petclinic[]
 public final class Petclinic extends DefaultDomain {
 
-  private static final DomainType DOMAIN = domainType("Petclinic");
+  public static final DomainType DOMAIN = domainType("Petclinic");
 
   public Petclinic() {
     super(DOMAIN);
