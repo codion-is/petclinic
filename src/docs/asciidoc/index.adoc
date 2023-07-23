@@ -5,13 +5,34 @@
 :dir-resources: ../../main/resources
 :dir-source-test: ../../test/java
 
+This tutorial assumes you have at least skimmed the https://codion.is/doc/0.17.16/manual/manual.html#_domain_model[Domain model] part of the Codion manual.
+
+Each section of the tutorial below is based on a single table and has the following subsections:
+
+SQL:: The underlying table DDL.
+Domain:: The domain model specification for an entity based on the table.
+Model:: The application model components associated with the entity (if any).
+UI:: The application UI components associated with the entity.
+
 == Domain model
+
+The domain model is created by extending the *DefaultDomain* class and defining a *DomainType* constant identifying the domain model.
+
+In the constructor we call methods adding a single Entity definition to the domain model. The *Domain* subsections below continue the Petclinic class.
+
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=petclinic]
 ----
 
-The domain sections below continue the Petclinic class.
+.Display full Petclinic class
+[%collapsible]
+====
+[source,java,options="nowrap"]
+----
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=**]
+----
+====
 
 == Owners
 
@@ -26,9 +47,23 @@ include::{dir-resources}/create_schema.sql[tags=owner]
 ----
 
 ==== Domain
+
+===== API
+We start by defining an *Owner* interface and defining constants for the table and its columns.
+
+The *EntityType* identifies this entity and the *Attributes* identify the columns and their types. We define a *PhoneType* enum, which we use as a custom type for the attribute based on the *phone_type* column.
+
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=owner]
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=owner_api]
+----
+
+===== Implementation
+We then define an entity based on the attributes, wrapping each attribute in a property, allowing us to configure presentation and persistance.
+
+[source,java,options="nowrap"]
+----
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=owner_impl]
 ----
 
 ==== UI
@@ -46,9 +81,17 @@ include::{dir-resources}/create_schema.sql[tags=pet]
 ----
 
 ==== Domain
+
+===== API
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=pet]
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=pet_api]
+----
+
+===== Implementation
+[source,java,options="nowrap"]
+----
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=pet_impl]
 ----
 
 ==== UI
@@ -66,9 +109,17 @@ include::{dir-resources}/create_schema.sql[tags=visit]
 ----
 
 ==== Domain
+
+===== API
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=visit]
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=visit_api]
+----
+
+===== Implementation
+[source,java,options="nowrap"]
+----
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=visit_impl]
 ----
 
 ==== UI
@@ -90,9 +141,17 @@ include::{dir-resources}/create_schema.sql[tags=pet_type]
 ----
 
 ==== Domain
+
+==== API
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=pet_type]
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=pet_type_api]
+----
+
+===== Implementation
+[source,java,options="nowrap"]
+----
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=pet_type_impl]
 ----
 
 ==== UI
@@ -112,9 +171,17 @@ include::{dir-resources}/create_schema.sql[tags=specialty]
 ----
 
 ==== Domain
+
+===== API
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=specialty]
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=specialty_api]
+----
+
+===== Implementation
+[source,java,options="nowrap"]
+----
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=specialty_impl]
 ----
 
 ==== UI
@@ -134,9 +201,17 @@ include::{dir-resources}/create_schema.sql[tags=vet]
 ----
 
 ==== Domain
+
+===== API
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=vet]
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=vet_api]
+----
+
+===== Implementation
+[source,java,options="nowrap"]
+----
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=vet_impl]
 ----
 
 ==== UI
@@ -154,9 +229,17 @@ include::{dir-resources}/create_schema.sql[tags=vet_specialty]
 ----
 
 ==== Domain
+
+===== API
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=vet_specialty]
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=vet_specialty_api]
+----
+
+===== Implementation
+[source,java,options="nowrap"]
+----
+include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=vet_specialty_impl]
 ----
 
 ==== Model
@@ -169,12 +252,6 @@ include::{dir-source}/is/codion/framework/demos/petclinic/model/VetSpecialtyEdit
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/framework/demos/petclinic/ui/VetSpecialtyEditPanel.java[lines=19..-1]
-----
-
-==== UI
-[source,java,options="nowrap"]
-----
-include::{dir-source}/is/codion/framework/demos/petclinic/ui/SpecialtyEditPanel.java[lines=19..-1]
 ----
 
 == PetclinicAppModel

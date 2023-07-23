@@ -54,7 +54,7 @@ public final class Petclinic extends DefaultDomain {
   }
   // end::petclinic[]
 
-  // tag::vet[]
+  // tag::vet_api[]
   public interface Vet {
     EntityType TYPE = DOMAIN.entityType("petclinic.vet");
 
@@ -62,7 +62,9 @@ public final class Petclinic extends DefaultDomain {
     Attribute<String> FIRST_NAME = TYPE.stringAttribute("first_name");
     Attribute<String> LAST_NAME = TYPE.stringAttribute("last_name");
   }
+  // end::vet_api[]
 
+  // tag::vet_impl[]
   private void vet() {
     add(definition(
             primaryKeyProperty(Vet.ID),
@@ -84,16 +86,18 @@ public final class Petclinic extends DefaultDomain {
             .orderBy(ascending(Vet.LAST_NAME, Vet.FIRST_NAME))
             .smallDataset(true));
   }
-  // end::vet[]
+  // end::vet_impl[]
 
-  // tag::specialty[]
+  // tag::specialty_api[]
   public interface Specialty {
     EntityType TYPE = DOMAIN.entityType("petclinic.specialty");
 
     Attribute<Integer> ID = TYPE.integerAttribute("id");
     Attribute<String> NAME = TYPE.stringAttribute("name");
   }
+  // end::specialty_api[]
 
+  // tag::specialty_impl[]
   private void specialty() {
     add(definition(
             primaryKeyProperty(Specialty.ID),
@@ -106,9 +110,9 @@ public final class Petclinic extends DefaultDomain {
             .stringFactory(Specialty.NAME)
             .smallDataset(true));
   }
-  // end::specialty[]
+  // end::specialty_impl[]
 
-  // tag::vet_specialty[]
+  // tag::vet_specialty_api[]
   public interface VetSpecialty {
     EntityType TYPE = DOMAIN.entityType("petclinic.vet_specialty");
 
@@ -118,7 +122,9 @@ public final class Petclinic extends DefaultDomain {
     ForeignKey VET_FK = TYPE.foreignKey("vet_fk", VET, Vet.ID);
     ForeignKey SPECIALTY_FK = TYPE.foreignKey("specialty_fk", SPECIALTY, Specialty.ID);
   }
+  // end::vet_specialty_api[]
 
+  // tag::vet_specialty_impl[]
   private void vetSpecialty() {
     add(definition(
             columnProperty(VetSpecialty.VET)
@@ -134,16 +140,18 @@ public final class Petclinic extends DefaultDomain {
                     .value(VetSpecialty.SPECIALTY_FK)
                     .build()));
   }
-  // end::vet_specialty[]
+  // end::vet_specialty_impl[]
 
-  // tag::pet_type[]
+  // tag::pet_type_api[]
   public interface PetType {
     EntityType TYPE = DOMAIN.entityType("petclinic.pet_type");
 
     Attribute<Integer> ID = TYPE.integerAttribute("id");
     Attribute<String> NAME = TYPE.stringAttribute("name");
   }
+  // end::pet_type_api[]
 
+  // tag::pet_type_impl[]
   private void petType() {
     add(definition(
             primaryKeyProperty(PetType.ID),
@@ -157,9 +165,9 @@ public final class Petclinic extends DefaultDomain {
             .orderBy(ascending(PetType.NAME))
             .smallDataset(true));
   }
-  // end::pet_type[]
+  // end::pet_type_impl[]
 
-  // tag::owner[]
+  // tag::owner_api[]
   public interface Owner {
     EntityType TYPE = DOMAIN.entityType("petclinic.owner");
 
@@ -175,7 +183,9 @@ public final class Petclinic extends DefaultDomain {
       MOBILE, HOME, WORK
     }
   }
+  // end::owner_api[]
 
+  // tag::owner_impl[]
   private void owner() {
     add(definition(
             primaryKeyProperty(Owner.ID),
@@ -217,9 +227,9 @@ public final class Petclinic extends DefaultDomain {
       return PhoneType.valueOf(columnValue);
     }
   }
-  // end::owner[]
+  // end::owner_impl[]
 
-  // tag::pet[]
+  // tag::pet_api[]
   public interface Pet {
     EntityType TYPE = DOMAIN.entityType("petclinic.pet");
 
@@ -232,7 +242,9 @@ public final class Petclinic extends DefaultDomain {
     ForeignKey PET_TYPE_FK = TYPE.foreignKey("type_fk", PET_TYPE_ID, PetType.ID);
     ForeignKey OWNER_FK = TYPE.foreignKey("owner_fk", OWNER_ID, Owner.ID);
   }
+  // end::pet_api[]
 
+  // tag::pet_impl[]
   private void pet() {
     add(definition(
             primaryKeyProperty(Pet.ID),
@@ -253,9 +265,9 @@ public final class Petclinic extends DefaultDomain {
             .stringFactory(Pet.NAME)
             .orderBy(ascending(Pet.NAME)));
   }
-  // end::pet[]
+  // end::pet_impl[]
 
-  // tag::visit[]
+  // tag::visit_api[]
   public interface Visit {
     EntityType TYPE = DOMAIN.entityType("petclinic.visit");
 
@@ -266,7 +278,9 @@ public final class Petclinic extends DefaultDomain {
 
     ForeignKey PET_FK = TYPE.foreignKey("pet_fk", PET_ID, Pet.ID);
   }
+  // end::visit_api[]
 
+  // tag::visit_impl[]
   private void visit() {
     add(definition(
             primaryKeyProperty(Visit.ID),
@@ -284,5 +298,5 @@ public final class Petclinic extends DefaultDomain {
                     .build())
             .caption("Visits"));
   }
-  // end::visit[]
+  // end::visit_impl[]
 }

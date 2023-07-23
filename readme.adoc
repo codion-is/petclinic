@@ -6,6 +6,22 @@ image::petclinic-client.png[Petclinic client]
 
 NOTE: The Codion framework will be released in Q4 of 2023.
 
+== Documentation
+
+Build the tutorial by running this Gradle target:
+
+[source,shell]
+----
+gradlew asciidoctor
+----
+
+...and browse the tutorial here:
+
+[source]
+----
+build/docs/asciidoc/index.html
+----
+
 == Run
 
 [source,shell]
