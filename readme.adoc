@@ -19,7 +19,7 @@ gradlew asciidoctor
 
 [source]
 ----
-build/docs/asciidoc/index.html
+build/docs/asciidoc/petclinic.html
 ----
 
 == Run
