@@ -5,7 +5,7 @@
 :dir-resources: ../../main/resources
 :dir-source-test: ../../test/java
 
-This tutorial assumes you have at least skimmed the https://codion.is/doc/0.17.16/manual/manual.html#_domain_model[Domain model] part of the Codion manual.
+This tutorial assumes you have at least skimmed the https://codion.is/doc/{codion-version}/manual/manual.html#_domain_model[Domain model] part of the Codion manual.
 
 Each section of the tutorial below is based on a single table and has the following subsections:
 
