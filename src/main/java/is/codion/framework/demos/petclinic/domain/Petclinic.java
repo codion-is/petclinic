@@ -21,7 +21,7 @@ package is.codion.framework.demos.petclinic.domain;
 import is.codion.framework.demos.petclinic.domain.Petclinic.Owner.PhoneType;
 import is.codion.framework.domain.DefaultDomain;
 import is.codion.framework.domain.DomainType;
-import is.codion.framework.domain.entity.Attribute;
+import is.codion.framework.domain.entity.Column;
 import is.codion.framework.domain.entity.EntityType;
 import is.codion.framework.domain.entity.ForeignKey;
 import is.codion.framework.domain.entity.OrderBy;
@@ -58,9 +58,9 @@ public final class Petclinic extends DefaultDomain {
   public interface Vet {
     EntityType TYPE = DOMAIN.entityType("petclinic.vet");
 
-    Attribute<Integer> ID = TYPE.integerAttribute("id");
-    Attribute<String> FIRST_NAME = TYPE.stringAttribute("first_name");
-    Attribute<String> LAST_NAME = TYPE.stringAttribute("last_name");
+    Column<Integer> ID = TYPE.integerColumn("id");
+    Column<String> FIRST_NAME = TYPE.stringColumn("first_name");
+    Column<String> LAST_NAME = TYPE.stringColumn("last_name");
   }
   // end::vet_api[]
 
@@ -92,8 +92,8 @@ public final class Petclinic extends DefaultDomain {
   public interface Specialty {
     EntityType TYPE = DOMAIN.entityType("petclinic.specialty");
 
-    Attribute<Integer> ID = TYPE.integerAttribute("id");
-    Attribute<String> NAME = TYPE.stringAttribute("name");
+    Column<Integer> ID = TYPE.integerColumn("id");
+    Column<String> NAME = TYPE.stringColumn("name");
   }
   // end::specialty_api[]
 
@@ -116,8 +116,8 @@ public final class Petclinic extends DefaultDomain {
   public interface VetSpecialty {
     EntityType TYPE = DOMAIN.entityType("petclinic.vet_specialty");
 
-    Attribute<Integer> VET = TYPE.integerAttribute("vet");
-    Attribute<Integer> SPECIALTY = TYPE.integerAttribute("specialty");
+    Column<Integer> VET = TYPE.integerColumn("vet");
+    Column<Integer> SPECIALTY = TYPE.integerColumn("specialty");
 
     ForeignKey VET_FK = TYPE.foreignKey("vet_fk", VET, Vet.ID);
     ForeignKey SPECIALTY_FK = TYPE.foreignKey("specialty_fk", SPECIALTY, Specialty.ID);
@@ -146,8 +146,8 @@ public final class Petclinic extends DefaultDomain {
   public interface PetType {
     EntityType TYPE = DOMAIN.entityType("petclinic.pet_type");
 
-    Attribute<Integer> ID = TYPE.integerAttribute("id");
-    Attribute<String> NAME = TYPE.stringAttribute("name");
+    Column<Integer> ID = TYPE.integerColumn("id");
+    Column<String> NAME = TYPE.stringColumn("name");
   }
   // end::pet_type_api[]
 
@@ -171,13 +171,13 @@ public final class Petclinic extends DefaultDomain {
   public interface Owner {
     EntityType TYPE = DOMAIN.entityType("petclinic.owner");
 
-    Attribute<Integer> ID = TYPE.integerAttribute("id");
-    Attribute<String> FIRST_NAME = TYPE.stringAttribute("first_name");
-    Attribute<String> LAST_NAME = TYPE.stringAttribute("last_name");
-    Attribute<String> ADDRESS = TYPE.stringAttribute("address");
-    Attribute<String> CITY = TYPE.stringAttribute("city");
-    Attribute<String> TELEPHONE = TYPE.stringAttribute("telephone");
-    Attribute<PhoneType> PHONE_TYPE = TYPE.attribute("phone_type", PhoneType.class);
+    Column<Integer> ID = TYPE.integerColumn("id");
+    Column<String> FIRST_NAME = TYPE.stringColumn("first_name");
+    Column<String> LAST_NAME = TYPE.stringColumn("last_name");
+    Column<String> ADDRESS = TYPE.stringColumn("address");
+    Column<String> CITY = TYPE.stringColumn("city");
+    Column<String> TELEPHONE = TYPE.stringColumn("telephone");
+    Column<PhoneType> PHONE_TYPE = TYPE.column("phone_type", PhoneType.class);
 
     enum PhoneType {
       MOBILE, HOME, WORK
@@ -233,11 +233,11 @@ public final class Petclinic extends DefaultDomain {
   public interface Pet {
     EntityType TYPE = DOMAIN.entityType("petclinic.pet");
 
-    Attribute<Integer> ID = TYPE.integerAttribute("id");
-    Attribute<String> NAME = TYPE.stringAttribute("name");
-    Attribute<LocalDate> BIRTH_DATE = TYPE.localDateAttribute("birth_date");
-    Attribute<Integer> PET_TYPE_ID = TYPE.integerAttribute("type_id");
-    Attribute<Integer> OWNER_ID = TYPE.integerAttribute("owner_id");
+    Column<Integer> ID = TYPE.integerColumn("id");
+    Column<String> NAME = TYPE.stringColumn("name");
+    Column<LocalDate> BIRTH_DATE = TYPE.localDateColumn("birth_date");
+    Column<Integer> PET_TYPE_ID = TYPE.integerColumn("type_id");
+    Column<Integer> OWNER_ID = TYPE.integerColumn("owner_id");
 
     ForeignKey PET_TYPE_FK = TYPE.foreignKey("type_fk", PET_TYPE_ID, PetType.ID);
     ForeignKey OWNER_FK = TYPE.foreignKey("owner_fk", OWNER_ID, Owner.ID);
@@ -271,10 +271,10 @@ public final class Petclinic extends DefaultDomain {
   public interface Visit {
     EntityType TYPE = DOMAIN.entityType("petclinic.visit");
 
-    Attribute<Integer> ID = TYPE.integerAttribute("id");
-    Attribute<Integer> PET_ID = TYPE.integerAttribute("pet_id");
-    Attribute<LocalDate> VISIT_DATE = TYPE.localDateAttribute("visit_date");
-    Attribute<String> DESCRIPTION = TYPE.stringAttribute("description");
+    Column<Integer> ID = TYPE.integerColumn("id");
+    Column<Integer> PET_ID = TYPE.integerColumn("pet_id");
+    Column<LocalDate> VISIT_DATE = TYPE.localDateColumn("visit_date");
+    Column<String> DESCRIPTION = TYPE.stringColumn("description");
 
     ForeignKey PET_FK = TYPE.foreignKey("pet_fk", PET_ID, Pet.ID);
   }
