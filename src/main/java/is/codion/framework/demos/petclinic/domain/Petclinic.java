@@ -21,21 +21,19 @@ package is.codion.framework.demos.petclinic.domain;
 import is.codion.framework.demos.petclinic.domain.Petclinic.Owner.PhoneType;
 import is.codion.framework.domain.DefaultDomain;
 import is.codion.framework.domain.DomainType;
-import is.codion.framework.domain.entity.Column;
 import is.codion.framework.domain.entity.EntityType;
-import is.codion.framework.domain.entity.ForeignKey;
 import is.codion.framework.domain.entity.OrderBy;
 import is.codion.framework.domain.entity.StringFactory;
-import is.codion.framework.domain.property.ColumnProperty.ValueConverter;
+import is.codion.framework.domain.entity.attribute.Column;
+import is.codion.framework.domain.entity.attribute.Column.ValueConverter;
+import is.codion.framework.domain.entity.attribute.ForeignKey;
 
 import java.sql.Statement;
 import java.time.LocalDate;
 
 import static is.codion.framework.domain.DomainType.domainType;
-import static is.codion.framework.domain.entity.EntityDefinition.definition;
 import static is.codion.framework.domain.entity.KeyGenerator.identity;
 import static is.codion.framework.domain.entity.OrderBy.ascending;
-import static is.codion.framework.domain.property.Property.*;
 
 // tag::petclinic[]
 public final class Petclinic extends DefaultDomain {
@@ -66,14 +64,14 @@ public final class Petclinic extends DefaultDomain {
 
   // tag::vet_impl[]
   private void vet() {
-    add(definition(
-            primaryKeyProperty(Vet.ID),
-            columnProperty(Vet.FIRST_NAME, "First name")
-                    .searchProperty(true)
+    add(Vet.TYPE.define(
+            Vet.ID.primaryKey(),
+            Vet.FIRST_NAME.column("First name")
+                    .searchColumn(true)
                     .maximumLength(30)
                     .nullable(false),
-            columnProperty(Vet.LAST_NAME, "Last name")
-                    .searchProperty(true)
+            Vet.LAST_NAME.column("Last name")
+                    .searchColumn(true)
                     .maximumLength(30)
                     .nullable(false))
             .keyGenerator(identity())
@@ -99,10 +97,10 @@ public final class Petclinic extends DefaultDomain {
 
   // tag::specialty_impl[]
   private void specialty() {
-    add(definition(
-            primaryKeyProperty(Specialty.ID),
-            columnProperty(Specialty.NAME, "Name")
-                    .searchProperty(true)
+    add(Specialty.TYPE.define(
+            Specialty.ID.primaryKey(),
+            Specialty.NAME.column("Name")
+                    .searchColumn(true)
                     .maximumLength(80)
                     .nullable(false))
             .keyGenerator(identity())
@@ -126,13 +124,13 @@ public final class Petclinic extends DefaultDomain {
 
   // tag::vet_specialty_impl[]
   private void vetSpecialty() {
-    add(definition(
-            columnProperty(VetSpecialty.VET)
+    add(VetSpecialty.TYPE.define(
+            VetSpecialty.VET.column()
                     .primaryKeyIndex(0),
-            columnProperty(VetSpecialty.SPECIALTY)
+            VetSpecialty.SPECIALTY.column()
                     .primaryKeyIndex(1),
-            foreignKeyProperty(VetSpecialty.VET_FK, "Vet"),
-            foreignKeyProperty(VetSpecialty.SPECIALTY_FK, "Specialty"))
+            VetSpecialty.VET_FK.foreignKey("Vet"),
+            VetSpecialty.SPECIALTY_FK.foreignKey("Specialty"))
             .caption("Vet specialties")
             .stringFactory(StringFactory.builder()
                     .value(VetSpecialty.VET_FK)
@@ -153,10 +151,10 @@ public final class Petclinic extends DefaultDomain {
 
   // tag::pet_type_impl[]
   private void petType() {
-    add(definition(
-            primaryKeyProperty(PetType.ID),
-            columnProperty(PetType.NAME, "Name")
-                    .searchProperty(true)
+    add(PetType.TYPE.define(
+            PetType.ID.primaryKey(),
+            PetType.NAME.column("Name")
+                    .searchColumn(true)
                     .maximumLength(80)
                     .nullable(false))
             .keyGenerator(identity())
@@ -187,23 +185,23 @@ public final class Petclinic extends DefaultDomain {
 
   // tag::owner_impl[]
   private void owner() {
-    add(definition(
-            primaryKeyProperty(Owner.ID),
-            columnProperty(Owner.FIRST_NAME, "First name")
-                    .searchProperty(true)
+    add(Owner.TYPE.define(
+            Owner.ID.primaryKey(),
+            Owner.FIRST_NAME.column("First name")
+                    .searchColumn(true)
                     .maximumLength(30)
                     .nullable(false),
-            columnProperty(Owner.LAST_NAME, "Last name")
-                    .searchProperty(true)
+            Owner.LAST_NAME.column("Last name")
+                    .searchColumn(true)
                     .maximumLength(30)
                     .nullable(false),
-            columnProperty(Owner.ADDRESS, "Address")
+            Owner.ADDRESS.column("Address")
                     .maximumLength(255),
-            columnProperty(Owner.CITY, "City")
+            Owner.CITY.column("City")
                     .maximumLength(80),
-            columnProperty(Owner.TELEPHONE, "Telephone")
+            Owner.TELEPHONE.column("Telephone")
                     .maximumLength(20),
-            columnProperty(Owner.PHONE_TYPE, "Phone type")
+            Owner.PHONE_TYPE.column("Phone type")
                     .columnClass(String.class, new PhoneTypeValueConverter()))
             .keyGenerator(identity())
             .caption("Owners")
@@ -246,20 +244,20 @@ public final class Petclinic extends DefaultDomain {
 
   // tag::pet_impl[]
   private void pet() {
-    add(definition(
-            primaryKeyProperty(Pet.ID),
-            columnProperty(Pet.NAME, "Name")
-                    .searchProperty(true)
+    add(Pet.TYPE.define(
+            Pet.ID.primaryKey(),
+            Pet.NAME.column("Name")
+                    .searchColumn(true)
                     .maximumLength(30)
                     .nullable(false),
-            columnProperty(Pet.BIRTH_DATE, "Birth date")
+            Pet.BIRTH_DATE.column("Birth date")
                     .nullable(false),
-            columnProperty(Pet.PET_TYPE_ID)
+            Pet.PET_TYPE_ID.column()
                     .nullable(false),
-            foreignKeyProperty(Pet.PET_TYPE_FK, "Pet type"),
-            columnProperty(Pet.OWNER_ID)
+            Pet.PET_TYPE_FK.foreignKey("Pet type"),
+            Pet.OWNER_ID.column()
                     .nullable(false),
-            foreignKeyProperty(Pet.OWNER_FK, "Owner"))
+            Pet.OWNER_FK.foreignKey("Owner"))
             .keyGenerator(identity())
             .caption("Pets")
             .stringFactory(Pet.NAME)
@@ -282,14 +280,14 @@ public final class Petclinic extends DefaultDomain {
 
   // tag::visit_impl[]
   private void visit() {
-    add(definition(
-            primaryKeyProperty(Visit.ID),
-            columnProperty(Visit.PET_ID)
+    add(Visit.TYPE.define(
+            Visit.ID.primaryKey(),
+            Visit.PET_ID.column()
                     .nullable(false),
-            foreignKeyProperty(Visit.PET_FK, "Pet"),
-            columnProperty(Visit.VISIT_DATE, "Date")
+            Visit.PET_FK.foreignKey("Pet"),
+            Visit.VISIT_DATE.column("Date")
                     .nullable(false),
-            columnProperty(Visit.DESCRIPTION, "Description")
+            Visit.DESCRIPTION.column("Description")
                     .maximumLength(255))
             .keyGenerator(identity())
             .orderBy(OrderBy.builder()
