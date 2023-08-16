@@ -66,7 +66,7 @@ public final class Petclinic extends DefaultDomain {
   private void vet() {
     add(Vet.TYPE.define(
             Vet.ID
-                    .primaryKey(),
+                    .primaryKeyColumn(),
             Vet.FIRST_NAME
                     .column()
                     .caption("First name")
@@ -104,7 +104,7 @@ public final class Petclinic extends DefaultDomain {
   private void specialty() {
     add(Specialty.TYPE.define(
             Specialty.ID
-                    .primaryKey(),
+                    .primaryKeyColumn(),
             Specialty.NAME
                     .column()
                     .caption("Name")
@@ -167,7 +167,7 @@ public final class Petclinic extends DefaultDomain {
   private void petType() {
     add(PetType.TYPE.define(
             PetType.ID
-                    .primaryKey(),
+                    .primaryKeyColumn(),
             PetType.NAME
                     .column()
                     .caption("Name")
@@ -205,7 +205,7 @@ public final class Petclinic extends DefaultDomain {
   private void owner() {
     add(Owner.TYPE.define(
             Owner.ID
-                    .primaryKey(),
+                    .primaryKeyColumn(),
             Owner.FIRST_NAME
                     .column()
                     .caption("First name")
@@ -277,7 +277,7 @@ public final class Petclinic extends DefaultDomain {
   private void pet() {
     add(Pet.TYPE.define(
             Pet.ID
-                    .primaryKey(),
+                    .primaryKeyColumn(),
             Pet.NAME
                     .column()
                     .caption("Name")
@@ -324,7 +324,7 @@ public final class Petclinic extends DefaultDomain {
   private void visit() {
     add(Visit.TYPE.define(
             Visit.ID
-                    .primaryKey(),
+                    .primaryKeyColumn(),
             Visit.PET_ID
                     .column()
                     .nullable(false),
