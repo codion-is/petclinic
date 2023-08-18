@@ -42,7 +42,7 @@ public final class PetEditPanel extends EntityEditPanel {
 
     createForeignKeyComboBox(Pet.OWNER_FK);
     createTextField(Pet.NAME);
-    createTextField(Pet.BIRTH_DATE);
+    createTemporalInputPanel(Pet.BIRTH_DATE);
     EntityComboBox petTypeBox =
             createForeignKeyComboBox(Pet.PET_TYPE_FK)
                     .build();
