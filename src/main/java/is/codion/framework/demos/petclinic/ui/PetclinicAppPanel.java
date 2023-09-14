@@ -31,7 +31,6 @@ import is.codion.framework.demos.petclinic.domain.Petclinic.Visit;
 import is.codion.framework.demos.petclinic.model.PetclinicAppModel;
 import is.codion.framework.demos.petclinic.model.VetSpecialtyEditModel;
 import is.codion.swing.common.ui.Windows;
-import is.codion.swing.common.ui.laf.LookAndFeelComboBox;
 import is.codion.swing.common.ui.laf.LookAndFeelProvider;
 import is.codion.swing.framework.model.SwingEntityModel;
 import is.codion.swing.framework.ui.EntityApplicationPanel;
@@ -108,7 +107,6 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
             .setRegion("en")
             .build());
     Arrays.stream(FlatAllIJThemes.INFOS).forEach(LookAndFeelProvider::addLookAndFeelProvider);
-    LookAndFeelComboBox.CHANGE_ON_SELECTION.set(true);
     ReferentialIntegrityErrorHandling.REFERENTIAL_INTEGRITY_ERROR_HANDLING
             .set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
     EntityApplicationPanel.builder(PetclinicAppModel.class, PetclinicAppPanel.class)
