@@ -4,8 +4,6 @@ A simple demo application based on the https://codion.is[Codion application fram
 
 image::petclinic-client.png[Petclinic client]
 
-NOTE: The Codion framework will be released in Q4 of 2023.
-
 == Documentation
 
 Build the tutorial by running this Gradle target:
