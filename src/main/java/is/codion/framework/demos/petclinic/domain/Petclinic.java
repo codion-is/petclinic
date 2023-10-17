@@ -21,6 +21,7 @@ package is.codion.framework.demos.petclinic.domain;
 import is.codion.framework.demos.petclinic.domain.Petclinic.Owner.PhoneType;
 import is.codion.framework.domain.DefaultDomain;
 import is.codion.framework.domain.DomainType;
+import is.codion.framework.domain.entity.Entity;
 import is.codion.framework.domain.entity.EntityType;
 import is.codion.framework.domain.entity.OrderBy;
 import is.codion.framework.domain.entity.StringFactory;
@@ -28,8 +29,10 @@ import is.codion.framework.domain.entity.attribute.Column;
 import is.codion.framework.domain.entity.attribute.Column.ValueConverter;
 import is.codion.framework.domain.entity.attribute.ForeignKey;
 
+import java.io.Serializable;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.function.Predicate;
 
 import static is.codion.framework.domain.DomainType.domainType;
 import static is.codion.framework.domain.entity.KeyGenerator.identity;
@@ -127,6 +130,16 @@ public final class Petclinic extends DefaultDomain {
 
     ForeignKey VET_FK = TYPE.foreignKey("vet_fk", VET, Vet.ID);
     ForeignKey SPECIALTY_FK = TYPE.foreignKey("specialty_fk", SPECIALTY, Specialty.ID);
+
+    final class Exists implements Predicate<Entity>, Serializable {
+
+      private static final long serialVersionUID = 1;
+
+      @Override
+      public boolean test(Entity entity) {
+        return entity.originalPrimaryKey().isNotNull();
+      }
+    }
   }
   // end::vet_specialty_api[]
 
@@ -152,7 +165,8 @@ public final class Petclinic extends DefaultDomain {
                     .value(VetSpecialty.VET_FK)
                     .text(" - ")
                     .value(VetSpecialty.SPECIALTY_FK)
-                    .build()));
+                    .build())
+            .exists(new VetSpecialty.Exists()));
   }
   // end::vet_specialty_impl[]
 
