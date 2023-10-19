@@ -147,12 +147,10 @@ public final class Petclinic extends DefaultDomain {
   private void vetSpecialty() {
     add(VetSpecialty.TYPE.define(
             VetSpecialty.VET.define()
-                    .column()
-                    .primaryKeyIndex(0)
+                    .primaryKey(0)
                     .updatable(true),
             VetSpecialty.SPECIALTY.define()
-                    .column()
-                    .primaryKeyIndex(1)
+                    .primaryKey(1)
                     .updatable(true),
             VetSpecialty.VET_FK.define()
                     .foreignKey()
