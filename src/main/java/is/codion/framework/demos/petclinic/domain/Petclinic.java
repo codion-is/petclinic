@@ -26,7 +26,7 @@ import is.codion.framework.domain.entity.EntityType;
 import is.codion.framework.domain.entity.OrderBy;
 import is.codion.framework.domain.entity.StringFactory;
 import is.codion.framework.domain.entity.attribute.Column;
-import is.codion.framework.domain.entity.attribute.Column.ValueConverter;
+import is.codion.framework.domain.entity.attribute.Column.Converter;
 import is.codion.framework.domain.entity.attribute.ForeignKey;
 
 import java.io.Serializable;
@@ -206,8 +206,7 @@ public final class Petclinic extends DefaultDomain {
     Column<String> ADDRESS = TYPE.stringColumn("address");
     Column<String> CITY = TYPE.stringColumn("city");
     Column<String> TELEPHONE = TYPE.stringColumn("telephone");
-    Column<PhoneType> PHONE_TYPE = TYPE
-            .column("phone_type", PhoneType.class);
+    Column<PhoneType> PHONE_TYPE = TYPE.column("phone_type", PhoneType.class);
 
     enum PhoneType {
       MOBILE, HOME, WORK
@@ -247,7 +246,7 @@ public final class Petclinic extends DefaultDomain {
             Owner.PHONE_TYPE.define()
                     .column()
                     .caption("Phone type")
-                    .columnClass(String.class, new PhoneTypeValueConverter()))
+                    .columnClass(String.class, new PhoneTypeConverter()))
             .keyGenerator(identity())
             .caption("Owners")
             .stringFactory(StringFactory.builder()
@@ -258,7 +257,7 @@ public final class Petclinic extends DefaultDomain {
             .orderBy(ascending(Owner.LAST_NAME, Owner.FIRST_NAME)));
   }
 
-  private static final class PhoneTypeValueConverter implements ValueConverter<PhoneType, String> {
+  private static final class PhoneTypeConverter implements Converter<PhoneType, String> {
 
     @Override
     public String toColumnValue(PhoneType value, Statement statement) {
