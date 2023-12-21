@@ -111,6 +111,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
             .set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
     EntityApplicationPanel.builder(PetclinicAppModel.class, PetclinicAppPanel.class)
             .applicationName("Petclinic")
+            .applicationVersion(PetclinicAppModel.VERSION)
             .domainType(Petclinic.DOMAIN)
             .frameSize(Windows.screenSizeRatio(0.6))
             .displayStartupDialog(false)

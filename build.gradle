@@ -78,6 +78,22 @@ asciidoctor {
     }
 }
 
+tasks.register("writeVersion") {
+    group "build"
+    def versionFile = file(sourceSets.main.output.resourcesDir.getAbsolutePath() + "/version.properties")
+    inputs.property("version", project.version)
+    outputs.file(versionFile)
+    outputs.upToDateWhen { false }
+
+    doLast {
+        def versionProperties = new Properties()
+        versionProperties.put("version", project.version)
+        versionProperties.store(versionFile.newWriter(), null)
+    }
+}
+
+classes.dependsOn writeVersion
+
 tasks.register("copyToGitHubPages", Sync) {
     dependsOn asciidoctor
     group "documentation"
