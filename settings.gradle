@@ -15,7 +15,7 @@ dependencyResolutionManagement {
             version("h2", "2.2.224")
             version("json", "20231013")
             version("junit", "5.10.1")
-            version("flatlaf", "3.2.5")
+            version("flatlaf", "3.3")
 
             library("codion-dbms-h2database", "is.codion", "codion-dbms-h2database").versionRef("codion")
             library("codion.framework.domain", "is.codion", "codion-framework-domain").versionRef("codion")
