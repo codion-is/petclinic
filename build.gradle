@@ -97,7 +97,7 @@ classes.dependsOn writeVersion
 tasks.register("copyToGitHubPages", Sync) {
     dependsOn asciidoctor
     group "documentation"
-    def documentationDir = project.version.replace("-SNAPSHOT", "")
+    def documentationDir = project.version
     from project.layout.buildDirectory.dir("docs/asciidoc")
     into "../codion-pages/doc/${documentationDir}/tutorials/petclinic"
 }
@@ -116,7 +116,6 @@ jlink {
 
     jpackage {
         imageName = "Petclinic"
-        appVersion = project.version
         if (org.gradle.internal.os.OperatingSystem.current().linux) {
             installerType = "deb"
             icon = "src/main/icons/petclinic.png"
