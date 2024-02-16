@@ -13,7 +13,7 @@ dependencies {
     runtimeOnly (libs.codion.plugin.logback.proxy)
 
     runtimeOnly (libs.codion.framework.db.local)
-    runtimeOnly (libs.codion.dbms.h2database)
+    runtimeOnly (libs.codion.dbms.h2)
     runtimeOnly (libs.h2)
 
     testImplementation (libs.codion.framework.domain.test)
