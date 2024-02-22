@@ -11,7 +11,7 @@ dependencyResolutionManagement {
     }
     versionCatalogs {
         libs {
-            version("codion", "0.17.28")
+            version("codion", "0.17.29")
             version("h2", "2.2.224")
             version("json", "20240205")
             version("junit", "5.10.2")
