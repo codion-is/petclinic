@@ -19,14 +19,14 @@ UI:: The application UI components associated with the entity.
 
 The domain model is created by extending the *DefaultDomain* class and defining a *DomainType* constant identifying the domain model.
 
-In the constructor we call methods adding a single Entity definition to the domain model. The *Domain* subsections below continue the Petclinic class.
+In the constructor we call methods each adding a single Entity definition to the domain model. The *Domain* subsections below continue the Petclinic class.
 
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=petclinic]
 ----
 
-.Display full Petclinic class
+.Display full Petclinic domain model class
 [%collapsible]
 ====
 [source,java,options="nowrap"]
@@ -50,9 +50,9 @@ include::{dir-resources}/create_schema.sql[tags=owner]
 ==== Domain
 
 ===== API
-We start by defining an *Owner* interface and defining constants for the table and its columns.
+We start by creating an `Owner` interface and defining the domain API constants for the table and its columns, providing the table and column names as parameters.
 
-The *EntityType* identifies this entity and the *Attributes* identify the columns and their types. We define a *PhoneType* enum, which we use as a custom type for the attribute based on the *phone_type* column.
+We also define a `PhoneType` enum, which we use as a custom type for the *phone_type* column.
 
 [source,java,options="nowrap"]
 ----
@@ -60,26 +60,31 @@ include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[
 ----
 
 ===== Implementation
-We then define an entity based on the attributes, wrapping each attribute in a property, allowing us to configure presentation and persistance.
+We then define an Entity along with its columns based on the domain API constants, configuring each for persistance and presentation.
 
+For the `Owner.PHONE_TYPE` column we call `columnClass()` where we specify the underlying column type and provide a `Column.Converter` implementation, for converting the enum to and from the underlying column value.
+
+We use the `StringFactory.builder()` method to build a `Function<Entity, String>` instance which provides the `toString()` implementation for entities of this type.
+
+We also specify a default `OrderBy` clause to use when selecting entities of this type.
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=owner_impl]
 ----
 
 ==== UI
-We extend the {doc-url}/api/is.codion.swing.framework.ui/is/codion/swing/framework/ui/EntityEditPanel.html[EntityEditPanel] class and implement the *initializeUI* method to provide a user interface for editing *Owner* instances.
+We extend the {doc-url}/api/is.codion.swing.framework.ui/is/codion/swing/framework/ui/EntityEditPanel.html[EntityEditPanel] class, with a constructor taking a `SwingEntityEditModel` parameter, which we simply propagate to the super constructor. We implement the `initializeUI()` method in which we create the components using the `create...()` methods and add them to the panel using `addInputPanel()`.
+
+NOTE:: The `create...()` methods return a {doc-url}/api/is.codion.swing.common.ui/is/codion/swing/common/ui/component/builder/ComponentBuilder.html[ComponentBuilder] instance, providing a way to configure the input fields.
 
 * Set the initial focus attribute, which specifies which input field should receive the focus when the panel is cleared or initialized.
-* Create input fields for the attributes.
-* Set a layout and add the input fields on the panel.
+* Create input fields for the columns.
+* Set a layout and add the input fields to the panel.
 
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/framework/demos/petclinic/ui/OwnerEditPanel.java[lines=19..-1]
 ----
-
-NOTE:: The *create...* methods return a {doc-url}/api/is.codion.swing.common.ui/is/codion/swing/common/ui/component/builder/ComponentBuilder.html[ComponentBuilder] instance, providing a way to configure the input fields.
 
 === Pet
 
@@ -92,18 +97,30 @@ include::{dir-resources}/create_schema.sql[tags=pet]
 ==== Domain
 
 ===== API
+For the `Pet` Entity we define a `ForeignKey` domain API constant for each foreign key, providing a name along with the columns comprising the underlying reference.
+
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=pet_api]
 ----
 
 ===== Implementation
+We define the foreign keys the same way we define columns.
+
+NOTE:: The underlying foreign key reference columns do not have a `caption` specified, which means they will be hidden in table views by default.
+
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=pet_impl]
 ----
 
 ==== UI
+For the `PetEditPanel` we use `createForeignKeyComboBox()` to create a `EntityComboBox` for the `Pet.OWNER_FK` foreign key, which provides a ComboBox populated with the underlying entities.
+
+For the `Pet.PET_TYPE_FK` foreign key we use `createForeignKeyComboBoxPanel()` which creates a `EntityComboBox` on a panel, which can also include buttons for adding a new item or editing the selected one. In this case we provide a button for adding a new `PetType` by calling `add(true)`. The `createForeignKeyComboBoxPanel()` method takes a `Supplier<EntityEditPanel>` parameter, responsible for providing the `EntityEditPanel` instance to display when adding or editing items.
+
+The `createTemporalFieldPanel()` method creates a temporal field for editing dates, on a panel which includes a button for displaying a calendar.
+
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/framework/demos/petclinic/ui/PetEditPanel.java[lines=19..-1]
@@ -126,12 +143,16 @@ include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[
 ----
 
 ===== Implementation
+Here we create a `OrderBy` instance using a builder instead of a factory method.
+
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=visit_impl]
 ----
 
 ==== UI
+When using a `JTextArea` requiring a `JScrollPane` we supply the scroll pane containing the text area, retrived via `component(Attribute)`,  as a parameter when calling `addInputPanel()`.
+
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/framework/demos/petclinic/ui/VisitEditPanel.java[lines=19..-1]
@@ -252,6 +273,14 @@ include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[
 ----
 
 ==== Model
+Here we extend `SwingEntityEditModel` in order to provide validation for a Vet/Specialty combination. And yes, this should obviously be done with a unique key in the underlying table, but let's assume we can't do that for some reason.
+
+The `validate()` method is called before inserting or updating the given entity instance.
+
+In the constructor we initialize the ComboBox models used, creating and populating them, in order to prevent it from happening automatically when the UI is initialized on the EDT.
+
+We also specify that the `VetSpecialty.VET_FK` and `VetSpecialty.SPECIALTY_FK` values should not persist when the edit model is cleared.
+
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/framework/demos/petclinic/model/VetSpecialtyEditModel.java[lines=19..-1]
@@ -264,12 +293,18 @@ include::{dir-source}/is/codion/framework/demos/petclinic/ui/VetSpecialtyEditPan
 ----
 
 == PetclinicAppModel
+The application model holds the `SwingEntityModel` instances used by the application, here we create a `setupEntityModels()` method for creating and configuring the application model layer. Note that we initialize ComboBox models and refresh the Owners table model, in order for that not to happen on the EDT when the UI is created.
+
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/framework/demos/petclinic/model/PetclinicAppModel.java[lines=19..-1]
 ----
 
 == PetclinicAppPanel
+The application panel holds the `EntityPanel` instances used by the application, which are created in the `createEntityPanels()` method. These `EntityPanels` are based on the `SwingEntityModels` we get from the application model.
+
+We also override `createSupportPanelBuilders()`, where we create `EntityPanel.Builder` instances on which to base the `Support tables` main menu.
+
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/framework/demos/petclinic/ui/PetclinicAppPanel.java[lines=19..-1]
