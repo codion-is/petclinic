@@ -18,8 +18,8 @@ dependencyResolutionManagement {
             version("flatlaf", "3.4")
 
             library("codion-dbms-h2", "is.codion", "codion-dbms-h2").versionRef("codion")
-            library("codion.framework.domain", "is.codion", "codion-framework-domain").versionRef("codion")
-            library("codion.framework.domain.test", "is.codion", "codion-framework-domain-test").versionRef("codion")
+            library("codion-framework-domain", "is.codion", "codion-framework-domain").versionRef("codion")
+            library("codion-framework-domain-test", "is.codion", "codion-framework-domain-test").versionRef("codion")
             library("codion-framework-db-local", "is.codion", "codion-framework-db-local").versionRef("codion")
             library("codion-swing-framework-ui", "is.codion", "codion-swing-framework-ui").versionRef("codion")
             library("codion-plugin-logback-proxy", "is.codion", "codion-plugin-logback-proxy").versionRef("codion")
