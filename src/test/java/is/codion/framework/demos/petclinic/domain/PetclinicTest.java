@@ -32,42 +32,42 @@ import org.junit.jupiter.api.Test;
 
 public final class PetclinicTest extends EntityTestUnit {
 
-  public PetclinicTest() {
-    super(new Petclinic());
-  }
+	public PetclinicTest() {
+		super(new Petclinic());
+	}
 
-  @Test
-  void vet() throws DatabaseException {
-    test(Vet.TYPE);
-  }
+	@Test
+	void vet() throws DatabaseException {
+		test(Vet.TYPE);
+	}
 
-  @Test
-  void specialty() throws DatabaseException {
-    test(Specialty.TYPE);
-  }
+	@Test
+	void specialty() throws DatabaseException {
+		test(Specialty.TYPE);
+	}
 
-  @Test
-  void vetSpecialty() throws DatabaseException {
-    test(VetSpecialty.TYPE);
-  }
+	@Test
+	void vetSpecialty() throws DatabaseException {
+		test(VetSpecialty.TYPE);
+	}
 
-  @Test
-  void petType() throws DatabaseException {
-    test(PetType.TYPE);
-  }
+	@Test
+	void petType() throws DatabaseException {
+		test(PetType.TYPE);
+	}
 
-  @Test
-  void owner() throws DatabaseException {
-    test(Owner.TYPE);
-  }
+	@Test
+	void owner() throws DatabaseException {
+		test(Owner.TYPE);
+	}
 
-  @Test
-  void pet() throws DatabaseException {
-    test(Pet.TYPE);
-  }
+	@Test
+	void pet() throws DatabaseException {
+		test(Pet.TYPE);
+	}
 
-  @Test
-  void visit() throws DatabaseException {
-    test(Visit.TYPE);
-  }
+	@Test
+	void visit() throws DatabaseException {
+		test(Visit.TYPE);
+	}
 }

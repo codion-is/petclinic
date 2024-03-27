@@ -28,25 +28,25 @@ import is.codion.swing.framework.model.SwingEntityModel;
 
 public final class PetclinicAppModel extends SwingEntityApplicationModel {
 
-  public static final Version VERSION = Version.parsePropertiesFile(PetclinicAppModel.class, "/version.properties");
+	public static final Version VERSION = Version.parsePropertiesFile(PetclinicAppModel.class, "/version.properties");
 
-  public PetclinicAppModel(EntityConnectionProvider connectionProvider) {
-    super(connectionProvider, VERSION);
-    setupEntityModels(connectionProvider);
-  }
+	public PetclinicAppModel(EntityConnectionProvider connectionProvider) {
+		super(connectionProvider, VERSION);
+		setupEntityModels(connectionProvider);
+	}
 
-  private void setupEntityModels(EntityConnectionProvider connectionProvider) {
-    SwingEntityModel ownersModel = new SwingEntityModel(Owner.TYPE, connectionProvider);
-    SwingEntityModel petsModel = new SwingEntityModel(Pet.TYPE, connectionProvider);
-    petsModel.editModel().initializeComboBoxModels(Pet.OWNER_FK, Pet.PET_TYPE_FK);
-    SwingEntityModel visitModel = new SwingEntityModel(Visit.TYPE, connectionProvider);
-    visitModel.editModel().initializeComboBoxModels(Visit.PET_FK);
+	private void setupEntityModels(EntityConnectionProvider connectionProvider) {
+		SwingEntityModel ownersModel = new SwingEntityModel(Owner.TYPE, connectionProvider);
+		SwingEntityModel petsModel = new SwingEntityModel(Pet.TYPE, connectionProvider);
+		petsModel.editModel().initializeComboBoxModels(Pet.OWNER_FK, Pet.PET_TYPE_FK);
+		SwingEntityModel visitModel = new SwingEntityModel(Visit.TYPE, connectionProvider);
+		visitModel.editModel().initializeComboBoxModels(Visit.PET_FK);
 
-    ownersModel.addDetailModel(petsModel);
-    petsModel.addDetailModel(visitModel);
+		ownersModel.addDetailModel(petsModel);
+		petsModel.addDetailModel(visitModel);
 
-    ownersModel.tableModel().refresh();
+		ownersModel.tableModel().refresh();
 
-    addEntityModel(ownersModel);
-  }
+		addEntityModel(ownersModel);
+	}
 }
