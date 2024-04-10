@@ -28,7 +28,7 @@ import is.codion.swing.framework.model.SwingEntityModel;
 
 public final class PetclinicAppModel extends SwingEntityApplicationModel {
 
-	public static final Version VERSION = Version.parsePropertiesFile(PetclinicAppModel.class, "/version.properties");
+	public static final Version VERSION = Version.parse(PetclinicAppModel.class, "/version.properties");
 
 	public PetclinicAppModel(EntityConnectionProvider connectionProvider) {
 		super(connectionProvider, VERSION);
