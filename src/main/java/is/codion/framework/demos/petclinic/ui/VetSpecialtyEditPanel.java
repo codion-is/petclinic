@@ -38,7 +38,7 @@ public final class VetSpecialtyEditPanel extends EntityEditPanel {
 
 		createForeignKeyComboBox(VetSpecialty.VET_FK);
 		createForeignKeyComboBoxPanel(VetSpecialty.SPECIALTY_FK, this::createSpecialtyEditPanel)
-						.add(true);
+						.includeAddButton(true);
 
 		setLayout(gridLayout(2, 1));
 
