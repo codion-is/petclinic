@@ -21,6 +21,7 @@ package is.codion.framework.demos.petclinic.domain;
 import is.codion.framework.demos.petclinic.domain.Petclinic.Owner.PhoneType;
 import is.codion.framework.domain.DefaultDomain;
 import is.codion.framework.domain.DomainType;
+import is.codion.framework.domain.entity.EntityDefinition;
 import is.codion.framework.domain.entity.EntityType;
 import is.codion.framework.domain.entity.OrderBy;
 import is.codion.framework.domain.entity.StringFactory;
@@ -42,13 +43,13 @@ public final class Petclinic extends DefaultDomain {
 
 	public Petclinic() {
 		super(DOMAIN);
-		vet();
-		specialty();
-		vetSpecialty();
-		petType();
-		owner();
-		pet();
-		visit();
+		add(vet());
+		add(specialty());
+		add(vetSpecialty());
+		add(petType());
+		add(owner());
+		add(pet());
+		add(visit());
 	}
 	// end::petclinic[]
 
@@ -63,8 +64,8 @@ public final class Petclinic extends DefaultDomain {
 	// end::vet_api[]
 
 	// tag::vet_impl[]
-	private void vet() {
-		add(Vet.TYPE.define(
+	private EntityDefinition.Builder vet() {
+		return Vet.TYPE.define(
 										Vet.ID.define()
 														.primaryKey(),
 										Vet.FIRST_NAME.define()
@@ -87,7 +88,7 @@ public final class Petclinic extends DefaultDomain {
 										.value(Vet.FIRST_NAME)
 										.build())
 						.orderBy(ascending(Vet.LAST_NAME, Vet.FIRST_NAME))
-						.smallDataset(true));
+						.smallDataset(true);
 	}
 	// end::vet_impl[]
 
@@ -101,8 +102,8 @@ public final class Petclinic extends DefaultDomain {
 	// end::specialty_api[]
 
 	// tag::specialty_impl[]
-	private void specialty() {
-		add(Specialty.TYPE.define(
+	private EntityDefinition.Builder specialty() {
+		return Specialty.TYPE.define(
 										Specialty.ID.define()
 														.primaryKey(),
 										Specialty.NAME.define()
@@ -114,7 +115,7 @@ public final class Petclinic extends DefaultDomain {
 						.keyGenerator(identity())
 						.caption("Specialties")
 						.stringFactory(Specialty.NAME)
-						.smallDataset(true));
+						.smallDataset(true);
 	}
 	// end::specialty_impl[]
 
@@ -131,8 +132,8 @@ public final class Petclinic extends DefaultDomain {
 	// end::vet_specialty_api[]
 
 	// tag::vet_specialty_impl[]
-	private void vetSpecialty() {
-		add(VetSpecialty.TYPE.define(
+	private EntityDefinition.Builder vetSpecialty() {
+		return VetSpecialty.TYPE.define(
 										VetSpecialty.VET.define()
 														.primaryKey(0)
 														.updatable(true),
@@ -150,7 +151,7 @@ public final class Petclinic extends DefaultDomain {
 										.value(VetSpecialty.VET_FK)
 										.text(" - ")
 										.value(VetSpecialty.SPECIALTY_FK)
-										.build()));
+										.build());
 	}
 	// end::vet_specialty_impl[]
 
@@ -164,8 +165,8 @@ public final class Petclinic extends DefaultDomain {
 	// end::pet_type_api[]
 
 	// tag::pet_type_impl[]
-	private void petType() {
-		add(PetType.TYPE.define(
+	private EntityDefinition.Builder petType() {
+		return PetType.TYPE.define(
 										PetType.ID.define()
 														.primaryKey(),
 										PetType.NAME.define()
@@ -178,7 +179,7 @@ public final class Petclinic extends DefaultDomain {
 						.caption("Pet types")
 						.stringFactory(PetType.NAME)
 						.orderBy(ascending(PetType.NAME))
-						.smallDataset(true));
+						.smallDataset(true);
 	}
 	// end::pet_type_impl[]
 
@@ -201,8 +202,8 @@ public final class Petclinic extends DefaultDomain {
 	// end::owner_api[]
 
 	// tag::owner_impl[]
-	private void owner() {
-		add(Owner.TYPE.define(
+	private EntityDefinition.Builder owner() {
+		return Owner.TYPE.define(
 										Owner.ID.define()
 														.primaryKey(),
 										Owner.FIRST_NAME.define()
@@ -240,7 +241,7 @@ public final class Petclinic extends DefaultDomain {
 										.text(", ")
 										.value(Owner.FIRST_NAME)
 										.build())
-						.orderBy(ascending(Owner.LAST_NAME, Owner.FIRST_NAME)));
+						.orderBy(ascending(Owner.LAST_NAME, Owner.FIRST_NAME));
 	}
 
 	private static final class PhoneTypeConverter implements Converter<PhoneType, String> {
@@ -273,8 +274,8 @@ public final class Petclinic extends DefaultDomain {
 	// end::pet_api[]
 
 	// tag::pet_impl[]
-	private void pet() {
-		add(Pet.TYPE.define(
+	private EntityDefinition.Builder pet() {
+		return Pet.TYPE.define(
 										Pet.ID.define()
 														.primaryKey(),
 										Pet.NAME.define()
@@ -302,7 +303,7 @@ public final class Petclinic extends DefaultDomain {
 						.keyGenerator(identity())
 						.caption("Pets")
 						.stringFactory(Pet.NAME)
-						.orderBy(ascending(Pet.NAME)));
+						.orderBy(ascending(Pet.NAME));
 	}
 	// end::pet_impl[]
 
@@ -320,8 +321,8 @@ public final class Petclinic extends DefaultDomain {
 	// end::visit_api[]
 
 	// tag::visit_impl[]
-	private void visit() {
-		add(Visit.TYPE.define(
+	private EntityDefinition.Builder visit() {
+		return Visit.TYPE.define(
 										Visit.ID.define()
 														.primaryKey(),
 										Visit.PET_ID.define()
@@ -343,7 +344,7 @@ public final class Petclinic extends DefaultDomain {
 										.ascending(Visit.PET_ID)
 										.descending(Visit.VISIT_DATE)
 										.build())
-						.caption("Visits"));
+						.caption("Visits");
 	}
 	// end::visit_impl[]
 }
