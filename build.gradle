@@ -5,20 +5,20 @@ plugins {
 }
 
 dependencies {
-    implementation (libs.codion.swing.framework.ui)
+    implementation(libs.codion.swing.framework.ui)
 
-    implementation (libs.json)
-    implementation (libs.flatlaf.intellij.themes)
+    implementation(libs.json)
+    implementation(libs.flatlaf.intellij.themes)
 
-    runtimeOnly (libs.codion.plugin.logback.proxy)
+    runtimeOnly(libs.codion.plugin.logback.proxy)
 
-    runtimeOnly (libs.codion.framework.db.local)
-    runtimeOnly (libs.codion.dbms.h2)
-    runtimeOnly (libs.h2)
+    runtimeOnly(libs.codion.framework.db.local)
+    runtimeOnly(libs.codion.dbms.h2)
+    runtimeOnly(libs.h2)
 
-    testImplementation (libs.codion.framework.domain.test)
-    testImplementation (libs.junit.api)
-    testRuntimeOnly (libs.junit.engine)
+    testImplementation(libs.codion.framework.domain.test)
+    testImplementation(libs.junit.api)
+    testRuntimeOnly(libs.junit.engine)
 }
 
 configurations.configureEach {

@@ -14,7 +14,6 @@ gradlew asciidoctor
 ----
 
 ...and browse the tutorial here:
-
 [source]
 ----
 build/docs/asciidoc/petclinic.html
