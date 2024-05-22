@@ -19,7 +19,7 @@
 package is.codion.framework.demos.petclinic.domain;
 
 import is.codion.framework.demos.petclinic.domain.Petclinic.Owner.PhoneType;
-import is.codion.framework.domain.DefaultDomain;
+import is.codion.framework.domain.DomainModel;
 import is.codion.framework.domain.DomainType;
 import is.codion.framework.domain.entity.EntityDefinition;
 import is.codion.framework.domain.entity.EntityType;
@@ -37,19 +37,13 @@ import static is.codion.framework.domain.entity.KeyGenerator.identity;
 import static is.codion.framework.domain.entity.OrderBy.ascending;
 
 // tag::petclinic[]
-public final class Petclinic extends DefaultDomain {
+public final class Petclinic extends DomainModel {
 
 	public static final DomainType DOMAIN = domainType("Petclinic");
 
 	public Petclinic() {
 		super(DOMAIN);
-		add(vet());
-		add(specialty());
-		add(vetSpecialty());
-		add(petType());
-		add(owner());
-		add(pet());
-		add(visit());
+		add(vet(), specialty(), vetSpecialty(), petType(), owner(), pet(), visit());
 	}
 	// end::petclinic[]
 
