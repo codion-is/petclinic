@@ -2,7 +2,7 @@
 
 A simple demo application based on the https://codion.is[Codion application framework], with only a local JDBC connection option.
 
-image::petclinic-client.png[Petclinic client]
+image::src/docs/asciidoc/images/owners.png[Petclinic client]
 
 == Documentation
 
