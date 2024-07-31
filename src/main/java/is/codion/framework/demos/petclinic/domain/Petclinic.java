@@ -58,7 +58,7 @@ public final class Petclinic extends DomainModel {
 	// end::vet_api[]
 
 	// tag::vet_impl[]
-	private EntityDefinition.Builder vet() {
+	private EntityDefinition vet() {
 		return Vet.TYPE.define(
 										Vet.ID.define()
 														.primaryKey(),
@@ -82,7 +82,8 @@ public final class Petclinic extends DomainModel {
 										.value(Vet.FIRST_NAME)
 										.build())
 						.orderBy(ascending(Vet.LAST_NAME, Vet.FIRST_NAME))
-						.smallDataset(true);
+						.smallDataset(true)
+						.build();
 	}
 	// end::vet_impl[]
 
@@ -96,7 +97,7 @@ public final class Petclinic extends DomainModel {
 	// end::specialty_api[]
 
 	// tag::specialty_impl[]
-	private EntityDefinition.Builder specialty() {
+	private EntityDefinition specialty() {
 		return Specialty.TYPE.define(
 										Specialty.ID.define()
 														.primaryKey(),
@@ -109,7 +110,8 @@ public final class Petclinic extends DomainModel {
 						.keyGenerator(identity())
 						.caption("Specialties")
 						.stringFactory(Specialty.NAME)
-						.smallDataset(true);
+						.smallDataset(true)
+						.build();
 	}
 	// end::specialty_impl[]
 
@@ -126,7 +128,7 @@ public final class Petclinic extends DomainModel {
 	// end::vet_specialty_api[]
 
 	// tag::vet_specialty_impl[]
-	private EntityDefinition.Builder vetSpecialty() {
+	private EntityDefinition vetSpecialty() {
 		return VetSpecialty.TYPE.define(
 										VetSpecialty.VET.define()
 														.primaryKey(0)
@@ -145,7 +147,8 @@ public final class Petclinic extends DomainModel {
 										.value(VetSpecialty.VET_FK)
 										.text(" - ")
 										.value(VetSpecialty.SPECIALTY_FK)
-										.build());
+										.build())
+						.build();
 	}
 	// end::vet_specialty_impl[]
 
@@ -159,7 +162,7 @@ public final class Petclinic extends DomainModel {
 	// end::pet_type_api[]
 
 	// tag::pet_type_impl[]
-	private EntityDefinition.Builder petType() {
+	private EntityDefinition petType() {
 		return PetType.TYPE.define(
 										PetType.ID.define()
 														.primaryKey(),
@@ -173,7 +176,8 @@ public final class Petclinic extends DomainModel {
 						.caption("Pet types")
 						.stringFactory(PetType.NAME)
 						.orderBy(ascending(PetType.NAME))
-						.smallDataset(true);
+						.smallDataset(true)
+						.build();
 	}
 	// end::pet_type_impl[]
 
@@ -196,7 +200,7 @@ public final class Petclinic extends DomainModel {
 	// end::owner_api[]
 
 	// tag::owner_impl[]
-	private EntityDefinition.Builder owner() {
+	private EntityDefinition owner() {
 		return Owner.TYPE.define(
 										Owner.ID.define()
 														.primaryKey(),
@@ -235,7 +239,8 @@ public final class Petclinic extends DomainModel {
 										.text(", ")
 										.value(Owner.FIRST_NAME)
 										.build())
-						.orderBy(ascending(Owner.LAST_NAME, Owner.FIRST_NAME));
+						.orderBy(ascending(Owner.LAST_NAME, Owner.FIRST_NAME))
+						.build();
 	}
 
 	private static final class PhoneTypeConverter implements Converter<PhoneType, String> {
@@ -268,7 +273,7 @@ public final class Petclinic extends DomainModel {
 	// end::pet_api[]
 
 	// tag::pet_impl[]
-	private EntityDefinition.Builder pet() {
+	private EntityDefinition pet() {
 		return Pet.TYPE.define(
 										Pet.ID.define()
 														.primaryKey(),
@@ -297,7 +302,8 @@ public final class Petclinic extends DomainModel {
 						.keyGenerator(identity())
 						.caption("Pets")
 						.stringFactory(Pet.NAME)
-						.orderBy(ascending(Pet.NAME));
+						.orderBy(ascending(Pet.NAME))
+						.build();
 	}
 	// end::pet_impl[]
 
@@ -315,7 +321,7 @@ public final class Petclinic extends DomainModel {
 	// end::visit_api[]
 
 	// tag::visit_impl[]
-	private EntityDefinition.Builder visit() {
+	private EntityDefinition visit() {
 		return Visit.TYPE.define(
 										Visit.ID.define()
 														.primaryKey(),
@@ -338,7 +344,8 @@ public final class Petclinic extends DomainModel {
 										.ascending(Visit.PET_ID)
 										.descending(Visit.VISIT_DATE)
 										.build())
-						.caption("Visits");
+						.caption("Visits")
+						.build();
 	}
 	// end::visit_impl[]
 }
