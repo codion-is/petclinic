@@ -21,9 +21,7 @@ dependencies {
     testRuntimeOnly(libs.junit.engine)
 }
 
-configurations.configureEach {
-    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-}
+version = libs.versions.codion.get().replace("-SNAPSHOT", "")
 
 java {
     toolchain {
