@@ -11,11 +11,11 @@ dependencyResolutionManagement {
     }
     versionCatalogs {
         libs {
-            version("codion", "0.18.18")
+            version("codion", "0.18.19")
             version("h2", "2.3.232")
             version("json", "20240205")
             version("junit", "5.11.1")
-            version("flatlaf", "3.5.1")
+            version("flatlaf", "3.5.2")
 
             library("codion-dbms-h2", "is.codion", "codion-dbms-h2").versionRef("codion")
             library("codion-framework-domain", "is.codion", "codion-framework-domain").versionRef("codion")
