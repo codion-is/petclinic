@@ -66,7 +66,7 @@ tasks.withType<JavaCompile>().configureEach {
 
 tasks.asciidoctor {
     inputs.dir("src")
-    setBaseDir(file("src"))
+    baseDirFollowsSourceFile()
     attributes(
         mapOf(
             "codion-version" to project.version,
@@ -98,17 +98,15 @@ tasks.register<Sync>("copyToGitHubPages") {
 
 jlink {
     imageName.set(project.name)
-    moduleName.set(application.mainModule)
     options = listOf(
-        "--strip-debug", "--no-header-files", "--no-man-pages", "--add-modules",
+        "--strip-debug",
+        "--no-header-files",
+        "--no-man-pages",
+        "--add-modules",
         "is.codion.framework.db.local,is.codion.dbms.h2,is.codion.plugin.logback.proxy"
     )
 
     addExtraDependencies("slf4j-api")
-
-    launcher {
-        jvmArgs.addAll(application.applicationDefaultJvmArgs)
-    }
 
     jpackage {
         imageName = "Petclinic"
