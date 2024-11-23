@@ -89,11 +89,9 @@ tasks.processResources {
 }
 
 tasks.register<Sync>("copyToGitHubPages") {
-    dependsOn(tasks.asciidoctor)
     group = "documentation"
-    val documentationDir = project.version
-    from(layout.buildDirectory.dir("docs/asciidoc"))
-    into("../codion-pages/doc/${documentationDir}/tutorials/petclinic")
+    from(tasks.asciidoctor)
+    into("../codion-pages/doc/" + project.version + "/tutorials/petclinic")
 }
 
 jlink {
