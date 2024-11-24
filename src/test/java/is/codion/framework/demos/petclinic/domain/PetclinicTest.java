@@ -18,7 +18,6 @@
  */
 package is.codion.framework.demos.petclinic.domain;
 
-import is.codion.common.db.exception.DatabaseException;
 import is.codion.framework.demos.petclinic.domain.Petclinic.Owner;
 import is.codion.framework.demos.petclinic.domain.Petclinic.Pet;
 import is.codion.framework.demos.petclinic.domain.Petclinic.PetType;
@@ -37,37 +36,37 @@ public final class PetclinicTest extends DomainTest {
 	}
 
 	@Test
-	void vet() throws DatabaseException {
+	void vet() {
 		test(Vet.TYPE);
 	}
 
 	@Test
-	void specialty() throws DatabaseException {
+	void specialty() {
 		test(Specialty.TYPE);
 	}
 
 	@Test
-	void vetSpecialty() throws DatabaseException {
+	void vetSpecialty() {
 		test(VetSpecialty.TYPE);
 	}
 
 	@Test
-	void petType() throws DatabaseException {
+	void petType() {
 		test(PetType.TYPE);
 	}
 
 	@Test
-	void owner() throws DatabaseException {
+	void owner() {
 		test(Owner.TYPE);
 	}
 
 	@Test
-	void pet() throws DatabaseException {
+	void pet() {
 		test(Pet.TYPE);
 	}
 
 	@Test
-	void visit() throws DatabaseException {
+	void visit() {
 		test(Visit.TYPE);
 	}
 }
