@@ -14,20 +14,30 @@
  * You should have received a copy of the GNU General Public License
  * along with Codion Petclinic Demo.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2023 - 2024, Björn Darri Sigurðsson.
+ * Copyright (c) 2004 - 2024, Björn Darri Sigurðsson.
  */
-/**
- * Petclinic demo.
- */
-module is.codion.demos.petclinic {
-	requires is.codion.swing.framework.ui;
-	requires com.formdev.flatlaf.intellijthemes;
+package is.codion.demos.petclinic.ui;
 
-	exports is.codion.demos.petclinic.model
-					to is.codion.swing.framework.model, is.codion.swing.framework.ui;
-	exports is.codion.demos.petclinic.ui
-					to is.codion.swing.framework.ui;
+import is.codion.demos.petclinic.domain.Petclinic.PetType;
+import is.codion.swing.framework.model.SwingEntityEditModel;
+import is.codion.swing.framework.ui.EntityEditPanel;
 
-	provides is.codion.framework.domain.Domain
-					with is.codion.demos.petclinic.domain.Petclinic;
+import static is.codion.swing.common.ui.layout.Layouts.gridLayout;
+
+public final class PetTypeEditPanel extends EntityEditPanel {
+
+	public PetTypeEditPanel(SwingEntityEditModel editModel) {
+		super(editModel);
+	}
+
+	@Override
+	protected void initializeUI() {
+		initialFocusAttribute().set(PetType.NAME);
+
+		createTextField(PetType.NAME);
+
+		setLayout(gridLayout(1, 1));
+
+		addInputPanel(PetType.NAME);
+	}
 }

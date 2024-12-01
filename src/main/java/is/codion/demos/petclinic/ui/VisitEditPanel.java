@@ -16,30 +16,41 @@
  *
  * Copyright (c) 2004 - 2024, Björn Darri Sigurðsson.
  */
-package is.codion.framework.demos.petclinic.ui;
+package is.codion.demos.petclinic.ui;
 
-import is.codion.framework.demos.petclinic.domain.Petclinic.Vet;
+import is.codion.demos.petclinic.domain.Petclinic.Visit;
 import is.codion.swing.framework.model.SwingEntityEditModel;
 import is.codion.swing.framework.ui.EntityEditPanel;
 
-import static is.codion.swing.common.ui.layout.Layouts.gridLayout;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import java.awt.BorderLayout;
 
-public final class VetEditPanel extends EntityEditPanel {
+import static is.codion.swing.common.ui.component.Components.gridLayoutPanel;
+import static is.codion.swing.common.ui.layout.Layouts.borderLayout;
 
-	public VetEditPanel(SwingEntityEditModel editModel) {
+public final class VisitEditPanel extends EntityEditPanel {
+
+	public VisitEditPanel(SwingEntityEditModel editModel) {
 		super(editModel);
 	}
 
 	@Override
 	protected void initializeUI() {
-		initialFocusAttribute().set(Vet.FIRST_NAME);
+		initialFocusAttribute().set(Visit.PET_FK);
 
-		createTextField(Vet.FIRST_NAME);
-		createTextField(Vet.LAST_NAME);
+		createForeignKeyComboBox(Visit.PET_FK);
+		createTemporalFieldPanel(Visit.VISIT_DATE);
+		createTextArea(Visit.DESCRIPTION)
+						.rowsColumns(4, 20);
 
-		setLayout(gridLayout(2, 1));
+		JPanel northPanel = gridLayoutPanel(1, 2)
+						.add(createInputPanel(Visit.PET_FK))
+						.add(createInputPanel(Visit.VISIT_DATE))
+						.build();
 
-		addInputPanel(Vet.FIRST_NAME);
-		addInputPanel(Vet.LAST_NAME);
+		setLayout(borderLayout());
+		add(northPanel, BorderLayout.NORTH);
+		addInputPanel(Visit.DESCRIPTION, new JScrollPane(component(Visit.DESCRIPTION).get()), BorderLayout.CENTER);
 	}
 }

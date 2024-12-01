@@ -16,15 +16,15 @@
  *
  * Copyright (c) 2004 - 2024, Björn Darri Sigurðsson.
  */
-package is.codion.framework.demos.petclinic.domain;
+package is.codion.demos.petclinic.domain;
 
-import is.codion.framework.demos.petclinic.domain.Petclinic.Owner;
-import is.codion.framework.demos.petclinic.domain.Petclinic.Pet;
-import is.codion.framework.demos.petclinic.domain.Petclinic.PetType;
-import is.codion.framework.demos.petclinic.domain.Petclinic.Specialty;
-import is.codion.framework.demos.petclinic.domain.Petclinic.Vet;
-import is.codion.framework.demos.petclinic.domain.Petclinic.VetSpecialty;
-import is.codion.framework.demos.petclinic.domain.Petclinic.Visit;
+import is.codion.demos.petclinic.domain.Petclinic.Owner;
+import is.codion.demos.petclinic.domain.Petclinic.Pet;
+import is.codion.demos.petclinic.domain.Petclinic.PetType;
+import is.codion.demos.petclinic.domain.Petclinic.Specialty;
+import is.codion.demos.petclinic.domain.Petclinic.Vet;
+import is.codion.demos.petclinic.domain.Petclinic.VetSpecialty;
+import is.codion.demos.petclinic.domain.Petclinic.Visit;
 import is.codion.framework.domain.test.DomainTest;
 
 import org.junit.jupiter.api.Test;

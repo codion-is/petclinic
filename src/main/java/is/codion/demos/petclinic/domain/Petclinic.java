@@ -16,9 +16,9 @@
  *
  * Copyright (c) 2004 - 2024, Björn Darri Sigurðsson.
  */
-package is.codion.framework.demos.petclinic.domain;
+package is.codion.demos.petclinic.domain;
 
-import is.codion.framework.demos.petclinic.domain.Petclinic.Owner.PhoneType;
+import is.codion.demos.petclinic.domain.Petclinic.Owner.PhoneType;
 import is.codion.framework.domain.DomainModel;
 import is.codion.framework.domain.DomainType;
 import is.codion.framework.domain.entity.EntityDefinition;

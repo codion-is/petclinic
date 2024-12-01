@@ -55,8 +55,8 @@ application {
         "-Dsun.awt.disablegrab=true"
     )
 
-    mainModule.set("is.codion.framework.demos.petclinic")
-    mainClass.set("is.codion.framework.demos.petclinic.ui.PetclinicAppPanel")
+    mainModule.set("is.codion.demos.petclinic")
+    mainClass.set("is.codion.demos.petclinic.ui.PetclinicAppPanel")
 }
 
 tasks.withType<JavaCompile>().configureEach {

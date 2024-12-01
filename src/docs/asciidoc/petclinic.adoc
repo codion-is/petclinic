@@ -24,7 +24,7 @@ The *Domain* subsections below continue the Petclinic class.
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=petclinic]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=petclinic]
 ----
 
 .Display full Petclinic domain model class
@@ -32,7 +32,7 @@ include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[
 ====
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=**]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=**]
 ----
 ====
 
@@ -59,7 +59,7 @@ We also define a `PhoneType` enum, which we use as a custom type for the *phone_
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=owner_api]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=owner_api]
 ----
 
 ===== Implementation
@@ -74,7 +74,7 @@ We also specify a default `OrderBy` clause to use when selecting entities of thi
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=owner_impl]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=owner_impl]
 ----
 
 ==== UI
@@ -90,7 +90,7 @@ NOTE:: The `create...()` methods return a {doc-url}/api/is.codion.swing.common.u
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/ui/OwnerEditPanel.java[lines=19..-1]
+include::{dir-source}/is/codion/demos/petclinic/ui/OwnerEditPanel.java[lines=19..-1]
 ----
 
 === Pet
@@ -110,7 +110,7 @@ For the `Pet` Entity we define a `ForeignKey` domain API constant for each forei
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=pet_api]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=pet_api]
 ----
 
 ===== Implementation
@@ -121,7 +121,7 @@ NOTE:: The underlying foreign key reference columns do not have a `caption` spec
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=pet_impl]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=pet_impl]
 ----
 
 ==== UI
@@ -136,7 +136,7 @@ The `createTemporalFieldPanel()` method creates a temporal field for editing dat
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/ui/PetEditPanel.java[lines=19..-1]
+include::{dir-source}/is/codion/demos/petclinic/ui/PetEditPanel.java[lines=19..-1]
 ----
 
 === Visit
@@ -154,7 +154,7 @@ include::{dir-resources}/create_schema.sql[tags=visit]
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=visit_api]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=visit_api]
 ----
 
 ===== Implementation
@@ -163,7 +163,7 @@ Here we create a `OrderBy` instance using a builder instead of a factory method.
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=visit_impl]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=visit_impl]
 ----
 
 ==== UI
@@ -172,7 +172,7 @@ When using a `JTextArea` requiring a `JScrollPane` we supply the scroll pane con
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/ui/VisitEditPanel.java[lines=19..-1]
+include::{dir-source}/is/codion/demos/petclinic/ui/VisitEditPanel.java[lines=19..-1]
 ----
 
 == Support tables
@@ -194,21 +194,21 @@ include::{dir-resources}/create_schema.sql[tags=pet_type]
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=pet_type_api]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=pet_type_api]
 ----
 
 ===== Implementation
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=pet_type_impl]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=pet_type_impl]
 ----
 
 ==== UI
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/ui/PetTypeEditPanel.java[lines=19..-1]
+include::{dir-source}/is/codion/demos/petclinic/ui/PetTypeEditPanel.java[lines=19..-1]
 ----
 
 === Specialty
@@ -228,21 +228,21 @@ include::{dir-resources}/create_schema.sql[tags=specialty]
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=specialty_api]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=specialty_api]
 ----
 
 ===== Implementation
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=specialty_impl]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=specialty_impl]
 ----
 
 ==== UI
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/ui/SpecialtyEditPanel.java[lines=19..-1]
+include::{dir-source}/is/codion/demos/petclinic/ui/SpecialtyEditPanel.java[lines=19..-1]
 ----
 
 === Vet
@@ -262,21 +262,21 @@ include::{dir-resources}/create_schema.sql[tags=vet]
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=vet_api]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=vet_api]
 ----
 
 ===== Implementation
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=vet_impl]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=vet_impl]
 ----
 
 ==== UI
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/ui/VetEditPanel.java[lines=19..-1]
+include::{dir-source}/is/codion/demos/petclinic/ui/VetEditPanel.java[lines=19..-1]
 ----
 
 === Vet Specialty
@@ -294,14 +294,14 @@ include::{dir-resources}/create_schema.sql[tags=vet_specialty]
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=vet_specialty_api]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=vet_specialty_api]
 ----
 
 ===== Implementation
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/domain/Petclinic.java[tags=vet_specialty_impl]
+include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=vet_specialty_impl]
 ----
 
 ==== Model
@@ -317,14 +317,14 @@ We also specify that the `VetSpecialty.VET_FK` and `VetSpecialty.SPECIALTY_FK` v
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/model/VetSpecialtyEditModel.java[lines=19..-1]
+include::{dir-source}/is/codion/demos/petclinic/model/VetSpecialtyEditModel.java[lines=19..-1]
 ----
 
 ==== UI
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/ui/VetSpecialtyEditPanel.java[lines=19..-1]
+include::{dir-source}/is/codion/demos/petclinic/ui/VetSpecialtyEditPanel.java[lines=19..-1]
 ----
 
 == PetclinicAppModel
@@ -334,7 +334,7 @@ Note that we initialize ComboBox models and refresh the Owners table model, in o
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/model/PetclinicAppModel.java[lines=19..-1]
+include::{dir-source}/is/codion/demos/petclinic/model/PetclinicAppModel.java[lines=19..-1]
 ----
 
 == PetclinicAppPanel
@@ -346,14 +346,14 @@ We also override `createSupportPanelBuilders()`, where we create `EntityPanel.Bu
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source}/is/codion/framework/demos/petclinic/ui/PetclinicAppPanel.java[lines=19..-1]
+include::{dir-source}/is/codion/demos/petclinic/ui/PetclinicAppPanel.java[lines=19..-1]
 ----
 
 == Domain unit test
 
 [source,java,options="nowrap"]
 ----
-include::{dir-source-test}/is/codion/framework/demos/petclinic/domain/PetclinicTest.java[lines=19..-1]
+include::{dir-source-test}/is/codion/demos/petclinic/domain/PetclinicTest.java[lines=19..-1]
 ----
 
 == Module Info
