@@ -1,3 +1,5 @@
+import org.gradle.internal.os.OperatingSystem
+
 plugins {
     id("org.beryx.jlink") version "3.1.1"
     id("com.diffplug.spotless") version "6.25.0"
@@ -47,6 +49,8 @@ tasks.test {
 }
 
 application {
+    mainModule = "is.codion.demos.petclinic"
+    mainClass = "is.codion.demos.petclinic.ui.PetclinicAppPanel"
     applicationDefaultJvmArgs = listOf(
         "-Xmx64m",
         "-Dcodion.client.connectionType=local",
@@ -54,9 +58,6 @@ application {
         "-Dcodion.db.initScripts=classpath:create_schema.sql",
         "-Dsun.awt.disablegrab=true"
     )
-
-    mainModule.set("is.codion.demos.petclinic")
-    mainClass.set("is.codion.demos.petclinic.ui.PetclinicAppPanel")
 }
 
 tasks.withType<JavaCompile>().configureEach {
@@ -80,7 +81,7 @@ tasks.asciidoctor {
 }
 
 tasks.register<WriteProperties>("writeVersion") {
-    destinationFile.set(file("${temporaryDir.absolutePath}/version.properties"))
+    destinationFile = file("${temporaryDir.absolutePath}/version.properties")
     property("version", libs.versions.codion.get().replace("-SNAPSHOT", ""))
 }
 
@@ -95,7 +96,7 @@ tasks.register<Sync>("copyToGitHubPages") {
 }
 
 jlink {
-    imageName.set(project.name)
+    imageName = project.name
     options = listOf(
         "--strip-debug",
         "--no-header-files",
@@ -108,7 +109,7 @@ jlink {
 
     jpackage {
         imageName = "Petclinic"
-        if (org.gradle.internal.os.OperatingSystem.current().isLinux) {
+        if (OperatingSystem.current().isLinux) {
             installerType = "deb"
             icon = "src/main/icons/petclinic.png"
             installerOptions = listOf(
@@ -117,7 +118,7 @@ jlink {
                 "--linux-shortcut"
             )
         }
-        if (org.gradle.internal.os.OperatingSystem.current().isWindows) {
+        if (OperatingSystem.current().isWindows) {
             installerType = "msi"
             icon = "src/main/icons/petclinic.ico"
             installerOptions = listOf(
