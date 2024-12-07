@@ -44,7 +44,7 @@ import java.util.Locale;
 
 public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicAppModel> {
 
-	private static final String DEFAULT_FLAT_LOOK_AND_FEEL = "com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialDarkerIJTheme";
+	private static final String DEFAULT_FLAT_LOOK_AND_FEEL = "com.formdev.flatlaf.intellijthemes.FlatArcIJTheme";
 
 	public PetclinicAppPanel(PetclinicAppModel appModel) {
 		super(appModel);
@@ -101,11 +101,9 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 	}
 
 	public static void main(String[] args) throws CancelException {
-		Locale.setDefault(new Locale.Builder()
-						.setLanguage("EN")
-						.setRegion("en")
-						.build());
-		Arrays.stream(FlatAllIJThemes.INFOS).forEach(LookAndFeelProvider::addLookAndFeel);
+		Locale.setDefault(Locale.of("en", "EN"));
+		Arrays.stream(FlatAllIJThemes.INFOS)
+						.forEach(LookAndFeelProvider::addLookAndFeel);
 		ReferentialIntegrityErrorHandling.REFERENTIAL_INTEGRITY_ERROR_HANDLING
 						.set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
 		EntityApplicationPanel.builder(PetclinicAppModel.class, PetclinicAppPanel.class)
