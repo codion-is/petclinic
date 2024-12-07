@@ -19,8 +19,6 @@ dependencies {
     runtimeOnly(libs.h2)
 
     testImplementation(libs.codion.framework.domain.test)
-    testImplementation(libs.junit.api)
-    testRuntimeOnly(libs.junit.engine)
 }
 
 version = libs.versions.codion.get().replace("-SNAPSHOT", "")
@@ -41,11 +39,21 @@ spotless {
     }
 }
 
-tasks.test {
-    useJUnitPlatform()
-    systemProperty("codion.db.url", "jdbc:h2:mem:h2db")
-    systemProperty("codion.db.initScripts", "classpath:create_schema.sql")
-    systemProperty("codion.test.user", "scott:tiger")
+testing {
+    suites {
+        val test by getting(JvmTestSuite::class) {
+            useJUnitJupiter()
+            targets {
+                all {
+                    testTask.configure {
+                        systemProperty("codion.db.url", "jdbc:h2:mem:h2db")
+                        systemProperty("codion.db.initScripts", "classpath:create_schema.sql")
+                        systemProperty("codion.test.user", "scott:tiger")
+                    }
+                }
+            }
+        }
+    }
 }
 
 application {
