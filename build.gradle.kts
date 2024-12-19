@@ -118,7 +118,6 @@ jlink {
     jpackage {
         imageName = "Petclinic"
         if (OperatingSystem.current().isLinux) {
-            installerType = "deb"
             icon = "src/main/icons/petclinic.png"
             installerOptions = listOf(
                 "--resource-dir",
@@ -127,7 +126,6 @@ jlink {
             )
         }
         if (OperatingSystem.current().isWindows) {
-            installerType = "msi"
             icon = "src/main/icons/petclinic.ico"
             installerOptions = listOf(
                 "--win-menu",
