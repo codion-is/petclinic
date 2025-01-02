@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Codion Petclinic Demo.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2004 - 2024, Björn Darri Sigurðsson.
+ * Copyright (c) 2004 - 2025, Björn Darri Sigurðsson.
  */
 package is.codion.demos.petclinic.ui;
 
@@ -52,9 +52,9 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 
 	@Override
 	protected List<EntityPanel> createEntityPanels() {
-		SwingEntityModel ownersModel = applicationModel().entityModel(Owner.TYPE);
-		SwingEntityModel petsModel = ownersModel.detailModel(Pet.TYPE);
-		SwingEntityModel visitsModel = petsModel.detailModel(Visit.TYPE);
+		SwingEntityModel ownersModel = applicationModel().entityModels().get(Owner.TYPE);
+		SwingEntityModel petsModel = ownersModel.detailModels().get(Pet.TYPE);
+		SwingEntityModel visitsModel = petsModel.detailModels().get(Visit.TYPE);
 
 		EntityPanel ownersPanel = new EntityPanel(ownersModel,
 						new OwnerEditPanel(ownersModel.editModel()));
@@ -63,8 +63,8 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 		EntityPanel visitsPanel = new EntityPanel(visitsModel,
 						new VisitEditPanel(visitsModel.editModel()));
 
-		ownersPanel.addDetailPanel(petsPanel);
-		petsPanel.addDetailPanel(visitsPanel);
+		ownersPanel.detailPanels().add(petsPanel);
+		petsPanel.detailPanels().add(visitsPanel);
 
 		return List.of(ownersPanel);
 	}

@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Codion Petclinic Demo.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2004 - 2024, Björn Darri Sigurðsson.
+ * Copyright (c) 2004 - 2025, Björn Darri Sigurðsson.
  */
 package is.codion.demos.petclinic.model;
 
@@ -35,7 +35,7 @@ public final class VetSpecialtyEditModel extends SwingEntityEditModel {
 		initializeComboBoxModels(VetSpecialty.VET_FK, VetSpecialty.SPECIALTY_FK);
 		value(VetSpecialty.VET_FK).persist().set(false);
 		value(VetSpecialty.SPECIALTY_FK).persist().set(false);
-		entity().validator().set(new VetSpecialtyValidator());
+		editor().validator().set(new VetSpecialtyValidator());
 	}
 
 	private final class VetSpecialtyValidator extends DefaultEntityValidator {

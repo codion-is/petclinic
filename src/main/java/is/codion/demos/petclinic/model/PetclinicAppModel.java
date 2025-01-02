@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Codion Petclinic Demo.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2004 - 2024, Björn Darri Sigurðsson.
+ * Copyright (c) 2004 - 2025, Björn Darri Sigurðsson.
  */
 package is.codion.demos.petclinic.model;
 
@@ -42,11 +42,11 @@ public final class PetclinicAppModel extends SwingEntityApplicationModel {
 		SwingEntityModel visitModel = new SwingEntityModel(Visit.TYPE, connectionProvider);
 		visitModel.editModel().initializeComboBoxModels(Visit.PET_FK);
 
-		ownersModel.addDetailModel(petsModel);
-		petsModel.addDetailModel(visitModel);
+		ownersModel.detailModels().add(petsModel);
+		petsModel.detailModels().add(visitModel);
 
-		ownersModel.tableModel().refresh();
+		ownersModel.tableModel().items().refresh();
 
-		addEntityModel(ownersModel);
+		entityModels().add(ownersModel);
 	}
 }

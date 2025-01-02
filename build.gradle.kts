@@ -3,7 +3,7 @@ import org.gradle.internal.os.OperatingSystem
 plugins {
     id("org.beryx.jlink") version "3.1.1"
     id("com.diffplug.spotless") version "6.25.0"
-    id("org.asciidoctor.jvm.convert") version "4.0.3"
+    id("org.asciidoctor.jvm.convert") version "4.0.4"
 }
 
 dependencies {

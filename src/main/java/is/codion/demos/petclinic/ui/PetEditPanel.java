@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Codion Petclinic Demo.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2004 - 2024, Björn Darri Sigurðsson.
+ * Copyright (c) 2004 - 2025, Björn Darri Sigurðsson.
  */
 package is.codion.demos.petclinic.ui;
 
@@ -33,11 +33,11 @@ public final class PetEditPanel extends EntityEditPanel {
 
 	@Override
 	protected void initializeUI() {
-		initialFocusAttribute().set(Pet.NAME);
+		focus().initial().set(Pet.NAME);
 
-		createForeignKeyComboBox(Pet.OWNER_FK);
+		createComboBox(Pet.OWNER_FK);
 		createTextField(Pet.NAME);
-		createForeignKeyComboBoxPanel(Pet.PET_TYPE_FK, this::createPetTypeEditPanel)
+		createComboBoxPanel(Pet.PET_TYPE_FK, this::createPetTypeEditPanel)
 						.includeAddButton(true);
 		createTemporalFieldPanel(Pet.BIRTH_DATE);
 

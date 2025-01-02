@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Codion Petclinic Demo.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2004 - 2024, Björn Darri Sigurðsson.
+ * Copyright (c) 2004 - 2025, Björn Darri Sigurðsson.
  */
 package is.codion.demos.petclinic.ui;
 
@@ -37,9 +37,9 @@ public final class VisitEditPanel extends EntityEditPanel {
 
 	@Override
 	protected void initializeUI() {
-		initialFocusAttribute().set(Visit.PET_FK);
+		focus().initial().set(Visit.PET_FK);
 
-		createForeignKeyComboBox(Visit.PET_FK);
+		createComboBox(Visit.PET_FK);
 		createTemporalFieldPanel(Visit.VISIT_DATE);
 		createTextArea(Visit.DESCRIPTION)
 						.rowsColumns(4, 20);

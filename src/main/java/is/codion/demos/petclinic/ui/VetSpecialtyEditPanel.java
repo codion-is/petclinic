@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Codion Petclinic Demo.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (c) 2004 - 2024, Björn Darri Sigurðsson.
+ * Copyright (c) 2004 - 2025, Björn Darri Sigurðsson.
  */
 package is.codion.demos.petclinic.ui;
 
@@ -29,16 +29,17 @@ public final class VetSpecialtyEditPanel extends EntityEditPanel {
 
 	public VetSpecialtyEditPanel(SwingEntityEditModel editModel) {
 		super(editModel);
-		defaults().foreignKeyComboBoxPreferredWidth().set(200);
 	}
 
 	@Override
 	protected void initializeUI() {
-		initialFocusAttribute().set(VetSpecialty.VET_FK);
+		focus().initial().set(VetSpecialty.VET_FK);
 
-		createForeignKeyComboBox(VetSpecialty.VET_FK);
-		createForeignKeyComboBoxPanel(VetSpecialty.SPECIALTY_FK, this::createSpecialtyEditPanel)
-						.includeAddButton(true);
+		createComboBox(VetSpecialty.VET_FK)
+						.preferredWidth(200);
+		createComboBoxPanel(VetSpecialty.SPECIALTY_FK, this::createSpecialtyEditPanel)
+						.includeAddButton(true)
+						.preferredWidth(200);
 
 		setLayout(gridLayout(2, 1));
 
