@@ -116,12 +116,9 @@ jlink {
     addExtraDependencies("slf4j-api")
 
     jpackage {
-        imageName = "Petclinic"
         if (OperatingSystem.current().isLinux) {
             icon = "src/main/icons/petclinic.png"
             installerOptions = listOf(
-                "--resource-dir",
-                "build/jpackage/Petclinic/lib",
                 "--linux-shortcut"
             )
         }
