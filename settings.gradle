@@ -6,17 +6,14 @@ rootProject.name = "petclinic"
 
 dependencyResolutionManagement {
     repositories {
-        maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots/" }
         mavenCentral()
     }
     versionCatalogs {
         libs {
             version("codion", "0.18.24")
             version("h2", "2.3.232")
-            version("json", "20240205")
 
             library("codion-dbms-h2", "is.codion", "codion-dbms-h2").versionRef("codion")
-            library("codion-framework-domain", "is.codion", "codion-framework-domain").versionRef("codion")
             library("codion-framework-domain-test", "is.codion", "codion-framework-domain-test").versionRef("codion")
             library("codion-framework-db-local", "is.codion", "codion-framework-db-local").versionRef("codion")
             library("codion-swing-framework-ui", "is.codion", "codion-swing-framework-ui").versionRef("codion")
@@ -25,7 +22,6 @@ dependencyResolutionManagement {
             library("codion-plugin-flatlaf-intellij-themes", "is.codion", "codion-plugin-flatlaf-intellij-themes").versionRef("codion")
 
             library("h2", "com.h2database", "h2").versionRef("h2")
-            library("json", "org.json", "json").versionRef("json")
         }
     }
 }

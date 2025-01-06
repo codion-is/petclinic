@@ -11,8 +11,6 @@ dependencies {
     implementation(libs.codion.plugin.flatlaf)
     implementation(libs.codion.plugin.flatlaf.intellij.themes)
 
-    implementation(libs.json)
-
     runtimeOnly(libs.codion.plugin.logback.proxy)
 
     runtimeOnly(libs.codion.framework.db.local)
