@@ -7,6 +7,8 @@
 :dir-source-test: ../../test/java
 :doc-url: https://codion.is/doc/{codion-version}
 
+https://github.com/codion-is/petclinic[Petclinic Demo on Github]
+
 NOTE: For the Gradle build configuration see <<#_build, Build>> section.
 
 This tutorial assumes you have at least skimmed the {doc-url}/manual/manual.html#_domain_model[Domain model] part of the Codion manual.
