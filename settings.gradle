@@ -11,10 +11,9 @@ dependencyResolutionManagement {
     }
     versionCatalogs {
         libs {
-            version("codion", "0.18.23")
+            version("codion", "0.18.24")
             version("h2", "2.3.232")
             version("json", "20240205")
-            version("flatlaf", "3.5.4")
 
             library("codion-dbms-h2", "is.codion", "codion-dbms-h2").versionRef("codion")
             library("codion-framework-domain", "is.codion", "codion-framework-domain").versionRef("codion")
@@ -22,11 +21,11 @@ dependencyResolutionManagement {
             library("codion-framework-db-local", "is.codion", "codion-framework-db-local").versionRef("codion")
             library("codion-swing-framework-ui", "is.codion", "codion-swing-framework-ui").versionRef("codion")
             library("codion-plugin-logback-proxy", "is.codion", "codion-plugin-logback-proxy").versionRef("codion")
+            library("codion-plugin-flatlaf", "is.codion", "codion-plugin-flatlaf").versionRef("codion")
+            library("codion-plugin-flatlaf-intellij-themes", "is.codion", "codion-plugin-flatlaf-intellij-themes").versionRef("codion")
 
             library("h2", "com.h2database", "h2").versionRef("h2")
             library("json", "org.json", "json").versionRef("json")
-
-            library("flatlaf-intellij-themes", "com.formdev", "flatlaf-intellij-themes").versionRef("flatlaf")
         }
     }
 }

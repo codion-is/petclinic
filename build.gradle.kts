@@ -8,9 +8,10 @@ plugins {
 
 dependencies {
     implementation(libs.codion.swing.framework.ui)
+    implementation(libs.codion.plugin.flatlaf)
+    implementation(libs.codion.plugin.flatlaf.intellij.themes)
 
     implementation(libs.json)
-    implementation(libs.flatlaf.intellij.themes)
 
     runtimeOnly(libs.codion.plugin.logback.proxy)
 
