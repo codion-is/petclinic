@@ -1,10 +1,13 @@
 = Petclinic tutorial
 :toc: left
 :imagesdir: images
+:root-dir: ../../..
 :dir-source: ../../main/java
 :dir-resources: ../../main/resources
 :dir-source-test: ../../test/java
 :doc-url: https://codion.is/doc/{codion-version}
+
+NOTE: For the Gradle build configuration see <<#_build, Build>> section.
 
 This tutorial assumes you have at least skimmed the {doc-url}/manual/manual.html#_domain_model[Domain model] part of the Codion manual.
 
@@ -362,3 +365,23 @@ include::{dir-source-test}/is/codion/demos/petclinic/domain/PetclinicTest.java[l
 ----
 include::{dir-source}/module-info.java[lines=19..-1]
 ----
+
+== Build
+
+.settings.gradle
+[%collapsible]
+====
+[source,kotlin,options="nowrap"]
+----
+include::{root-dir}/settings.gradle[]
+----
+====
+
+.build.gradle.kts
+[%collapsible]
+====
+[source,kotlin,options="nowrap"]
+----
+include::{root-dir}/build.gradle.kts[]
+----
+====
