@@ -10,7 +10,7 @@ dependencyResolutionManagement {
     }
     versionCatalogs {
         libs {
-            version("codion", "0.18.25")
+            version("codion", "0.18.26")
             version("h2", "2.3.232")
 
             library("codion-dbms-h2", "is.codion", "codion-dbms-h2").versionRef("codion")
