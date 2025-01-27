@@ -32,6 +32,7 @@ dependencies {
 
     // The domain model unit test module
     testImplementation(libs.codion.framework.domain.test)
+    testImplementation(libs.codion.framework.db.local)
 }
 
 // The application version simply follows the Codion framework version used

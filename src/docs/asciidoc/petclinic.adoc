@@ -314,15 +314,24 @@ include::{dir-source}/is/codion/demos/petclinic/domain/Petclinic.java[tags=vet_s
 Here we extend `SwingEntityEditModel` in order to provide validation for a Vet/Specialty combination.
 And yes, this should obviously be done with a unique key in the underlying table, but let's assume we can't do that for some reason.
 
-The `validate()` method is called before inserting or updating the given entity instance.
+Since this validation has some performance cost, due to the select query, we don't want to add it the the standard form validation, since that is performed every time a value changes.
 
-In the constructor we initialize the ComboBox models used, creating and populating them, in order to prevent it from happening automatically when the UI is initialized on the EDT.
+Instead we add `beforeUpdate` and `beforeInsert` listeners, which means this validation is only performed before entities are updated or inserted.
+
+In the constructor we initialize the ComboBox models used, creating and populating them, otherwise that would happen during UI initialization.
 
 We also specify that the `VetSpecialty.VET_FK` and `VetSpecialty.SPECIALTY_FK` values should not persist when the edit model is cleared.
 
 [source,java,options="nowrap"]
 ----
 include::{dir-source}/is/codion/demos/petclinic/model/VetSpecialtyEditModel.java[lines=19..-1]
+----
+
+==== Model Test
+
+[source,java,options="nowrap"]
+----
+include::{dir-source-test}/is/codion/demos/petclinic/model/VetSpecialtyEditModelTest.java[lines=19..-1]
 ----
 
 ==== UI
