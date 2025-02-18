@@ -26,16 +26,17 @@ import is.codion.framework.db.EntityConnectionProvider;
 import is.codion.swing.framework.model.SwingEntityApplicationModel;
 import is.codion.swing.framework.model.SwingEntityModel;
 
+import java.util.List;
+
 public final class PetclinicAppModel extends SwingEntityApplicationModel {
 
 	public static final Version VERSION = Version.parse(PetclinicAppModel.class, "/version.properties");
 
 	public PetclinicAppModel(EntityConnectionProvider connectionProvider) {
-		super(connectionProvider, VERSION);
-		setupEntityModels(connectionProvider);
+		super(connectionProvider, List.of(createOwnersModel(connectionProvider)));
 	}
 
-	private void setupEntityModels(EntityConnectionProvider connectionProvider) {
+	private static SwingEntityModel createOwnersModel(EntityConnectionProvider connectionProvider) {
 		SwingEntityModel ownersModel = new SwingEntityModel(Owner.TYPE, connectionProvider);
 		SwingEntityModel petsModel = new SwingEntityModel(Pet.TYPE, connectionProvider);
 		petsModel.editModel().initializeComboBoxModels(Pet.OWNER_FK, Pet.PET_TYPE_FK);
@@ -47,6 +48,6 @@ public final class PetclinicAppModel extends SwingEntityApplicationModel {
 
 		ownersModel.tableModel().items().refresh();
 
-		entityModels().add(ownersModel);
+		return ownersModel;
 	}
 }
