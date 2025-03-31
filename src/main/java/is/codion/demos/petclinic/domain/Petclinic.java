@@ -314,9 +314,11 @@ public final class Petclinic extends DomainModel {
 		Column<Integer> ID = TYPE.integerColumn("id");
 		Column<Integer> PET_ID = TYPE.integerColumn("pet_id");
 		Column<LocalDate> VISIT_DATE = TYPE.localDateColumn("visit_date");
+		Column<Integer> VET_ID = TYPE.integerColumn("vet_id");
 		Column<String> DESCRIPTION = TYPE.stringColumn("description");
 
 		ForeignKey PET_FK = TYPE.foreignKey("pet_fk", PET_ID, Pet.ID);
+		ForeignKey VET_FK = TYPE.foreignKey("vet_fk", VET_ID, Vet.ID);
 	}
 	// end::visit_api[]
 
@@ -335,6 +337,12 @@ public final class Petclinic extends DomainModel {
 														.column()
 														.caption("Date")
 														.nullable(false),
+										Visit.VET_ID.define()
+														.column()
+														.nullable(false),
+										Visit.VET_FK.define()
+														.foreignKey()
+														.caption("Vet"),
 										Visit.DESCRIPTION.define()
 														.column()
 														.caption("Description")
