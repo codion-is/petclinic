@@ -356,7 +356,7 @@ include::{dir-source}/is/codion/demos/petclinic/model/PetclinicAppModel.java[lin
 The application panel holds the `EntityPanel` instances used by the application, which are created in the `createEntityPanels()` method.
 These `EntityPanels` are based on the `SwingEntityModels` we get from the application model.
 
-We also override `createSupportPanelBuilders()`, where we create `EntityPanel.Builder` instances on which to base the `Support tables` main menu.
+We also provide `createSupportPanelBuilders()`, where we create `EntityPanel.Builder` instances on which to base the `Support tables` main menu.
 
 [source,java,options="nowrap"]
 ----
