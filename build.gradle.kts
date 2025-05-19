@@ -9,6 +9,8 @@ plugins {
     id("com.diffplug.spotless") version "7.0.1"
     // For the asciidoctor docs
     id("org.asciidoctor.jvm.convert") version "4.0.4"
+    // For Github Releases
+    id("com.github.breadmoirai.github-release") version "2.5.2"
 }
 
 dependencies {
@@ -41,7 +43,7 @@ version = libs.versions.codion.get().replace("-SNAPSHOT", "")
 java {
     toolchain {
         // Use the latest possible Java version
-        languageVersion.set(JavaLanguageVersion.of(23))
+        languageVersion.set(JavaLanguageVersion.of(24))
     }
 }
 
@@ -132,7 +134,8 @@ tasks.processResources {
 // Configure the Jlink plugin
 jlink {
     // Specify the jlink image name
-    imageName = project.name
+    imageName = project.name + "-" + project.version + "-" +
+            OperatingSystem.current().familyName.replace(" ", "").lowercase()
     // The options for the jlink task
     options = listOf(
         "--strip-debug",
@@ -157,18 +160,39 @@ jlink {
     jpackage {
         if (OperatingSystem.current().isLinux) {
             icon = "src/main/icons/petclinic.png"
+            installerType = "deb"
             installerOptions = listOf(
                 "--linux-shortcut"
             )
         }
         if (OperatingSystem.current().isWindows) {
             icon = "src/main/icons/petclinic.ico"
+            installerType = "msi"
             installerOptions = listOf(
                 "--win-menu",
                 "--win-shortcut"
             )
         }
+        if (OperatingSystem.current().isMacOsX) {
+            icon = "src/main/icons/petclinic.icns"
+            installerType = "dmg"
+        }
     }
+}
+
+githubRelease {
+    token(properties["githubAccessToken"] as String)
+    owner = "codion-is"
+    allowUploadToExisting = true
+    releaseAssets.from(tasks.named("jlinkZip").get().outputs.files)
+    releaseAssets.from(fileTree(tasks.named("jpackage").get().outputs.files.singleFile) {
+        exclude(project.name + "/**")
+    })
+}
+
+tasks.named("githubRelease") {
+    dependsOn(tasks.named("jlinkZip"))
+    dependsOn(tasks.named("jpackage"))
 }
 
 // Copies the documentation to the Codion github pages repository, nevermind

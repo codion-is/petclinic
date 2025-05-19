@@ -7,7 +7,7 @@
 :dir-source-test: ../../test/java
 :doc-url: https://codion.is/doc/{codion-version}
 
-https://github.com/codion-is/petclinic[Petclinic Demo on Github]
+https://github.com/codion-is/petclinic[Petclinic Demo on GitHub]
 
 NOTE: For the Gradle build configuration see <<#_build, Build>> section.
 
@@ -320,7 +320,7 @@ Instead we add `beforeUpdate` and `beforeInsert` listeners, which means this val
 
 In the constructor we initialize the ComboBox models used, creating and populating them, otherwise that would happen during UI initialization.
 
-We also specify that the `VetSpecialty.VET_FK` and `VetSpecialty.SPECIALTY_FK` values should not persist when the edit model is cleared.
+We also specify that the `VetSpecialty.SPECIALTY_FK` value should not persist when the edit model is cleared.
 
 [source,java,options="nowrap"]
 ----
@@ -356,7 +356,7 @@ include::{dir-source}/is/codion/demos/petclinic/model/PetclinicAppModel.java[lin
 The application panel holds the `EntityPanel` instances used by the application, which are created in the `createEntityPanels()` method.
 These `EntityPanels` are based on the `SwingEntityModels` we get from the application model.
 
-We also override `createSupportPanelBuilders()`, where we create `EntityPanel.Builder` instances on which to base the `Support tables` main menu.
+We also provide `createSupportPanelBuilders()`, where we create `EntityPanel.Builder` instances on which to base the `Support tables` main menu.
 
 [source,java,options="nowrap"]
 ----
