@@ -18,6 +18,7 @@
  */
 package is.codion.demos.petclinic.ui;
 
+import is.codion.common.db.database.Database;
 import is.codion.common.model.CancelException;
 import is.codion.common.user.User;
 import is.codion.demos.petclinic.domain.Petclinic;
@@ -119,17 +120,19 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 	}
 
 	public static void main(String[] args) throws CancelException {
-		Locale.setDefault(Locale.of("en", "EN"));
+		Locale.setDefault(new Locale("en", "EN"));
 		ValidIndicatorFactory.FACTORY_CLASS.set("is.codion.plugin.flatlaf.indicator.FlatLafValidIndicatorFactory");
 		ReferentialIntegrityErrorHandling.REFERENTIAL_INTEGRITY_ERROR_HANDLING
 						.set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
+		Database.DATABASE_URL.set("jdbc:h2:mem:h2db");
+		Database.DATABASE_INIT_SCRIPTS.set("classpath:create_schema.sql");
 		EntityApplicationPanel.builder(PetclinicAppModel.class, PetclinicAppPanel.class)
 						.applicationName("Petclinic")
 						.applicationVersion(PetclinicAppModel.VERSION)
 						.domainType(Petclinic.DOMAIN)
 						.displayStartupDialog(false)
 						.defaultLookAndFeel(Arc.class)
-						.defaultUser(User.parse("scott:tiger"))
+						.user(User.parse("scott:tiger"))
 						.start();
 	}
 }

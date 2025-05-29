@@ -1,0 +1,5297 @@
+{
+  "reflection": [
+    {
+      "type": "[B"
+    },
+    {
+      "type": "[C"
+    },
+    {
+      "type": "[Ljava.awt.event.MouseMotionListener;"
+    },
+    {
+      "type": "[Ljava.awt.event.WindowFocusListener;"
+    },
+    {
+      "type": "ch.qos.logback.classic.encoder.PatternLayoutEncoder",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "ch.qos.logback.classic.joran.SerializedModelConfigurator",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "ch.qos.logback.classic.spi.LogbackServiceProvider"
+    },
+    {
+      "type": "ch.qos.logback.classic.util.DefaultJoranConfigurator",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "ch.qos.logback.core.FileAppender"
+    },
+    {
+      "type": "ch.qos.logback.core.OutputStreamAppender",
+      "methods": [
+        {
+          "name": "setEncoder",
+          "parameterTypes": [
+            "ch.qos.logback.core.encoder.Encoder"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ch.qos.logback.core.encoder.Encoder"
+    },
+    {
+      "type": "ch.qos.logback.core.encoder.LayoutWrappingEncoder",
+      "methods": [
+        {
+          "name": "setParent",
+          "parameterTypes": [
+            "ch.qos.logback.core.spi.ContextAware"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ch.qos.logback.core.pattern.PatternLayoutEncoderBase",
+      "methods": [
+        {
+          "name": "setPattern",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ch.qos.logback.core.rolling.FixedWindowRollingPolicy",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setMaxIndex",
+          "parameterTypes": [
+            "int"
+          ]
+        },
+        {
+          "name": "setMinIndex",
+          "parameterTypes": [
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ch.qos.logback.core.rolling.RollingFileAppender",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setFile",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setRollingPolicy",
+          "parameterTypes": [
+            "ch.qos.logback.core.rolling.RollingPolicy"
+          ]
+        },
+        {
+          "name": "setTriggeringPolicy",
+          "parameterTypes": [
+            "ch.qos.logback.core.rolling.TriggeringPolicy"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ch.qos.logback.core.rolling.RollingPolicy"
+    },
+    {
+      "type": "ch.qos.logback.core.rolling.RollingPolicyBase",
+      "methods": [
+        {
+          "name": "setFileNamePattern",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setParent",
+          "parameterTypes": [
+            "ch.qos.logback.core.FileAppender"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setMaxFileSize",
+          "parameterTypes": [
+            "ch.qos.logback.core.util.FileSize"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ch.qos.logback.core.rolling.TriggeringPolicy"
+    },
+    {
+      "type": "ch.qos.logback.core.spi.ContextAware"
+    },
+    {
+      "type": "ch.qos.logback.core.util.FileSize",
+      "methods": [
+        {
+          "name": "valueOf",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.FlatDarculaLaf",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.FlatDarkLaf",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.FlatIntelliJLaf",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.FlatLightLaf",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatAscendingSortIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatCheckBoxIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatCheckBoxMenuItemIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatDescendingSortIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatFileViewDirectoryIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatFileViewFileIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatHelpButtonIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatMenuArrowIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatMenuItemArrowIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatOptionPaneInformationIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatOptionPaneQuestionIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatRadioButtonIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatTabbedPaneCloseIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatTreeClosedIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatTreeCollapsedIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatTreeExpandedIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatTreeLeafIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.icons.FlatTreeOpenIcon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.themes.FlatMacDarkLaf",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.themes.FlatMacLightLaf",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatArrowButton"
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatButtonBorder",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatButtonUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatCheckBoxMenuItemUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatCheckBoxUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatComboBoxUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatComboBoxUI$FlatComboBoxButton"
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatComboBoxUI$FlatComboPopup"
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatEmptyBorder",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatFormattedTextFieldUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatLabelUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatListCellBorder$Default",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatListCellBorder$Selected",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatListUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatMarginBorder",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatMenuBarBorder",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatMenuBarUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatMenuItemBorder",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatMenuItemUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatMenuUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatOptionPaneUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatPanelUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatPopupMenuBorder",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatPopupMenuSeparatorUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatPopupMenuUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatProgressBarUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatRadioButtonUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatRootPaneUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatRoundBorder",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatScrollBarUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatScrollBarUI$FlatScrollBarButton"
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatScrollPaneBorder",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatScrollPaneUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatSpinnerUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatSpinnerUI$1"
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatSplitPaneUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatSplitPaneUI$1"
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatSplitPaneUI$FlatSplitPaneDivider"
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatSplitPaneUI$FlatSplitPaneDivider$FlatOneTouchButton"
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatTabbedPaneUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatTableCellBorder$Default",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatTableCellBorder$Focused",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatTableCellBorder$Selected",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatTableHeaderBorder",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatTableHeaderUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatTableHeaderUI$FlatTableHeaderCellRendererPane"
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatTableUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatTableUI$FlatBooleanRenderer"
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatTextAreaUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatTextBorder",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatTextFieldUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatToolBarBorder",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatToolBarSeparatorUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatToolBarUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatTreeUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.formdev.flatlaf.ui.FlatViewportUI",
+      "methods": [
+        {
+          "name": "createUI",
+          "parameterTypes": [
+            "javax.swing.JComponent"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.ibm.icu.text.Collator"
+    },
+    {
+      "type": "com.sun.java.swing.plaf.gtk.GTKLookAndFeel",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.dbms.h2.H2DatabaseFactory"
+    },
+    {
+      "type": "is.codion.demos.petclinic.domain.Petclinic"
+    },
+    {
+      "type": "is.codion.demos.petclinic.model.PetclinicAppModel",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "is.codion.framework.db.EntityConnectionProvider"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "is.codion.demos.petclinic.ui.OwnerEditPanel"
+    },
+    {
+      "type": "is.codion.demos.petclinic.ui.PetEditPanel"
+    },
+    {
+      "type": "is.codion.demos.petclinic.ui.PetTypeEditPanel"
+    },
+    {
+      "type": "is.codion.demos.petclinic.ui.PetclinicAppPanel",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "is.codion.demos.petclinic.model.PetclinicAppModel"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "is.codion.demos.petclinic.ui.SpecialtyEditPanel"
+    },
+    {
+      "type": "is.codion.demos.petclinic.ui.VetEditPanel"
+    },
+    {
+      "type": "is.codion.demos.petclinic.ui.VetSpecialtyEditPanel"
+    },
+    {
+      "type": "is.codion.demos.petclinic.ui.VisitEditPanel"
+    },
+    {
+      "type": "is.codion.framework.db.local.DefaultLocalEntityConnectionProviderBuilder"
+    },
+    {
+      "type": "is.codion.framework.domain.entity.Entity"
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.FlatLookAndFeelProvider"
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.indicator.FlatLafValidIndicatorFactory"
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.IntelliJThemeProvider"
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.akusan.AkusanDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.akusan.AkusanGray",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.akusan.AkusanLight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.arc.Arc",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.arc.ArcDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.arc.ArcDarkOrange",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.arc.ArcOrange",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.carbon.Carbon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.cobalt2.Cobalt2",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.codely.Codely",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.codely.CodelyBlue",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.codely.CodelyDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.codely.CodelyLight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.cutepink.CutePinkDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.cutepink.CutePinkLight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.cyberpunk.Cyberpunk",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.darculasolid.DarculaSolid",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.darkflat.DarkFlat",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.darkhorizon.DarkHorizon",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.darkpurple.DarkPurple",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.dracula.Dracula",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.elegant.ElegantDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.elegant.ElegantLight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.espresso.EspressoLight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.everforest.EverforestDarkHard",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.everforest.EverforestDarkMedium",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.everforest.EverforestDarkSoft",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.everforest.EverforestLightHard",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.everforest.EverforestLightMedium",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.everforest.EverforestLightSoft",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gerry.GerryDarcula",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gerry.GerryDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gerry.GerryLight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gerry.GerryOceanic",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gerry.GerryStorm",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gerry.GerryViolet",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.github.GithubDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.github.GithubDarkDefault",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.github.GithubLight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gradianto.GradiantoDarkFuchsia",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gradianto.GradiantoDeepOcean",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gradianto.GradiantoMidnightBlue",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gradianto.GradiantoNatureGreen",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gray.Gray",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gruvbox.GruvboxDarkHard",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gruvbox.GruvboxDarkMedium",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gruvbox.GruvboxDarkSoft",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gruvbox.GruvboxMaterialLightHard",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gruvbox.GruvboxMaterialLightMedium",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.gruvbox.GruvboxMaterialLightSoft",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.hiberbee.HiberbeeDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.highcontrast.HighContrast",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.lightflat.LightFlat",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.lotus.LotusDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.lotus.LotusLight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.ArcDarkMaterial",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.AtomOneDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.AtomOneLight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.DraculaMaterial",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.GitHubDarkMaterial",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.GitHubMaterial",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.LightOwl",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.MaterialDarker",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.MaterialDeepOcean",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.MaterialLighter",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.MaterialOceanic",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.MaterialPalenight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.MonokaiProMaterial",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.Moonlight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.NightOwl",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.SolarizedDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.material.SolarizedLight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.materialtheme.MaterialTheme",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.monocai.Monocai",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.monokaipro.MonokaiPro",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.naturethemes.AuroraBorealis",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.naturethemes.Autumn",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.naturethemes.Everest",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.naturethemes.Roraima",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.naturethemes.Sakura",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.naturethemes.Sequoia",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.nightfall.Nightfall",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.obsidiansunset.ObsidianSunsetBlue",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.obsidiansunset.ObsidianSunsetOrange",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.onedark.OneDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.onepauintxi.OnePauintxiAllBlue",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.onepauintxi.OnePauintxiAllOrange",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.onepauintxi.OnePauintxiBlue",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.onepauintxi.OnePauintxiOrange",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.rider.RiderDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.rider.RiderDay",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.rider.RiderLight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.rider.RiderNight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.srcery.Srcery",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.tayviscon.TeyvisconDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.trashpanda.TrashPanda",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.trashpanda.TrashPandaBlacklight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.trashpanda.TrashPandaDawnlight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.trashpanda.TrashPandaDaylight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.trashpanda.TrashPandaMoonlight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.trashpanda.TrashPandaStarlight",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.vuesion.Vuesion",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.flatlaf.intellij.themes.xcodedark.XcodeDark",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "is.codion.plugin.logback.LogbackProxy"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.button.PersistMenuCheckBoxMenuItem"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.calendar.CalendarPanel"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.calendar.CalendarPanel$ControlKeys",
+      "allPublicFields": true
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.calendar.CalendarPanel$DayLabel"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.combobox.FocusableComboBox"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.list.FilterList"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.listbox.ListComboBox"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.table.ColumnConditionPanel"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.table.ColumnSelectionPanel"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.table.ConditionPanel"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.table.DefaultFilterTableCellRenderer"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.table.FilterTable"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.table.FilterTable$ControlKeys",
+      "allPublicFields": true
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.table.FilterTable$FilterTableHeader"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.table.FilterTableColumnComponentPanel"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.table.FilterTableConditionPanel"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.table.TableConditionPanel"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.text.HintTextField"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.text.TemporalField"
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.text.TemporalField$ControlKeys",
+      "allPublicFields": true
+    },
+    {
+      "type": "is.codion.swing.common.ui.component.text.TemporalFieldPanel"
+    },
+    {
+      "type": "is.codion.swing.common.ui.dialog.ProgressDialog"
+    },
+    {
+      "type": "is.codion.swing.common.ui.laf.InstalledLookAndFeelProvider"
+    },
+    {
+      "type": "is.codion.swing.common.ui.laf.LookAndFeelComboBox"
+    },
+    {
+      "type": "is.codion.swing.common.ui.laf.LookAndFeelPanel"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.EntityApplicationPanel"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.EntityDependenciesPanel"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.EntityEditComponentPanel"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.EntityEditPanel"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.EntityEditPanel$ControlKeys",
+      "allPublicFields": true
+    },
+    {
+      "type": "is.codion.swing.framework.ui.EntityPanel"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.EntityPanel$ControlKeys",
+      "allPublicFields": true
+    },
+    {
+      "type": "is.codion.swing.framework.ui.EntityTableExport$ConfigurationPanel"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.EntityTablePanel"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.EntityTablePanel$ControlKeys",
+      "allPublicFields": true
+    },
+    {
+      "type": "is.codion.swing.framework.ui.EntityTablePanel$SouthPanel"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.EntityTablePanel$StatusPanel"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.EntityTablePanel$TablePanel"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.TabbedDetailLayout$ControlKeys",
+      "allPublicFields": true
+    },
+    {
+      "type": "is.codion.swing.framework.ui.component.EntityComboBox"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.component.EntityComboBox$ControlKeys",
+      "allPublicFields": true
+    },
+    {
+      "type": "is.codion.swing.framework.ui.component.EntityComboBoxPanel"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.icon.DefaultFrameworkIcons"
+    },
+    {
+      "type": "is.codion.swing.framework.ui.icon.FrameworkIkonHandler"
+    },
+    {
+      "type": "java.awt.Image"
+    },
+    {
+      "type": "java.awt.SequencedEvent"
+    },
+    {
+      "type": "java.awt.event.KeyEvent",
+      "allDeclaredFields": true,
+      "fields": [
+        {
+          "name": "VK_A"
+        },
+        {
+          "name": "VK_ADD"
+        },
+        {
+          "name": "VK_BACK_SLASH"
+        },
+        {
+          "name": "VK_BACK_SPACE"
+        },
+        {
+          "name": "VK_C"
+        },
+        {
+          "name": "VK_CONTEXT_MENU"
+        },
+        {
+          "name": "VK_COPY"
+        },
+        {
+          "name": "VK_CUT"
+        },
+        {
+          "name": "VK_DELETE"
+        },
+        {
+          "name": "VK_DOWN"
+        },
+        {
+          "name": "VK_END"
+        },
+        {
+          "name": "VK_ENTER"
+        },
+        {
+          "name": "VK_ESCAPE"
+        },
+        {
+          "name": "VK_F10"
+        },
+        {
+          "name": "VK_F2"
+        },
+        {
+          "name": "VK_F6"
+        },
+        {
+          "name": "VK_F8"
+        },
+        {
+          "name": "VK_H"
+        },
+        {
+          "name": "VK_HOME"
+        },
+        {
+          "name": "VK_INSERT"
+        },
+        {
+          "name": "VK_KP_DOWN"
+        },
+        {
+          "name": "VK_KP_LEFT"
+        },
+        {
+          "name": "VK_KP_RIGHT"
+        },
+        {
+          "name": "VK_KP_UP"
+        },
+        {
+          "name": "VK_LEFT"
+        },
+        {
+          "name": "VK_O"
+        },
+        {
+          "name": "VK_PAGE_DOWN"
+        },
+        {
+          "name": "VK_PAGE_UP"
+        },
+        {
+          "name": "VK_PASTE"
+        },
+        {
+          "name": "VK_RETURN"
+        },
+        {
+          "name": "VK_RIGHT"
+        },
+        {
+          "name": "VK_SLASH"
+        },
+        {
+          "name": "VK_SPACE"
+        },
+        {
+          "name": "VK_SUBTRACT"
+        },
+        {
+          "name": "VK_T"
+        },
+        {
+          "name": "VK_TAB"
+        },
+        {
+          "name": "VK_UP"
+        },
+        {
+          "name": "VK_X"
+        }
+      ]
+    },
+    {
+      "type": "java.io.InputStream"
+    },
+    {
+      "type": "java.io.Reader"
+    },
+    {
+      "type": "java.lang.Comparable"
+    },
+    {
+      "type": "java.lang.Object"
+    },
+    {
+      "type": "java.lang.String",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.nio.ByteBuffer"
+    },
+    {
+      "type": "java.nio.CharBuffer"
+    },
+    {
+      "type": "java.sql.SQLException",
+      "fields": [
+        {
+          "name": "next"
+        }
+      ]
+    },
+    {
+      "type": "java.util.List"
+    },
+    {
+      "type": "javax.swing.JComponent",
+      "methods": [
+        {
+          "name": "getUI",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.PopupFactory",
+      "methods": [
+        {
+          "name": "getPopup",
+          "parameterTypes": [
+            "java.awt.Component",
+            "java.awt.Component",
+            "int",
+            "int",
+            "boolean"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.basic.BasicButtonListener",
+      "methods": [
+        {
+          "name": "loadActionMap",
+          "parameterTypes": [
+            "javax.swing.plaf.basic.LazyActionMap"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.basic.BasicComboBoxUI",
+      "methods": [
+        {
+          "name": "loadActionMap",
+          "parameterTypes": [
+            "javax.swing.plaf.basic.LazyActionMap"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.basic.BasicGraphicsUtils",
+      "methods": [
+        {
+          "name": "drawStringUnderlineCharAt",
+          "parameterTypes": [
+            "javax.swing.JComponent",
+            "java.awt.Graphics2D",
+            "java.lang.String",
+            "int",
+            "float",
+            "float"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.basic.BasicListUI",
+      "methods": [
+        {
+          "name": "loadActionMap",
+          "parameterTypes": [
+            "javax.swing.plaf.basic.LazyActionMap"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.basic.BasicMenuBarUI",
+      "methods": [
+        {
+          "name": "loadActionMap",
+          "parameterTypes": [
+            "javax.swing.plaf.basic.LazyActionMap"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.basic.BasicMenuItemUI",
+      "methods": [
+        {
+          "name": "loadActionMap",
+          "parameterTypes": [
+            "javax.swing.plaf.basic.LazyActionMap"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.basic.BasicOptionPaneUI",
+      "methods": [
+        {
+          "name": "loadActionMap",
+          "parameterTypes": [
+            "javax.swing.plaf.basic.LazyActionMap"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.basic.BasicPopupMenuUI",
+      "methods": [
+        {
+          "name": "loadActionMap",
+          "parameterTypes": [
+            "javax.swing.plaf.basic.LazyActionMap"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.basic.BasicRootPaneUI",
+      "methods": [
+        {
+          "name": "loadActionMap",
+          "parameterTypes": [
+            "javax.swing.plaf.basic.LazyActionMap"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.basic.BasicSplitPaneUI",
+      "methods": [
+        {
+          "name": "loadActionMap",
+          "parameterTypes": [
+            "javax.swing.plaf.basic.LazyActionMap"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.basic.BasicTabbedPaneUI",
+      "methods": [
+        {
+          "name": "loadActionMap",
+          "parameterTypes": [
+            "javax.swing.plaf.basic.LazyActionMap"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.basic.BasicTableUI",
+      "methods": [
+        {
+          "name": "loadActionMap",
+          "parameterTypes": [
+            "javax.swing.plaf.basic.LazyActionMap"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.basic.BasicTreeUI",
+      "methods": [
+        {
+          "name": "loadActionMap",
+          "parameterTypes": [
+            "javax.swing.plaf.basic.LazyActionMap"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "javax.swing.plaf.metal.MetalLookAndFeel",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "net.miginfocom.swing.MigLayout"
+    },
+    {
+      "type": "org.h2.Driver"
+    },
+    {
+      "type": "org.h2.mvstore.MVStore$TxCounter",
+      "fields": [
+        {
+          "name": "counter"
+        }
+      ]
+    },
+    {
+      "type": "org.h2.mvstore.Page",
+      "fields": [
+        {
+          "name": "pos"
+        }
+      ]
+    },
+    {
+      "type": "org.h2.store.fs.async.FilePathAsync",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.h2.store.fs.mem.FilePathMem",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.h2.store.fs.mem.FilePathMemLZF",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.h2.store.fs.niomapped.FilePathNioMapped",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.h2.store.fs.niomem.FilePathNioMem",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.h2.store.fs.niomem.FilePathNioMemLZF",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.h2.store.fs.retry.FilePathRetryOnInterrupt",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.h2.store.fs.split.FilePathSplit",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.h2.store.fs.zip.FilePathZip",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.kordamp.ikonli.IkonliIkonResolver"
+    },
+    {
+      "type": "org.locationtech.jts.geom.Geometry"
+    },
+    {
+      "type": "org.osgi.framework.BundleContext"
+    },
+    {
+      "type": "sun.font.HBShaper",
+      "methods": [
+        {
+          "name": "getFontTableData",
+          "parameterTypes": [
+            "sun.font.Font2D",
+            "int",
+            "java.lang.foreign.MemorySegment"
+          ]
+        },
+        {
+          "name": "get_glyph_contour_point",
+          "parameterTypes": [
+            "java.lang.foreign.MemorySegment",
+            "java.lang.foreign.MemorySegment",
+            "int",
+            "int",
+            "java.lang.foreign.MemorySegment",
+            "java.lang.foreign.MemorySegment",
+            "java.lang.foreign.MemorySegment"
+          ]
+        },
+        {
+          "name": "get_glyph_h_advance",
+          "parameterTypes": [
+            "java.lang.foreign.MemorySegment",
+            "java.lang.foreign.MemorySegment",
+            "int",
+            "java.lang.foreign.MemorySegment"
+          ]
+        },
+        {
+          "name": "get_glyph_v_advance",
+          "parameterTypes": [
+            "java.lang.foreign.MemorySegment",
+            "java.lang.foreign.MemorySegment",
+            "int",
+            "java.lang.foreign.MemorySegment"
+          ]
+        },
+        {
+          "name": "get_nominal_glyph",
+          "parameterTypes": [
+            "java.lang.foreign.MemorySegment",
+            "java.lang.foreign.MemorySegment",
+            "int",
+            "java.lang.foreign.MemorySegment",
+            "java.lang.foreign.MemorySegment"
+          ]
+        },
+        {
+          "name": "get_variation_glyph",
+          "parameterTypes": [
+            "java.lang.foreign.MemorySegment",
+            "java.lang.foreign.MemorySegment",
+            "int",
+            "int",
+            "java.lang.foreign.MemorySegment",
+            "java.lang.foreign.MemorySegment"
+          ]
+        },
+        {
+          "name": "store_layout_results",
+          "parameterTypes": [
+            "int",
+            "int",
+            "int",
+            "float",
+            "float",
+            "float",
+            "int",
+            "int",
+            "java.lang.foreign.MemorySegment",
+            "java.lang.foreign.MemorySegment"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.marlin.DMarlinRenderingEngine",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.reflect.misc.Trampoline",
+      "methods": [
+        {
+          "name": "invoke",
+          "parameterTypes": [
+            "java.lang.reflect.Method",
+            "java.lang.Object",
+            "java.lang.Object[]"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.NativePRNG",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.security.SecureRandomParameters"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SHA",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SHA2$SHA256",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SecureRandom",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": {
+        "proxy": [
+          "is.codion.framework.domain.entity.Entity"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "glob": "META-INF/resources/ikonli/0.0.0/fonts/ikonli.ttf"
+    },
+    {
+      "glob": "META-INF/services/ch.qos.logback.classic.spi.Configurator"
+    },
+    {
+      "glob": "META-INF/services/com.formdev.flatlaf.FlatDefaultsAddon"
+    },
+    {
+      "glob": "META-INF/services/is.codion.common.db.database.DatabaseFactory"
+    },
+    {
+      "glob": "META-INF/services/is.codion.common.logging.LoggerProxy"
+    },
+    {
+      "glob": "META-INF/services/is.codion.common.resource.Resources"
+    },
+    {
+      "glob": "META-INF/services/is.codion.framework.db.EntityConnectionProvider$Builder"
+    },
+    {
+      "glob": "META-INF/services/is.codion.framework.domain.Domain"
+    },
+    {
+      "glob": "META-INF/services/is.codion.swing.common.ui.component.indicator.ValidIndicatorFactory"
+    },
+    {
+      "glob": "META-INF/services/is.codion.swing.common.ui.laf.LookAndFeelProvider"
+    },
+    {
+      "glob": "META-INF/services/is.codion.swing.framework.ui.icon.FrameworkIcons"
+    },
+    {
+      "glob": "META-INF/services/java.awt.im.spi.InputMethodDescriptor"
+    },
+    {
+      "glob": "META-INF/services/java.lang.System$LoggerFinder"
+    },
+    {
+      "glob": "META-INF/services/java.net.spi.InetAddressResolverProvider"
+    },
+    {
+      "glob": "META-INF/services/java.nio.charset.spi.CharsetProvider"
+    },
+    {
+      "glob": "META-INF/services/java.sql.Driver"
+    },
+    {
+      "glob": "META-INF/services/java.time.zone.ZoneRulesProvider"
+    },
+    {
+      "glob": "META-INF/services/java.util.prefs.PreferencesFactory"
+    },
+    {
+      "glob": "META-INF/services/java.util.spi.ResourceBundleControlProvider"
+    },
+    {
+      "glob": "META-INF/services/javax.xml.parsers.DocumentBuilderFactory"
+    },
+    {
+      "glob": "META-INF/services/javax.xml.parsers.SAXParserFactory"
+    },
+    {
+      "glob": "META-INF/services/javax.xml.transform.TransformerFactory"
+    },
+    {
+      "glob": "META-INF/services/org.kordamp.ikonli.IkonHandler"
+    },
+    {
+      "glob": "META-INF/services/org.slf4j.spi.SLF4JServiceProvider"
+    },
+    {
+      "glob": "com/formdev/flatlaf/FlatDarculaLaf.properties"
+    },
+    {
+      "glob": "com/formdev/flatlaf/FlatDarkLaf.properties"
+    },
+    {
+      "glob": "com/formdev/flatlaf/FlatIntelliJLaf.properties"
+    },
+    {
+      "glob": "com/formdev/flatlaf/FlatLaf.properties"
+    },
+    {
+      "glob": "com/formdev/flatlaf/FlatLightLaf.properties"
+    },
+    {
+      "glob": "com/formdev/flatlaf/IntelliJTheme$ThemeLaf.properties"
+    },
+    {
+      "glob": "com/formdev/flatlaf/resources/Bundle.properties"
+    },
+    {
+      "glob": "com/formdev/flatlaf/resources/Bundle_en.properties"
+    },
+    {
+      "glob": "com/formdev/flatlaf/resources/Bundle_en_EN.properties"
+    },
+    {
+      "glob": "com/formdev/flatlaf/themes/FlatMacDarkLaf.properties"
+    },
+    {
+      "glob": "com/formdev/flatlaf/themes/FlatMacLightLaf.properties"
+    },
+    {
+      "glob": "create_schema.sql"
+    },
+    {
+      "glob": "is/codion/common/Operator.properties"
+    },
+    {
+      "glob": "is/codion/common/Operator_en.properties"
+    },
+    {
+      "glob": "is/codion/common/Operator_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/common/i18n/Messages.properties"
+    },
+    {
+      "glob": "is/codion/common/i18n/Messages_en.properties"
+    },
+    {
+      "glob": "is/codion/common/i18n/Messages_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/common/model/condition/ConditionModel$Wildcard.properties"
+    },
+    {
+      "glob": "is/codion/common/model/condition/ConditionModel$Wildcard_en.properties"
+    },
+    {
+      "glob": "is/codion/common/model/condition/ConditionModel$Wildcard_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/common/version/version.properties"
+    },
+    {
+      "glob": "is/codion/dbms/h2/H2Database.properties"
+    },
+    {
+      "glob": "is/codion/dbms/h2/H2Database_en.properties"
+    },
+    {
+      "glob": "is/codion/dbms/h2/H2Database_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/framework/db/local/LocalEntityConnection.properties"
+    },
+    {
+      "glob": "is/codion/framework/db/local/LocalEntityConnection_en.properties"
+    },
+    {
+      "glob": "is/codion/framework/db/local/LocalEntityConnection_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/framework/domain/entity/DefaultEntityValidator.properties"
+    },
+    {
+      "glob": "is/codion/framework/domain/entity/DefaultEntityValidator_en.properties"
+    },
+    {
+      "glob": "is/codion/framework/domain/entity/DefaultEntityValidator_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/framework/domain/entity/attribute/AbstractAttributeDefinition.properties"
+    },
+    {
+      "glob": "is/codion/framework/domain/entity/attribute/AbstractAttributeDefinition_en.properties"
+    },
+    {
+      "glob": "is/codion/framework/domain/entity/attribute/AbstractAttributeDefinition_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/framework/i18n/FrameworkMessages.properties"
+    },
+    {
+      "glob": "is/codion/framework/i18n/FrameworkMessages_en.properties"
+    },
+    {
+      "glob": "is/codion/framework/i18n/FrameworkMessages_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/akusan/AkusanDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/akusan/AkusanGray.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/akusan/AkusanLight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/akusan/aKusaN_dark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/akusan/aKusaN_gray.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/akusan/aKusaN_light.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/arc/Arc.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/arc/ArcDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/arc/ArcDarkOrange.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/arc/ArcOrange.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/arc/arc-theme-orange.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/arc/arc-theme.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/arc/arc_theme_dark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/arc/arc_theme_dark_orange.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/carbon/Carbon.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/carbon/matte_carbon_basics.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/cobalt2/Cobalt2.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/cobalt2/Cobalt_2.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/codely/Codely.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/codely/CodelyBlue.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/codely/CodelyDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/codely/CodelyLight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/codely/codely.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/codely/codely_blue.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/codely/codely_dark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/codely/codely_light.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/cutepink/CutePinkDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/cutepink/CutePinkLight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/cutepink/cute_pink_dark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/cutepink/cute_pink_light.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/cyberpunk/Cyberpunk.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/cyberpunk/cyberpunk_theme.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/darculasolid/DarculaSolid.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/darculasolid/Darcula_Solid.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/darkflat/DarkFlat.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/darkflat/DarkFlatTheme.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/darkhorizon/DarkHorizon.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/darkhorizon/dark_horizon_theme.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/darkpurple/DarkPurple.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/darkpurple/DarkPurple.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/dracula/Dracula.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/dracula/Dracula.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/elegant/ElegantDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/elegant/ElegantLight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/elegant/elegant-dark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/elegant/elegant-light.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/espresso/EspressoLight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/espresso/espresso_light.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/everforest/EverforestDarkHard.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/everforest/EverforestDarkMedium.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/everforest/EverforestDarkSoft.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/everforest/EverforestLightHard.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/everforest/EverforestLightMedium.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/everforest/EverforestLightSoft.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/everforest/Everforest_Dark_Hard.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/everforest/Everforest_Dark_Medium.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/everforest/Everforest_Dark_Soft.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/everforest/Everforest_Light_Hard.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/everforest/Everforest_Light_Medium.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/everforest/Everforest_Light_Soft.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gerry/GerryDarcula.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gerry/GerryDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gerry/GerryLight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gerry/GerryOceanic.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gerry/GerryStorm.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gerry/GerryViolet.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gerry/gerryDarcula.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gerry/gerryDark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gerry/gerryLight.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gerry/gerryOceanic.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gerry/gerryStorm.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gerry/gerryViolet.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/github/GithubDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/github/GithubDarkDefault.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/github/GithubLight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/github/dark-default.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/github/dark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/github/light.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gradianto/GradiantoDarkFuchsia.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gradianto/GradiantoDeepOcean.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gradianto/GradiantoMidnightBlue.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gradianto/GradiantoNatureGreen.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gradianto/Gradianto_Nature_Green.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gradianto/Gradianto_dark_fuchsia.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gradianto/Gradianto_deep_ocean.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gradianto/Gradianto_midnight_blue.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gray/Gray.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gray/Gray.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gruvbox/GruvboxDarkHard.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gruvbox/GruvboxDarkMedium.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gruvbox/GruvboxDarkSoft.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gruvbox/GruvboxMaterialLightHard.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gruvbox/GruvboxMaterialLightMedium.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gruvbox/GruvboxMaterialLightSoft.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gruvbox/gruvbox-material-light-hard.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gruvbox/gruvbox-material-light-medium.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gruvbox/gruvbox-material-light-soft.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gruvbox/gruvbox_dark_hard.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gruvbox/gruvbox_dark_medium.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/gruvbox/gruvbox_dark_soft.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/hiberbee/HiberbeeDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/hiberbee/HiberbeeDark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/highcontrast/HighContrast.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/highcontrast/HighContrast.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/lightflat/LightFlat.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/lightflat/LightFlatTheme.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/lotus/LotusDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/lotus/LotusLight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/lotus/Lotus_Dark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/lotus/Lotus_Light.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Arc Dark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/ArcDarkMaterial.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Atom One Dark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Atom One Light.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/AtomOneDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/AtomOneLight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Dracula.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/DraculaMaterial.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/GitHub Dark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/GitHub.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/GitHubDarkMaterial.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/GitHubMaterial.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Light Owl.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/LightOwl.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Material Darker.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Material Deep Ocean.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Material Lighter.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Material Oceanic.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Material Palenight.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/MaterialDarker.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/MaterialDeepOcean.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/MaterialLighter.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/MaterialOceanic.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/MaterialPalenight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Monokai Pro.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/MonokaiProMaterial.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Moonlight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Moonlight.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Night Owl.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/NightOwl.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Solarized Dark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/Solarized Light.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/SolarizedDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/material/SolarizedLight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/materialtheme/MaterialTheme.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/materialtheme/MaterialTheme.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/monocai/Monocai.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/monocai/Monocai.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/monokaipro/MonokaiPro.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/monokaipro/Monokai_Pro.default.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/naturethemes/AuroraBorealis.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/naturethemes/Autumn.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/naturethemes/Everest.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/naturethemes/Roraima.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/naturethemes/Sakura.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/naturethemes/Sequoia.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/naturethemes/aurora_borealis.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/naturethemes/autumn.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/naturethemes/everest.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/naturethemes/roraima.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/naturethemes/sakura.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/naturethemes/sequoia.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/nightfall/Nightfall.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/nightfall/nightfall.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/obsidiansunset/ObsidianSunsetBlue.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/obsidiansunset/ObsidianSunsetBlue.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/obsidiansunset/ObsidianSunsetOrange.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/obsidiansunset/ObsidianSunsetOrange.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/onedark/OneDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/onedark/one_dark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/onepauintxi/OnePauintxiAllBlue.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/onepauintxi/OnePauintxiAllOrange.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/onepauintxi/OnePauintxiBlue.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/onepauintxi/OnePauintxiOrange.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/onepauintxi/one-pauintxi-all-blue.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/onepauintxi/one-pauintxi-all-orange.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/onepauintxi/one-pauintxi-blue.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/onepauintxi/one-pauintxi-orange.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/rider/RiderDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/rider/RiderDark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/rider/RiderDay.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/rider/RiderDay.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/rider/RiderLight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/rider/RiderLight.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/rider/RiderNight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/rider/RiderNight.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/srcery/Srcery.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/srcery/srcery.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/tayviscon/TayvisconDark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/tayviscon/TeyvisconDark.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/trashpanda/TrashPanda.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/trashpanda/TrashPandaBlacklight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/trashpanda/TrashPandaDawnlight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/trashpanda/TrashPandaDaylight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/trashpanda/TrashPandaMoonlight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/trashpanda/TrashPandaStarlight.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/trashpanda/trash-panda-theme-blacklight.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/trashpanda/trash-panda-theme-dawnlight.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/trashpanda/trash-panda-theme-daylight.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/trashpanda/trash-panda-theme-moonlight.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/trashpanda/trash-panda-theme-starlight.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/trashpanda/trash-panda-theme.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/vuesion/Vuesion.properties"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/vuesion/vuesion_theme.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/xcodedark/Xcode-Dark.theme.json"
+    },
+    {
+      "glob": "is/codion/plugin/flatlaf/intellij/themes/xcodedark/XcodeDark.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/SwingMessages.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/SwingMessages_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/SwingMessages_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/calendar/CalendarPanel.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/calendar/CalendarPanel_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/calendar/CalendarPanel_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/table/ColumnConditionPanel.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/table/ColumnConditionPanel_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/table/ColumnConditionPanel_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/table/ColumnSelectionPanel.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/table/ColumnSelectionPanel_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/table/ColumnSelectionPanel_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/table/FilterTable.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/table/FilterTable_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/table/FilterTable_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/table/TableConditionPanel.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/table/TableConditionPanel_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/table/TableConditionPanel_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/text/StringLengthValidator.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/text/StringLengthValidator_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/text/StringLengthValidator_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/text/TemporalField.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/text/TemporalField_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/component/text/TemporalField_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/dialog/DefaultCalendarDialogBuilder.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/dialog/DefaultCalendarDialogBuilder_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/dialog/DefaultCalendarDialogBuilder_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/dialog/DefaultFontSizeSelectionDialogBuilder.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/dialog/DefaultFontSizeSelectionDialogBuilder_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/dialog/DefaultFontSizeSelectionDialogBuilder_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/dialog/DefaultLookAndFeelSelectionDialogBuilder.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/dialog/DefaultLookAndFeelSelectionDialogBuilder_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/dialog/DefaultLookAndFeelSelectionDialogBuilder_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/dialog/SelectionDialogBuilder.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/dialog/SelectionDialogBuilder_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/common/ui/dialog/SelectionDialogBuilder_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/DefaultEntityApplicationPanelBuilder.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/DefaultEntityApplicationPanelBuilder_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/DefaultEntityApplicationPanelBuilder_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityApplicationPanel.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityApplicationPanel_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityApplicationPanel_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityEditPanel.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityEditPanel_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityEditPanel_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityPanel.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityPanel_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityPanel_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityTableExport.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityTableExport_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityTableExport_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityTablePanel.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityTablePanel_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/EntityTablePanel_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/TabbedDetailLayout.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/TabbedDetailLayout_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/TabbedDetailLayout_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/component/EntityControls.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/component/EntityControls_en.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/component/EntityControls_en_EN.properties"
+    },
+    {
+      "glob": "is/codion/swing/framework/ui/icon/framework-icons.ttf"
+    },
+    {
+      "glob": "logback-test.scmo"
+    },
+    {
+      "glob": "logback-test.xml"
+    },
+    {
+      "glob": "logback.scmo"
+    },
+    {
+      "glob": "logback.xml"
+    },
+    {
+      "glob": "org/h2/util/data.zip"
+    },
+    {
+      "glob": "version.properties"
+    },
+    {
+      "module": "java.base",
+      "glob": "java/util/currency.data"
+    },
+    {
+      "module": "java.base",
+      "glob": "jdk/internal/icu/impl/data/icudt76b/nfc.nrm"
+    },
+    {
+      "module": "java.base",
+      "glob": "jdk/internal/icu/impl/data/icudt76b/ubidi.icu"
+    },
+    {
+      "module": "java.datatransfer",
+      "glob": "sun/datatransfer/resources/flavormap.properties"
+    },
+    {
+      "module": "java.desktop",
+      "glob": "com/formdev/flatlaf/resources/Bundle.properties"
+    },
+    {
+      "module": "java.desktop",
+      "glob": "com/sun/swing/internal/plaf/basic/resources/basic_en.properties"
+    },
+    {
+      "module": "java.desktop",
+      "glob": "com/sun/swing/internal/plaf/basic/resources/basic_en_EN.properties"
+    },
+    {
+      "module": "java.desktop",
+      "glob": "javax/swing/text/html/default.css"
+    },
+    {
+      "module": "java.desktop",
+      "glob": "sun/awt/resources/awt_en.properties"
+    },
+    {
+      "module": "java.desktop",
+      "glob": "sun/awt/resources/awt_en_US.properties"
+    },
+    {
+      "module": "java.xml",
+      "glob": "com/sun/org/apache/xml/internal/serializer/Encodings.properties"
+    },
+    {
+      "module": "java.xml",
+      "glob": "com/sun/org/apache/xml/internal/serializer/XMLEntities.properties"
+    },
+    {
+      "module": "java.xml",
+      "glob": "com/sun/org/apache/xml/internal/serializer/XMLEntities_en.properties"
+    },
+    {
+      "module": "java.xml",
+      "glob": "com/sun/org/apache/xml/internal/serializer/XMLEntities_en_EN.properties"
+    },
+    {
+      "module": "java.xml",
+      "glob": "jdk/xml/internal/jdkcatalog/JDKCatalog.xml"
+    }
+  ],
+  "bundles": [
+    {
+      "name": "com.formdev.flatlaf.resources.Bundle",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "com.sun.org.apache.xml.internal.serializer.XMLEntities",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "com.sun.swing.internal.plaf.basic.resources.basic",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.common.Operator",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.common.i18n.Messages",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.common.model.condition.ConditionModel$Wildcard",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.dbms.h2.H2Database",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.framework.db.local.LocalEntityConnection",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.framework.domain.entity.DefaultEntityValidator",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.framework.domain.entity.attribute.AbstractAttributeDefinition",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.framework.i18n.FrameworkMessages",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.common.ui.SwingMessages",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.common.ui.component.calendar.CalendarPanel",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.common.ui.component.table.ColumnConditionPanel",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.common.ui.component.table.ColumnSelectionPanel",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.common.ui.component.table.FilterTable",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.common.ui.component.table.TableConditionPanel",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.common.ui.component.text.StringLengthValidator",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.common.ui.component.text.TemporalField",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.common.ui.dialog.DefaultCalendarDialogBuilder",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.common.ui.dialog.DefaultFontSizeSelectionDialogBuilder",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.common.ui.dialog.DefaultLookAndFeelSelectionDialogBuilder",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.common.ui.dialog.SelectionDialogBuilder",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.framework.ui.DefaultEntityApplicationPanelBuilder",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.framework.ui.EntityApplicationPanel",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.framework.ui.EntityEditPanel",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.framework.ui.EntityPanel",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.framework.ui.EntityTableExport",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.framework.ui.EntityTablePanel",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.framework.ui.TabbedDetailLayout",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "is.codion.swing.framework.ui.component.EntityControls",
+      "locales": [
+        "en-EN"
+      ]
+    },
+    {
+      "name": "sun.awt.resources.awt",
+      "locales": [
+        "en-US"
+      ]
+    }
+  ],
+  "jni": [
+    {
+      "type": "[Lsun.java2d.loops.GraphicsPrimitive;"
+    },
+    {
+      "type": "is.codion.demos.petclinic.ui.PetclinicAppPanel",
+      "methods": [
+        {
+          "name": "main",
+          "parameterTypes": [
+            "java.lang.String[]"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.awt.AlphaComposite",
+      "fields": [
+        {
+          "name": "extraAlpha"
+        },
+        {
+          "name": "rule"
+        }
+      ]
+    },
+    {
+      "type": "java.awt.Color",
+      "methods": [
+        {
+          "name": "getRGB",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "java.awt.Component",
+      "fields": [
+        {
+          "name": "appContext"
+        },
+        {
+          "name": "background"
+        },
+        {
+          "name": "foreground"
+        },
+        {
+          "name": "graphicsConfig"
+        },
+        {
+          "name": "height"
+        },
+        {
+          "name": "isPacked"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "peer"
+        },
+        {
+          "name": "width"
+        },
+        {
+          "name": "x"
+        },
+        {
+          "name": "y"
+        }
+      ],
+      "methods": [
+        {
+          "name": "getLocationOnScreen_NoTreeLock",
+          "parameterTypes": []
+        },
+        {
+          "name": "getParent_NoClientCode",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "java.awt.GraphicsEnvironment",
+      "methods": [
+        {
+          "name": "getLocalGraphicsEnvironment",
+          "parameterTypes": []
+        },
+        {
+          "name": "isHeadless",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "java.awt.Rectangle",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "int",
+            "int",
+            "int",
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.awt.event.KeyEvent",
+      "fields": [
+        {
+          "name": "isProxyActive"
+        }
+      ]
+    },
+    {
+      "type": "java.awt.geom.AffineTransform",
+      "fields": [
+        {
+          "name": "m00"
+        },
+        {
+          "name": "m01"
+        },
+        {
+          "name": "m02"
+        },
+        {
+          "name": "m10"
+        },
+        {
+          "name": "m11"
+        },
+        {
+          "name": "m12"
+        }
+      ]
+    },
+    {
+      "type": "java.awt.geom.GeneralPath",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "int",
+            "byte[]",
+            "int",
+            "float[]",
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.awt.geom.Path2D",
+      "fields": [
+        {
+          "name": "numTypes"
+        },
+        {
+          "name": "pointTypes"
+        },
+        {
+          "name": "windingRule"
+        }
+      ]
+    },
+    {
+      "type": "java.awt.geom.Path2D$Float",
+      "fields": [
+        {
+          "name": "floatCoords"
+        }
+      ]
+    },
+    {
+      "type": "java.awt.geom.Point2D$Float",
+      "fields": [
+        {
+          "name": "x"
+        },
+        {
+          "name": "y"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "float",
+            "float"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.awt.geom.Rectangle2D$Float",
+      "fields": [
+        {
+          "name": "height"
+        },
+        {
+          "name": "width"
+        },
+        {
+          "name": "x"
+        },
+        {
+          "name": "y"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "float",
+            "float",
+            "float",
+            "float"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.awt.image.BufferedImage",
+      "fields": [
+        {
+          "name": "colorModel"
+        },
+        {
+          "name": "imageType"
+        },
+        {
+          "name": "raster"
+        }
+      ],
+      "methods": [
+        {
+          "name": "getRGB",
+          "parameterTypes": [
+            "int",
+            "int",
+            "int",
+            "int",
+            "int[]",
+            "int",
+            "int"
+          ]
+        },
+        {
+          "name": "setRGB",
+          "parameterTypes": [
+            "int",
+            "int",
+            "int",
+            "int",
+            "int[]",
+            "int",
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.awt.image.ColorModel",
+      "fields": [
+        {
+          "name": "colorSpace"
+        },
+        {
+          "name": "colorSpaceType"
+        },
+        {
+          "name": "isAlphaPremultiplied"
+        },
+        {
+          "name": "is_sRGB"
+        },
+        {
+          "name": "nBits"
+        },
+        {
+          "name": "numComponents"
+        },
+        {
+          "name": "supportsAlpha"
+        },
+        {
+          "name": "transparency"
+        }
+      ],
+      "methods": [
+        {
+          "name": "getRGBdefault",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "java.awt.image.DirectColorModel",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "int",
+            "int",
+            "int",
+            "int",
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.awt.image.IndexColorModel",
+      "fields": [
+        {
+          "name": "allgrayopaque"
+        },
+        {
+          "name": "colorData"
+        },
+        {
+          "name": "map_size"
+        },
+        {
+          "name": "rgb"
+        },
+        {
+          "name": "transparent_index"
+        }
+      ]
+    },
+    {
+      "type": "java.awt.image.Raster",
+      "fields": [
+        {
+          "name": "dataBuffer"
+        },
+        {
+          "name": "height"
+        },
+        {
+          "name": "minX"
+        },
+        {
+          "name": "minY"
+        },
+        {
+          "name": "numBands"
+        },
+        {
+          "name": "numDataElements"
+        },
+        {
+          "name": "sampleModel"
+        },
+        {
+          "name": "sampleModelTranslateX"
+        },
+        {
+          "name": "sampleModelTranslateY"
+        },
+        {
+          "name": "width"
+        }
+      ]
+    },
+    {
+      "type": "java.awt.image.SampleModel",
+      "fields": [
+        {
+          "name": "height"
+        },
+        {
+          "name": "width"
+        }
+      ],
+      "methods": [
+        {
+          "name": "getPixels",
+          "parameterTypes": [
+            "int",
+            "int",
+            "int",
+            "int",
+            "int[]",
+            "java.awt.image.DataBuffer"
+          ]
+        },
+        {
+          "name": "setPixels",
+          "parameterTypes": [
+            "int",
+            "int",
+            "int",
+            "int",
+            "int[]",
+            "java.awt.image.DataBuffer"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.awt.image.SinglePixelPackedSampleModel",
+      "fields": [
+        {
+          "name": "bitMasks"
+        },
+        {
+          "name": "bitOffsets"
+        },
+        {
+          "name": "bitSizes"
+        },
+        {
+          "name": "maxBitSize"
+        }
+      ]
+    },
+    {
+      "type": "java.lang.Boolean",
+      "methods": [
+        {
+          "name": "getBoolean",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.lang.System",
+      "methods": [
+        {
+          "name": "load",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.lang.Thread",
+      "methods": [
+        {
+          "name": "yield",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.awt.SunHints",
+      "fields": [
+        {
+          "name": "INTVAL_STROKE_PURE"
+        }
+      ]
+    },
+    {
+      "type": "sun.awt.SunToolkit",
+      "methods": [
+        {
+          "name": "awtLock",
+          "parameterTypes": []
+        },
+        {
+          "name": "awtLockNotify",
+          "parameterTypes": []
+        },
+        {
+          "name": "awtLockNotifyAll",
+          "parameterTypes": []
+        },
+        {
+          "name": "awtLockWait",
+          "parameterTypes": [
+            "long"
+          ]
+        },
+        {
+          "name": "awtUnlock",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.awt.X11.XBaseWindow",
+      "fields": [
+        {
+          "name": "window"
+        }
+      ],
+      "methods": [
+        {
+          "name": "getWindow",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.awt.X11.XContentWindow"
+    },
+    {
+      "type": "sun.awt.X11.XDialogPeer"
+    },
+    {
+      "type": "sun.awt.X11.XErrorHandlerUtil",
+      "methods": [
+        {
+          "name": "globalErrorHandler",
+          "parameterTypes": [
+            "long",
+            "long"
+          ]
+        },
+        {
+          "name": "init",
+          "parameterTypes": [
+            "long"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.awt.X11.XFramePeer"
+    },
+    {
+      "type": "sun.awt.X11.XToolkit",
+      "fields": [
+        {
+          "name": "modLockIsShiftLock"
+        },
+        {
+          "name": "numLockMask"
+        }
+      ]
+    },
+    {
+      "type": "sun.awt.X11.XWindow",
+      "fields": [
+        {
+          "name": "drawState"
+        },
+        {
+          "name": "graphicsConfig"
+        },
+        {
+          "name": "target"
+        }
+      ]
+    },
+    {
+      "type": "sun.awt.X11.XWindowPeer"
+    },
+    {
+      "type": "sun.awt.X11GraphicsConfig",
+      "fields": [
+        {
+          "name": "aData"
+        },
+        {
+          "name": "bitsPerPixel"
+        }
+      ]
+    },
+    {
+      "type": "sun.awt.X11GraphicsDevice",
+      "methods": [
+        {
+          "name": "addDoubleBufferVisual",
+          "parameterTypes": [
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.awt.X11InputMethodBase",
+      "fields": [
+        {
+          "name": "pData"
+        }
+      ]
+    },
+    {
+      "type": "sun.awt.image.BufImgSurfaceData$ICMColorData",
+      "fields": [
+        {
+          "name": "pData"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.awt.image.ImageRepresentation",
+      "fields": [
+        {
+          "name": "numSrcLUT"
+        },
+        {
+          "name": "srcLUTtransIndex"
+        }
+      ]
+    },
+    {
+      "type": "sun.awt.image.IntegerComponentRaster",
+      "fields": [
+        {
+          "name": "data"
+        },
+        {
+          "name": "dataOffsets"
+        },
+        {
+          "name": "pixelStride"
+        },
+        {
+          "name": "scanlineStride"
+        },
+        {
+          "name": "type"
+        }
+      ]
+    },
+    {
+      "type": "sun.font.CharToGlyphMapper",
+      "methods": [
+        {
+          "name": "charToGlyph",
+          "parameterTypes": [
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.font.Font2D",
+      "methods": [
+        {
+          "name": "canDisplay",
+          "parameterTypes": [
+            "char"
+          ]
+        },
+        {
+          "name": "charToGlyph",
+          "parameterTypes": [
+            "int"
+          ]
+        },
+        {
+          "name": "charToVariationGlyph",
+          "parameterTypes": [
+            "int",
+            "int"
+          ]
+        },
+        {
+          "name": "getMapper",
+          "parameterTypes": []
+        },
+        {
+          "name": "getTableBytes",
+          "parameterTypes": [
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.font.FontStrike",
+      "methods": [
+        {
+          "name": "getGlyphMetrics",
+          "parameterTypes": [
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.font.FontUtilities",
+      "methods": [
+        {
+          "name": "debugFonts",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.font.FreetypeFontScaler",
+      "methods": [
+        {
+          "name": "invalidateScaler",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.font.GlyphList",
+      "fields": [
+        {
+          "name": "gposx"
+        },
+        {
+          "name": "gposy"
+        },
+        {
+          "name": "images"
+        },
+        {
+          "name": "lcdRGBOrder"
+        },
+        {
+          "name": "lcdSubPixPos"
+        },
+        {
+          "name": "len"
+        },
+        {
+          "name": "positions"
+        },
+        {
+          "name": "usePositions"
+        }
+      ]
+    },
+    {
+      "type": "sun.font.PhysicalStrike",
+      "fields": [
+        {
+          "name": "pScalerContext"
+        }
+      ],
+      "methods": [
+        {
+          "name": "adjustPoint",
+          "parameterTypes": [
+            "java.awt.geom.Point2D$Float"
+          ]
+        },
+        {
+          "name": "getGlyphPoint",
+          "parameterTypes": [
+            "int",
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.font.StrikeMetrics",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "float",
+            "float",
+            "float",
+            "float",
+            "float",
+            "float",
+            "float",
+            "float",
+            "float",
+            "float"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.font.TrueTypeFont",
+      "methods": [
+        {
+          "name": "readBlock",
+          "parameterTypes": [
+            "java.nio.ByteBuffer",
+            "int",
+            "int"
+          ]
+        },
+        {
+          "name": "readBytes",
+          "parameterTypes": [
+            "int",
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.font.Type1Font",
+      "methods": [
+        {
+          "name": "readFile",
+          "parameterTypes": [
+            "java.nio.ByteBuffer"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.Disposer",
+      "methods": [
+        {
+          "name": "addRecord",
+          "parameterTypes": [
+            "java.lang.Object",
+            "long",
+            "long"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.InvalidPipeException"
+    },
+    {
+      "type": "sun.java2d.NullSurfaceData"
+    },
+    {
+      "type": "sun.java2d.SunGraphics2D",
+      "fields": [
+        {
+          "name": "clipRegion"
+        },
+        {
+          "name": "composite"
+        },
+        {
+          "name": "eargb"
+        },
+        {
+          "name": "lcdTextContrast"
+        },
+        {
+          "name": "pixel"
+        },
+        {
+          "name": "strokeHint"
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.SunGraphicsEnvironment",
+      "methods": [
+        {
+          "name": "isDisplayLocal",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.SurfaceData",
+      "fields": [
+        {
+          "name": "pData"
+        },
+        {
+          "name": "valid"
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.Blit",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.BlitBg",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.CompositeType",
+      "fields": [
+        {
+          "name": "AnyAlpha"
+        },
+        {
+          "name": "Src"
+        },
+        {
+          "name": "SrcNoEa"
+        },
+        {
+          "name": "SrcOver"
+        },
+        {
+          "name": "SrcOverNoEa"
+        },
+        {
+          "name": "Xor"
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.DrawGlyphList",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.DrawGlyphListAA",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.DrawGlyphListLCD",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.DrawLine",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.DrawParallelogram",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.DrawPath",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.DrawPolygons",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.DrawRect",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.FillParallelogram",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.FillPath",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.FillRect",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.FillSpans",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.GraphicsPrimitive",
+      "fields": [
+        {
+          "name": "pNativePrim"
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.GraphicsPrimitiveMgr",
+      "methods": [
+        {
+          "name": "register",
+          "parameterTypes": [
+            "sun.java2d.loops.GraphicsPrimitive[]"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.MaskBlit",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.MaskFill",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.ScaledBlit",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.SurfaceType",
+      "fields": [
+        {
+          "name": "Any3Byte"
+        },
+        {
+          "name": "Any4Byte"
+        },
+        {
+          "name": "AnyByte"
+        },
+        {
+          "name": "AnyColor"
+        },
+        {
+          "name": "AnyInt"
+        },
+        {
+          "name": "AnyShort"
+        },
+        {
+          "name": "ByteBinary1Bit"
+        },
+        {
+          "name": "ByteBinary2Bit"
+        },
+        {
+          "name": "ByteBinary4Bit"
+        },
+        {
+          "name": "ByteGray"
+        },
+        {
+          "name": "ByteIndexed"
+        },
+        {
+          "name": "ByteIndexedBm"
+        },
+        {
+          "name": "FourByteAbgr"
+        },
+        {
+          "name": "FourByteAbgrPre"
+        },
+        {
+          "name": "Index12Gray"
+        },
+        {
+          "name": "Index8Gray"
+        },
+        {
+          "name": "IntArgb"
+        },
+        {
+          "name": "IntArgbBm"
+        },
+        {
+          "name": "IntArgbPre"
+        },
+        {
+          "name": "IntBgr"
+        },
+        {
+          "name": "IntRgb"
+        },
+        {
+          "name": "IntRgbx"
+        },
+        {
+          "name": "OpaqueColor"
+        },
+        {
+          "name": "ThreeByteBgr"
+        },
+        {
+          "name": "Ushort4444Argb"
+        },
+        {
+          "name": "Ushort555Rgb"
+        },
+        {
+          "name": "Ushort555Rgbx"
+        },
+        {
+          "name": "Ushort565Rgb"
+        },
+        {
+          "name": "UshortGray"
+        },
+        {
+          "name": "UshortIndexed"
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.TransformHelper",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "long",
+            "sun.java2d.loops.SurfaceType",
+            "sun.java2d.loops.CompositeType",
+            "sun.java2d.loops.SurfaceType"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.loops.XORComposite",
+      "fields": [
+        {
+          "name": "alphaMask"
+        },
+        {
+          "name": "xorColor"
+        },
+        {
+          "name": "xorPixel"
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.pipe.Region",
+      "fields": [
+        {
+          "name": "bands"
+        },
+        {
+          "name": "endIndex"
+        },
+        {
+          "name": "hix"
+        },
+        {
+          "name": "hiy"
+        },
+        {
+          "name": "lox"
+        },
+        {
+          "name": "loy"
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.pipe.RegionIterator",
+      "fields": [
+        {
+          "name": "curIndex"
+        },
+        {
+          "name": "numXbands"
+        },
+        {
+          "name": "region"
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.pipe.ShapeSpanIterator",
+      "fields": [
+        {
+          "name": "pData"
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.xr.XRBackendNative",
+      "fields": [
+        {
+          "name": "FMTPTR_A8"
+        },
+        {
+          "name": "FMTPTR_ARGB32"
+        },
+        {
+          "name": "MASK_XIMG"
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.xr.XRSurfaceData",
+      "fields": [
+        {
+          "name": "picture"
+        },
+        {
+          "name": "xid"
+        }
+      ]
+    }
+  ]
+}

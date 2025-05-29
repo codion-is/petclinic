@@ -11,6 +11,13 @@ plugins {
     id("org.asciidoctor.jvm.convert") version "4.0.4"
     // For Github Releases
     id("com.github.breadmoirai.github-release") version "2.5.2"
+    id("com.gradleup.shadow") version "9.0.0-beta15"
+    // GraalVM Native Image plugin
+    id("org.graalvm.buildtools.native") version "0.10.4"
+}
+
+tasks.shadowJar {
+  mergeServiceFiles()
 }
 
 dependencies {
@@ -43,7 +50,7 @@ version = libs.versions.codion.get().replace("-SNAPSHOT", "")
 java {
     toolchain {
         // Use the latest possible Java version
-        languageVersion.set(JavaLanguageVersion.of(24))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
@@ -202,4 +209,46 @@ tasks.register<Sync>("copyToGitHubPages") {
     group = "documentation"
     from(tasks.asciidoctor)
     into("../codion-pages/doc/" + project.version + "/tutorials/petclinic")
+}
+
+// GraalVM Native Image configuration
+graalvmNative {
+    binaries {
+        named("main") {
+            imageName = project.name
+            mainClass = "is.codion.demos.petclinic.ui.NativeMain"
+            buildArgs.addAll(
+                "-H:+ForeignAPISupport",
+                "-H:+ReportExceptionStackTraces",
+                "-H:+UnlockExperimentalVMOptions"
+            )
+        }
+    }
+    
+    // For running with tracing agent
+    agent {
+        defaultMode = "standard"
+    }
+    
+    metadataRepository {
+        enabled = true
+    }
+}
+
+// Helper task to run application for collecting metadata
+tasks.register("runForAgent", JavaExec::class) {
+    dependsOn("classes")
+    group = "graalvm"
+    description = "Run application with agent to collect metadata"
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass = "is.codion.demos.petclinic.ui.NativeMain"
+    systemProperties = mapOf(
+        "codion.client.connectionType" to "local",
+        "codion.db.url" to "jdbc:h2:mem:h2db",
+        "codion.db.initScripts" to "classpath:create_schema.sql",
+        "java.awt.headless" to "false"
+    )
+    jvmArgs = listOf(
+        "-agentlib:native-image-agent=config-output-dir=build/native-image-config"
+    )
 }

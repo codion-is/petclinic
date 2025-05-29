@@ -1,0 +1,29 @@
+[
+  {
+    "name": "java.awt.Toolkit",
+    "methods": [
+      {"name": "loadLibraries", "parameterTypes": []},
+      {"name": "initStatic", "parameterTypes": []}
+    ]
+  },
+  {
+    "name": "java.awt.Component",
+    "methods": [
+      {"name": "<init>", "parameterTypes": []},
+      {"name": "<clinit>", "parameterTypes": []}
+    ]
+  },
+  {
+    "name": "javax.swing.JComponent",
+    "methods": [
+      {"name": "<init>", "parameterTypes": []},
+      {"name": "<clinit>", "parameterTypes": []}
+    ]
+  },
+  {
+    "name": "sun.awt.AWTAccessor",
+    "methods": [
+      {"name": "<clinit>", "parameterTypes": []}
+    ]
+  }
+]
