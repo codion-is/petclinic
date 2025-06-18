@@ -9,11 +9,14 @@ plugins {
     id("com.diffplug.spotless") version "7.0.1"
     // For the asciidoctor docs
     id("org.asciidoctor.jvm.convert") version "4.0.4"
-    // For Github Releases
+    // For GitHub Releases
     id("com.github.breadmoirai.github-release") version "2.5.2"
 }
 
 dependencies {
+    // Import the Codion BOM for dependency version management
+    implementation(platform(libs.codion.framework.bom))
+
     // The Codion framework UI module, transitively pulls in all required
     // modules, such as the model layer and the core database module
     implementation(libs.codion.swing.framework.ui)

@@ -1,0 +1,15 @@
+[versions]
+codion = "0.18.39"
+h2 = "2.3.232"
+
+[libraries]
+codion-framework-bom = { module = "is.codion:codion-framework-bom", version.ref = "codion" }
+codion-dbms-h2 = { module = "is.codion:codion-dbms-h2" }
+codion-framework-domain-test = { module = "is.codion:codion-framework-domain-test" }
+codion-framework-db-local = { module = "is.codion:codion-framework-db-local" }
+codion-swing-framework-ui = { module = "is.codion:codion-swing-framework-ui" }
+codion-plugin-logback-proxy = { module = "is.codion:codion-plugin-logback-proxy" }
+codion-plugin-flatlaf = { module = "is.codion:codion-plugin-flatlaf" }
+codion-plugin-flatlaf-intellij-themes = { module = "is.codion:codion-plugin-flatlaf-intellij-themes" }
+
+h2 = { module = "com.h2database:h2", version.ref = "h2" }

@@ -231,7 +231,7 @@ public final class Petclinic extends DomainModel {
 										Owner.PHONE_TYPE.define()
 														.column()
 														.caption("Phone type")
-														.columnClass(String.class, new PhoneTypeConverter()))
+														.converter(String.class, new PhoneTypeConverter()))
 						.keyGenerator(identity())
 						.caption("Owners")
 						.stringFactory(StringFactory.builder()
