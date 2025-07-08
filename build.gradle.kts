@@ -108,8 +108,13 @@ tasks.withType<JavaCompile>().configureEach {
 
 // Configure the docs generation
 tasks.asciidoctor {
-    inputs.dir("src")
+    dependsOn(tasks.build)
+    inputs.file(project.buildFile)
+    inputs.files(sourceSets.main.get().allSource)
+    inputs.files(sourceSets.test.get().allSource)
+
     baseDirFollowsSourceFile()
+
     attributes(
         mapOf(
             "codion-version" to project.version,
