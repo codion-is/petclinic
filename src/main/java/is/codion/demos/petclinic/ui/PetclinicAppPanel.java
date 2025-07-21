@@ -127,7 +127,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 						.domain(Petclinic.DOMAIN)
 						.applicationName("Petclinic")
 						.applicationVersion(PetclinicAppModel.VERSION)
-						.displayStartupDialog(false)
+						.startupDialog(false)
 						.defaultLookAndFeel(Arc.class)
 						.defaultUser(User.parse("scott:tiger"))
 						.start();
