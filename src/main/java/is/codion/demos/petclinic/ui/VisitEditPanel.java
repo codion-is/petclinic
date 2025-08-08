@@ -23,10 +23,10 @@ import is.codion.swing.framework.model.SwingEntityEditModel;
 import is.codion.swing.framework.ui.EntityEditPanel;
 
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
 
 import static is.codion.swing.common.ui.component.Components.gridLayoutPanel;
+import static is.codion.swing.common.ui.component.Components.scrollPane;
 import static is.codion.swing.common.ui.layout.Layouts.borderLayout;
 
 public final class VisitEditPanel extends EntityEditPanel {
@@ -48,13 +48,14 @@ public final class VisitEditPanel extends EntityEditPanel {
 		JPanel northPanel = gridLayoutPanel(2, 1)
 						.add(gridLayoutPanel(1, 2)
 										.add(createInputPanel(Visit.PET_FK))
-										.add(createInputPanel(Visit.VISIT_DATE))
-										.build())
+										.add(createInputPanel(Visit.VISIT_DATE)))
 						.add(createInputPanel(Visit.VET_FK))
 						.build();
 
 		setLayout(borderLayout());
 		add(northPanel, BorderLayout.NORTH);
-		addInputPanel(Visit.DESCRIPTION, new JScrollPane(component(Visit.DESCRIPTION).get()), BorderLayout.CENTER);
+		add(createInputPanel(Visit.DESCRIPTION)
+						.component(scrollPane()
+										.view(component(Visit.DESCRIPTION).get())), BorderLayout.CENTER);
 	}
 }
