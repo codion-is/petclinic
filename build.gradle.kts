@@ -204,10 +204,3 @@ tasks.named("githubRelease") {
     dependsOn(tasks.named("jlinkZip"))
     dependsOn(tasks.named("jpackage"))
 }
-
-// Copies the documentation to the Codion github pages repository, nevermind
-tasks.register<Sync>("copyToGitHubPages") {
-    group = "documentation"
-    from(tasks.asciidoctor)
-    into("../codion-pages/doc/" + project.version + "/tutorials/petclinic")
-}

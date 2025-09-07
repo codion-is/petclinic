@@ -33,6 +33,7 @@ import is.codion.framework.db.EntityConnectionProvider;
 import is.codion.plugin.flatlaf.intellij.themes.arc.Arc;
 import is.codion.swing.common.ui.component.indicator.ValidIndicatorFactory;
 import is.codion.swing.framework.model.SwingEntityModel;
+import is.codion.swing.framework.ui.EntityApplication;
 import is.codion.swing.framework.ui.EntityApplicationPanel;
 import is.codion.swing.framework.ui.EntityPanel;
 import is.codion.swing.framework.ui.ReferentialIntegrityErrorHandling;
@@ -123,10 +124,9 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 		ValidIndicatorFactory.FACTORY_CLASS.set("is.codion.plugin.flatlaf.indicator.FlatLafValidIndicatorFactory");
 		ReferentialIntegrityErrorHandling.REFERENTIAL_INTEGRITY_ERROR_HANDLING
 						.set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
-		EntityApplicationPanel.builder(PetclinicAppModel.class, PetclinicAppPanel.class)
+		EntityApplication.builder(PetclinicAppModel.class, PetclinicAppPanel.class)
 						.domain(Petclinic.DOMAIN)
-						.applicationName("Petclinic")
-						.applicationVersion(PetclinicAppModel.VERSION)
+						.version(PetclinicAppModel.VERSION)
 						.startupDialog(false)
 						.defaultLookAndFeel(Arc.class)
 						.defaultUser(User.parse("scott:tiger"))

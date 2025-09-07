@@ -22,9 +22,9 @@ import is.codion.demos.petclinic.domain.Petclinic.Owner.PhoneType;
 import is.codion.framework.domain.DomainModel;
 import is.codion.framework.domain.DomainType;
 import is.codion.framework.domain.entity.EntityDefinition;
+import is.codion.framework.domain.entity.EntityFormatter;
 import is.codion.framework.domain.entity.EntityType;
 import is.codion.framework.domain.entity.OrderBy;
-import is.codion.framework.domain.entity.StringFactory;
 import is.codion.framework.domain.entity.attribute.Column;
 import is.codion.framework.domain.entity.attribute.Column.Converter;
 import is.codion.framework.domain.entity.attribute.ForeignKey;
@@ -76,7 +76,7 @@ public final class Petclinic extends DomainModel {
 														.nullable(false))
 						.keyGenerator(identity())
 						.caption("Vets")
-						.stringFactory(StringFactory.builder()
+						.formatter(EntityFormatter.builder()
 										.value(Vet.LAST_NAME)
 										.text(", ")
 										.value(Vet.FIRST_NAME)
@@ -109,7 +109,7 @@ public final class Petclinic extends DomainModel {
 														.nullable(false))
 						.keyGenerator(identity())
 						.caption("Specialties")
-						.stringFactory(Specialty.NAME)
+						.formatter(Specialty.NAME)
 						.smallDataset(true)
 						.build();
 	}
@@ -143,7 +143,7 @@ public final class Petclinic extends DomainModel {
 														.foreignKey()
 														.caption("Specialty"))
 						.caption("Vet specialties")
-						.stringFactory(StringFactory.builder()
+						.formatter(EntityFormatter.builder()
 										.value(VetSpecialty.VET_FK)
 										.text(" - ")
 										.value(VetSpecialty.SPECIALTY_FK)
@@ -174,7 +174,7 @@ public final class Petclinic extends DomainModel {
 														.nullable(false))
 						.keyGenerator(identity())
 						.caption("Pet types")
-						.stringFactory(PetType.NAME)
+						.formatter(PetType.NAME)
 						.orderBy(ascending(PetType.NAME))
 						.smallDataset(true)
 						.build();
@@ -234,7 +234,7 @@ public final class Petclinic extends DomainModel {
 														.converter(String.class, new PhoneTypeConverter()))
 						.keyGenerator(identity())
 						.caption("Owners")
-						.stringFactory(StringFactory.builder()
+						.formatter(EntityFormatter.builder()
 										.value(Owner.LAST_NAME)
 										.text(", ")
 										.value(Owner.FIRST_NAME)
@@ -301,7 +301,7 @@ public final class Petclinic extends DomainModel {
 														.caption("Owner"))
 						.keyGenerator(identity())
 						.caption("Pets")
-						.stringFactory(Pet.NAME)
+						.formatter(Pet.NAME)
 						.orderBy(ascending(Pet.NAME))
 						.build();
 	}
