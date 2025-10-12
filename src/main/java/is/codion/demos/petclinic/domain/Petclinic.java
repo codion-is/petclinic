@@ -33,8 +33,8 @@ import java.sql.Statement;
 import java.time.LocalDate;
 
 import static is.codion.framework.domain.DomainType.domainType;
-import static is.codion.framework.domain.entity.KeyGenerator.identity;
 import static is.codion.framework.domain.entity.OrderBy.ascending;
+import static is.codion.framework.domain.entity.attribute.Column.Generator.identity;
 
 // tag::petclinic[]
 public final class Petclinic extends DomainModel {
@@ -61,7 +61,8 @@ public final class Petclinic extends DomainModel {
 	private EntityDefinition vet() {
 		return Vet.TYPE.define(
 										Vet.ID.define()
-														.primaryKey(),
+														.primaryKey()
+														.generator(identity()),
 										Vet.FIRST_NAME.define()
 														.column()
 														.caption("First name")
@@ -74,7 +75,6 @@ public final class Petclinic extends DomainModel {
 														.searchable(true)
 														.maximumLength(30)
 														.nullable(false))
-						.keyGenerator(identity())
 						.caption("Vets")
 						.formatter(EntityFormatter.builder()
 										.value(Vet.LAST_NAME)
@@ -100,14 +100,14 @@ public final class Petclinic extends DomainModel {
 	private EntityDefinition specialty() {
 		return Specialty.TYPE.define(
 										Specialty.ID.define()
-														.primaryKey(),
+														.primaryKey()
+														.generator(identity()),
 										Specialty.NAME.define()
 														.column()
 														.caption("Name")
 														.searchable(true)
 														.maximumLength(80)
 														.nullable(false))
-						.keyGenerator(identity())
 						.caption("Specialties")
 						.formatter(Specialty.NAME)
 						.smallDataset(true)
@@ -165,14 +165,14 @@ public final class Petclinic extends DomainModel {
 	private EntityDefinition petType() {
 		return PetType.TYPE.define(
 										PetType.ID.define()
-														.primaryKey(),
+														.primaryKey()
+														.generator(identity()),
 										PetType.NAME.define()
 														.column()
 														.caption("Name")
 														.searchable(true)
 														.maximumLength(80)
 														.nullable(false))
-						.keyGenerator(identity())
 						.caption("Pet types")
 						.formatter(PetType.NAME)
 						.orderBy(ascending(PetType.NAME))
@@ -203,7 +203,8 @@ public final class Petclinic extends DomainModel {
 	private EntityDefinition owner() {
 		return Owner.TYPE.define(
 										Owner.ID.define()
-														.primaryKey(),
+														.primaryKey()
+														.generator(identity()),
 										Owner.FIRST_NAME.define()
 														.column()
 														.caption("First name")
@@ -232,7 +233,6 @@ public final class Petclinic extends DomainModel {
 														.column()
 														.caption("Phone type")
 														.converter(String.class, new PhoneTypeConverter()))
-						.keyGenerator(identity())
 						.caption("Owners")
 						.formatter(EntityFormatter.builder()
 										.value(Owner.LAST_NAME)
@@ -276,7 +276,8 @@ public final class Petclinic extends DomainModel {
 	private EntityDefinition pet() {
 		return Pet.TYPE.define(
 										Pet.ID.define()
-														.primaryKey(),
+														.primaryKey()
+														.generator(identity()),
 										Pet.NAME.define()
 														.column()
 														.caption("Name")
@@ -299,7 +300,6 @@ public final class Petclinic extends DomainModel {
 										Pet.OWNER_FK.define()
 														.foreignKey()
 														.caption("Owner"))
-						.keyGenerator(identity())
 						.caption("Pets")
 						.formatter(Pet.NAME)
 						.orderBy(ascending(Pet.NAME))
@@ -326,7 +326,8 @@ public final class Petclinic extends DomainModel {
 	private EntityDefinition visit() {
 		return Visit.TYPE.define(
 										Visit.ID.define()
-														.primaryKey(),
+														.primaryKey()
+														.generator(identity()),
 										Visit.PET_ID.define()
 														.column()
 														.nullable(false),
@@ -347,7 +348,6 @@ public final class Petclinic extends DomainModel {
 														.column()
 														.caption("Description")
 														.maximumLength(255))
-						.keyGenerator(identity())
 						.orderBy(OrderBy.builder()
 										.ascending(Visit.PET_ID)
 										.descending(Visit.VISIT_DATE)
