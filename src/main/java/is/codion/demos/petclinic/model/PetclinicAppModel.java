@@ -18,7 +18,7 @@
  */
 package is.codion.demos.petclinic.model;
 
-import is.codion.common.version.Version;
+import is.codion.common.utilities.version.Version;
 import is.codion.demos.petclinic.domain.Petclinic.Owner;
 import is.codion.demos.petclinic.domain.Petclinic.Pet;
 import is.codion.demos.petclinic.domain.Petclinic.Visit;
