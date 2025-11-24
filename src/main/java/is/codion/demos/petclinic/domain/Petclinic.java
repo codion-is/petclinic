@@ -59,17 +59,17 @@ public final class Petclinic extends DomainModel {
 
 	// tag::vet_impl[]
 	private EntityDefinition vet() {
-		return Vet.TYPE.define(
-										Vet.ID.define()
+		return Vet.TYPE.as(
+										Vet.ID.as()
 														.primaryKey()
 														.generator(identity()),
-										Vet.FIRST_NAME.define()
+										Vet.FIRST_NAME.as()
 														.column()
 														.caption("First name")
 														.searchable(true)
 														.maximumLength(30)
 														.nullable(false),
-										Vet.LAST_NAME.define()
+										Vet.LAST_NAME.as()
 														.column()
 														.caption("Last name")
 														.searchable(true)
@@ -98,11 +98,11 @@ public final class Petclinic extends DomainModel {
 
 	// tag::specialty_impl[]
 	private EntityDefinition specialty() {
-		return Specialty.TYPE.define(
-										Specialty.ID.define()
+		return Specialty.TYPE.as(
+										Specialty.ID.as()
 														.primaryKey()
 														.generator(identity()),
-										Specialty.NAME.define()
+										Specialty.NAME.as()
 														.column()
 														.caption("Name")
 														.searchable(true)
@@ -129,17 +129,17 @@ public final class Petclinic extends DomainModel {
 
 	// tag::vet_specialty_impl[]
 	private EntityDefinition vetSpecialty() {
-		return VetSpecialty.TYPE.define(
-										VetSpecialty.VET.define()
+		return VetSpecialty.TYPE.as(
+										VetSpecialty.VET.as()
 														.primaryKey(0)
 														.updatable(true),
-										VetSpecialty.SPECIALTY.define()
+										VetSpecialty.SPECIALTY.as()
 														.primaryKey(1)
 														.updatable(true),
-										VetSpecialty.VET_FK.define()
+										VetSpecialty.VET_FK.as()
 														.foreignKey()
 														.caption("Vet"),
-										VetSpecialty.SPECIALTY_FK.define()
+										VetSpecialty.SPECIALTY_FK.as()
 														.foreignKey()
 														.caption("Specialty"))
 						.caption("Vet specialties")
@@ -163,11 +163,11 @@ public final class Petclinic extends DomainModel {
 
 	// tag::pet_type_impl[]
 	private EntityDefinition petType() {
-		return PetType.TYPE.define(
-										PetType.ID.define()
+		return PetType.TYPE.as(
+										PetType.ID.as()
 														.primaryKey()
 														.generator(identity()),
-										PetType.NAME.define()
+										PetType.NAME.as()
 														.column()
 														.caption("Name")
 														.searchable(true)
@@ -201,35 +201,35 @@ public final class Petclinic extends DomainModel {
 
 	// tag::owner_impl[]
 	private EntityDefinition owner() {
-		return Owner.TYPE.define(
-										Owner.ID.define()
+		return Owner.TYPE.as(
+										Owner.ID.as()
 														.primaryKey()
 														.generator(identity()),
-										Owner.FIRST_NAME.define()
+										Owner.FIRST_NAME.as()
 														.column()
 														.caption("First name")
 														.searchable(true)
 														.maximumLength(30)
 														.nullable(false),
-										Owner.LAST_NAME.define()
+										Owner.LAST_NAME.as()
 														.column()
 														.caption("Last name")
 														.searchable(true)
 														.maximumLength(30)
 														.nullable(false),
-										Owner.ADDRESS.define()
+										Owner.ADDRESS.as()
 														.column()
 														.caption("Address")
 														.maximumLength(255),
-										Owner.CITY.define()
+										Owner.CITY.as()
 														.column()
 														.caption("City")
 														.maximumLength(80),
-										Owner.TELEPHONE.define()
+										Owner.TELEPHONE.as()
 														.column()
 														.caption("Telephone")
 														.maximumLength(20),
-										Owner.PHONE_TYPE.define()
+										Owner.PHONE_TYPE.as()
 														.column()
 														.caption("Phone type")
 														.converter(String.class, new PhoneTypeConverter()))
@@ -274,30 +274,30 @@ public final class Petclinic extends DomainModel {
 
 	// tag::pet_impl[]
 	private EntityDefinition pet() {
-		return Pet.TYPE.define(
-										Pet.ID.define()
+		return Pet.TYPE.as(
+										Pet.ID.as()
 														.primaryKey()
 														.generator(identity()),
-										Pet.NAME.define()
+										Pet.NAME.as()
 														.column()
 														.caption("Name")
 														.searchable(true)
 														.maximumLength(30)
 														.nullable(false),
-										Pet.BIRTH_DATE.define()
+										Pet.BIRTH_DATE.as()
 														.column()
 														.caption("Birth date")
 														.nullable(false),
-										Pet.PET_TYPE_ID.define()
+										Pet.PET_TYPE_ID.as()
 														.column()
 														.nullable(false),
-										Pet.PET_TYPE_FK.define()
+										Pet.PET_TYPE_FK.as()
 														.foreignKey()
 														.caption("Pet type"),
-										Pet.OWNER_ID.define()
+										Pet.OWNER_ID.as()
 														.column()
 														.nullable(false),
-										Pet.OWNER_FK.define()
+										Pet.OWNER_FK.as()
 														.foreignKey()
 														.caption("Owner"))
 						.caption("Pets")
@@ -324,27 +324,27 @@ public final class Petclinic extends DomainModel {
 
 	// tag::visit_impl[]
 	private EntityDefinition visit() {
-		return Visit.TYPE.define(
-										Visit.ID.define()
+		return Visit.TYPE.as(
+										Visit.ID.as()
 														.primaryKey()
 														.generator(identity()),
-										Visit.PET_ID.define()
+										Visit.PET_ID.as()
 														.column()
 														.nullable(false),
-										Visit.PET_FK.define()
+										Visit.PET_FK.as()
 														.foreignKey()
 														.caption("Pet"),
-										Visit.VISIT_DATE.define()
+										Visit.VISIT_DATE.as()
 														.column()
 														.caption("Date")
 														.nullable(false),
-										Visit.VET_ID.define()
+										Visit.VET_ID.as()
 														.column()
 														.nullable(false),
-										Visit.VET_FK.define()
+										Visit.VET_FK.as()
 														.foreignKey()
 														.caption("Vet"),
-										Visit.DESCRIPTION.define()
+										Visit.DESCRIPTION.as()
 														.column()
 														.caption("Description")
 														.maximumLength(255))
