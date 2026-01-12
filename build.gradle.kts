@@ -22,7 +22,7 @@ dependencies {
     implementation(libs.codion.swing.framework.ui)
     // Include all the standard Flat Look and Feels and a bunch of IntelliJ
     // theme based ones, available via the View -> Select Look & Feel menu
-    implementation(libs.codion.plugin.flatlaf.lookandfeels)
+    implementation(libs.codion.plugin.flatlaf.themes)
     implementation(libs.codion.plugin.flatlaf.intellij.themes)
 
     // Provides the Logback logging library as a transitive dependency
