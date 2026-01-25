@@ -31,7 +31,7 @@ import is.codion.demos.petclinic.model.PetclinicAppModel;
 import is.codion.demos.petclinic.model.VetSpecialtyEditModel;
 import is.codion.framework.db.EntityConnectionProvider;
 import is.codion.plugin.flatlaf.intellij.themes.arc.Arc;
-import is.codion.swing.common.ui.component.indicator.ValidIndicatorFactory;
+import is.codion.swing.common.ui.component.indicator.ValidIndicator;
 import is.codion.swing.framework.model.SwingEntityModel;
 import is.codion.swing.framework.ui.EntityApplication;
 import is.codion.swing.framework.ui.EntityApplicationPanel;
@@ -121,7 +121,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 
 	public static void main(String[] args) throws CancelException {
 		Locale.setDefault(Locale.of("en", "EN"));
-		ValidIndicatorFactory.FACTORY_CLASS.set("is.codion.plugin.flatlaf.indicator.FlatLafValidIndicatorFactory");
+		ValidIndicator.INDICATOR_CLASS.set("is.codion.plugin.flatlaf.indicator.FlatLafValidIndicator");
 		ReferentialIntegrityErrorHandling.REFERENTIAL_INTEGRITY_ERROR_HANDLING
 						.set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
 		EntityApplication.builder(PetclinicAppModel.class, PetclinicAppPanel.class)
