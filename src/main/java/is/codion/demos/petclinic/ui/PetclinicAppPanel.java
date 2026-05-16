@@ -49,9 +49,9 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 	}
 
 	private static List<EntityPanel> createPanels(PetclinicAppModel applicationModel) {
-		SwingEntityModel ownersModel = applicationModel.entityModels().get(Owner.TYPE);
-		SwingEntityModel petsModel = ownersModel.detailModels().get(Pet.TYPE);
-		SwingEntityModel visitsModel = petsModel.detailModels().get(Visit.TYPE);
+		SwingEntityModel ownersModel = applicationModel.models().get(Owner.TYPE);
+		SwingEntityModel petsModel = ownersModel.detail().get(Pet.TYPE);
+		SwingEntityModel visitsModel = petsModel.detail().get(Visit.TYPE);
 
 		EntityPanel ownersPanel = new EntityPanel(ownersModel,
 						new OwnerEditPanel(ownersModel.editModel()));
@@ -60,8 +60,8 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 		EntityPanel visitsPanel = new EntityPanel(visitsModel,
 						new VisitEditPanel(visitsModel.editModel()));
 
-		ownersPanel.detailPanels().add(petsPanel);
-		petsPanel.detailPanels().add(visitsPanel);
+		ownersPanel.detail().add(petsPanel);
+		petsPanel.detail().add(visitsPanel);
 
 		return List.of(ownersPanel);
 	}
@@ -105,7 +105,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 						new SwingEntityModel(Vet.TYPE, connectionProvider);
 		SwingEntityModel vetSpecialtyModel =
 						new SwingEntityModel(new VetSpecialtyEditModel(connectionProvider));
-		vetModel.detailModels().add(vetSpecialtyModel);
+		vetModel.detail().add(vetSpecialtyModel);
 		vetModel.tableModel().items().refresh();
 
 		EntityPanel vetPanel = new EntityPanel(vetModel,
@@ -114,7 +114,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 		EntityPanel vetSpecialtyPanel = new EntityPanel(vetSpecialtyModel,
 						new VetSpecialtyEditPanel(vetSpecialtyModel.editModel()), config -> config
 						.caption("Specialty"));
-		vetPanel.detailPanels().add(vetSpecialtyPanel);
+		vetPanel.detail().add(vetSpecialtyPanel);
 
 		return vetPanel;
 	}
