@@ -59,7 +59,8 @@ public final class Petclinic extends DomainModel {
 
 	// tag::vet_impl[]
 	private EntityDefinition vet() {
-		return Vet.TYPE.as(
+		return Vet.TYPE.as()
+						.attributes(
 										Vet.ID.as()
 														.primaryKey()
 														.generator(identity()),
@@ -98,7 +99,8 @@ public final class Petclinic extends DomainModel {
 
 	// tag::specialty_impl[]
 	private EntityDefinition specialty() {
-		return Specialty.TYPE.as(
+		return Specialty.TYPE.as()
+						.attributes(
 										Specialty.ID.as()
 														.primaryKey()
 														.generator(identity()),
@@ -129,7 +131,8 @@ public final class Petclinic extends DomainModel {
 
 	// tag::vet_specialty_impl[]
 	private EntityDefinition vetSpecialty() {
-		return VetSpecialty.TYPE.as(
+		return VetSpecialty.TYPE.as()
+						.attributes(
 										VetSpecialty.VET.as()
 														.primaryKey(0)
 														.updatable(true),
@@ -163,7 +166,8 @@ public final class Petclinic extends DomainModel {
 
 	// tag::pet_type_impl[]
 	private EntityDefinition petType() {
-		return PetType.TYPE.as(
+		return PetType.TYPE.as()
+						.attributes(
 										PetType.ID.as()
 														.primaryKey()
 														.generator(identity()),
@@ -201,7 +205,8 @@ public final class Petclinic extends DomainModel {
 
 	// tag::owner_impl[]
 	private EntityDefinition owner() {
-		return Owner.TYPE.as(
+		return Owner.TYPE.as()
+						.attributes(
 										Owner.ID.as()
 														.primaryKey()
 														.generator(identity()),
@@ -274,7 +279,8 @@ public final class Petclinic extends DomainModel {
 
 	// tag::pet_impl[]
 	private EntityDefinition pet() {
-		return Pet.TYPE.as(
+		return Pet.TYPE.as()
+						.attributes(
 										Pet.ID.as()
 														.primaryKey()
 														.generator(identity()),
@@ -324,7 +330,8 @@ public final class Petclinic extends DomainModel {
 
 	// tag::visit_impl[]
 	private EntityDefinition visit() {
-		return Visit.TYPE.as(
+		return Visit.TYPE.as()
+						.attributes(
 										Visit.ID.as()
 														.primaryKey()
 														.generator(identity()),
