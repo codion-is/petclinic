@@ -86,8 +86,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 		petTypeModel.tableModel().items().refresh();
 
 		return new EntityPanel(petTypeModel,
-						new PetTypeEditPanel(petTypeModel.editModel()), config ->
-						config.caption("Pet types"));
+						new PetTypeEditPanel(petTypeModel.editModel()));
 	}
 
 	private static EntityPanel createSpecialtyPanel(EntityConnectionProvider connectionProvider) {
@@ -96,8 +95,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 		specialtyModel.tableModel().items().refresh();
 
 		return new EntityPanel(specialtyModel,
-						new SpecialtyEditPanel(specialtyModel.editModel()), config -> config
-						.caption("Specialties"));
+						new SpecialtyEditPanel(specialtyModel.editModel()));
 	}
 
 	private static EntityPanel createVetPanel(EntityConnectionProvider connectionProvider) {
@@ -109,8 +107,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 		vetModel.tableModel().items().refresh();
 
 		EntityPanel vetPanel = new EntityPanel(vetModel,
-						new VetEditPanel(vetModel.editModel()), config -> config
-						.caption("Vets"));
+						new VetEditPanel(vetModel.editModel()));
 		EntityPanel vetSpecialtyPanel = new EntityPanel(vetSpecialtyModel,
 						new VetSpecialtyEditPanel(vetSpecialtyModel.editModel()), config -> config
 						.caption("Specialty"));
