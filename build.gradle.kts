@@ -63,7 +63,7 @@ spotless {
 
 testing {
     suites {
-        val test by getting(JvmTestSuite::class) {
+        getByName<JvmTestSuite>("test") {
             useJUnitJupiter()
             targets {
                 all {
@@ -168,6 +168,9 @@ jlink {
     jpackage {
         if (OperatingSystem.current().isLinux) {
             icon = "src/main/icons/petclinic.png"
+            // jpackage ignores --icon when building the installer from
+            // an app image, it looks for <launcher>.png in the resource dir
+            setResourceDir(file("src/main/icons"))
             installerType = "deb"
             installerOptions = listOf(
                 "--linux-shortcut"
