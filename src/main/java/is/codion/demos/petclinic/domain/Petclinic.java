@@ -29,8 +29,10 @@ import is.codion.framework.domain.entity.attribute.Column;
 import is.codion.framework.domain.entity.attribute.Column.Converter;
 import is.codion.framework.domain.entity.attribute.ForeignKey;
 
+import java.math.BigDecimal;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import static is.codion.framework.domain.DomainType.domainType;
 import static is.codion.framework.domain.entity.OrderBy.ascending;
@@ -269,6 +271,7 @@ public final class Petclinic extends DomainModel {
 		Column<Integer> ID = TYPE.integerColumn("id");
 		Column<String> NAME = TYPE.stringColumn("name");
 		Column<LocalDate> BIRTH_DATE = TYPE.localDateColumn("birth_date");
+		Column<BigDecimal> WEIGHT_KG = TYPE.bigDecimalColumn("weight_kg");
 		Column<Integer> PET_TYPE_ID = TYPE.integerColumn("type_id");
 		Column<Integer> OWNER_ID = TYPE.integerColumn("owner_id");
 
@@ -294,6 +297,12 @@ public final class Petclinic extends DomainModel {
 														.column()
 														.caption("Birth date")
 														.nullable(false),
+										Pet.WEIGHT_KG.as()
+														.column()
+														.caption("Weight (kg)")
+														// mirror DECIMAL(5, 2)
+														.fractionDigits(2)
+														.range(0, 999),
 										Pet.PET_TYPE_ID.as()
 														.column()
 														.nullable(false),
@@ -322,6 +331,8 @@ public final class Petclinic extends DomainModel {
 		Column<LocalDate> VISIT_DATE = TYPE.localDateColumn("visit_date");
 		Column<Integer> VET_ID = TYPE.integerColumn("vet_id");
 		Column<String> DESCRIPTION = TYPE.stringColumn("description");
+		Column<LocalDateTime> INSERT_TIME = TYPE.localDateTimeColumn("insert_time");
+		Column<String> INSERT_USER = TYPE.stringColumn("insert_user");
 
 		ForeignKey PET_FK = TYPE.foreignKey("pet_fk", PET_ID, Pet.ID);
 		ForeignKey VET_FK = TYPE.foreignKey("vet_fk", VET_ID, Vet.ID);
@@ -354,7 +365,16 @@ public final class Petclinic extends DomainModel {
 										Visit.DESCRIPTION.as()
 														.column()
 														.caption("Description")
-														.maximumLength(255))
+														.maximumLength(255),
+										Visit.INSERT_TIME.as()
+														.column()
+														.caption("Inserted")
+														// Populated by the database, see DEFAULT in the schema
+														.readOnly(true),
+										Visit.INSERT_USER.as()
+														.column()
+														.caption("Inserted by")
+														.readOnly(true))
 						.orderBy(OrderBy.builder()
 										.ascending(Visit.PET_ID)
 										.descending(Visit.VISIT_DATE)

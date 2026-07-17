@@ -1,17 +1,19 @@
 import org.gradle.internal.os.OperatingSystem
 
 plugins {
-    // The Badass Jlink Plugin provides jlink and jpackage
-    // functionality and applies the java application plugin
+    // The Badass Jlink Plugin provides jlink and jpackage functionality
+    // and applies the java application plugin, see PACKAGING below
     // https://badass-jlink-plugin.beryx.org
     id("org.beryx.jlink") version "4.0.2"
-    // Just for managing the license headers
+    // Demo-repo housekeeping plugins, see HOUSEKEEPING below
     id("com.diffplug.spotless") version "8.2.1"
-    // For the asciidoctor docs
     id("org.asciidoctor.jvm.convert") version "4.0.4"
-    // For GitHub Releases
     id("com.github.breadmoirai.github-release") version "2.5.2"
 }
+
+// ============================================================================
+// THE APPLICATION — everything a minimal Codion application needs
+// ============================================================================
 
 dependencies {
     // Import the Codion BOM for dependency version management
@@ -41,23 +43,12 @@ dependencies {
 }
 
 // The application version simply follows the Codion framework version used
-version = libs.versions.codion.get().replace("-SNAPSHOT", "")
+version = libs.versions.codion.get()
 
 java {
     toolchain {
         // Use the latest possible Java version
         languageVersion.set(JavaLanguageVersion.of(26))
-    }
-}
-
-spotless {
-    // Just the license headers
-    java {
-        licenseHeaderFile("${rootDir}/license_header").yearSeparator(" - ")
-    }
-    format("javaMisc") {
-        target("src/**/package-info.java", "src/**/module-info.java")
-        licenseHeaderFile("${rootDir}/license_header", "\\/\\*\\*").yearSeparator(" - ")
     }
 }
 
@@ -106,40 +97,11 @@ tasks.withType<JavaCompile>().configureEach {
     options.isDeprecation = true
 }
 
-// Configure the docs generation
-tasks.asciidoctor {
-    dependsOn(tasks.build)
-    inputs.file(project.buildFile)
-    inputs.files(sourceSets.main.get().allSource)
-    inputs.files(sourceSets.test.get().allSource)
+// ============================================================================
+// PACKAGING — optional: a self-contained runtime image and native installer,
+// delete this section if you don't distribute the application this way
+// ============================================================================
 
-    baseDirFollowsSourceFile()
-
-    attributes(
-        mapOf(
-            "codion-version" to project.version,
-            "source-highlighter" to "rouge",
-            "tabsize" to "2"
-        )
-    )
-    asciidoctorj {
-        setVersion("2.5.13")
-    }
-}
-
-// Create a version.properties file containing the application version
-tasks.register<WriteProperties>("writeVersion") {
-    destinationFile = file("${temporaryDir.absolutePath}/version.properties")
-    property("version", libs.versions.codion.get().replace("-SNAPSHOT", ""))
-}
-
-// Include the version.properties file from above in the
-// application resources, see usage in PetclinicAppModel
-tasks.processResources {
-    from(tasks.named("writeVersion"))
-}
-
-// Configure the Jlink plugin
 jlink {
     // Specify the jlink image name
     imageName = project.name + "-" + project.version + "-" +
@@ -191,9 +153,46 @@ jlink {
     }
 }
 
-if (properties.containsKey("githubAccessToken")) {
+// ============================================================================
+// HOUSEKEEPING — this demo repository's own concerns (license headers, docs,
+// GitHub releases), not part of the application; delete freely
+// ============================================================================
+
+spotless {
+    // Just the license headers
+    java {
+        licenseHeaderFile("${rootDir}/license_header").yearSeparator(" - ")
+    }
+    format("javaMisc") {
+        target("src/**/package-info.java", "src/**/module-info.java")
+        licenseHeaderFile("${rootDir}/license_header", "\\/\\*\\*").yearSeparator(" - ")
+    }
+}
+
+// Configure the docs generation
+tasks.asciidoctor {
+    dependsOn(tasks.build)
+    inputs.file(project.buildFile)
+    inputs.files(sourceSets.main.get().allSource)
+    inputs.files(sourceSets.test.get().allSource)
+
+    baseDirFollowsSourceFile()
+
+    attributes(
+        mapOf(
+            "codion-version" to project.version,
+            "source-highlighter" to "rouge",
+            "tabsize" to "2"
+        )
+    )
+    asciidoctorj {
+        setVersion("2.5.13")
+    }
+}
+
+if (project.hasProperty("githubAccessToken")) {
     githubRelease {
-        token(properties["githubAccessToken"] as String)
+        token(project.findProperty("githubAccessToken") as String)
         owner = "codion-is"
         allowUploadToExisting = true
         releaseAssets.from(tasks.named("jlinkZip").get().outputs.files)

@@ -18,7 +18,6 @@
  */
 package is.codion.demos.petclinic.model;
 
-import is.codion.common.utilities.version.Version;
 import is.codion.demos.petclinic.domain.Petclinic.Owner;
 import is.codion.demos.petclinic.domain.Petclinic.Pet;
 import is.codion.demos.petclinic.domain.Petclinic.Visit;
@@ -29,8 +28,6 @@ import is.codion.swing.framework.model.SwingEntityModel;
 import java.util.List;
 
 public final class PetclinicAppModel extends SwingEntityApplicationModel {
-
-	public static final Version VERSION = Version.parse(PetclinicAppModel.class, "/version.properties");
 
 	public PetclinicAppModel(EntityConnectionProvider connectionProvider) {
 		super(connectionProvider, List.of(createOwnersModel(connectionProvider)));

@@ -123,7 +123,6 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 						.set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
 		EntityApplication.builder(PetclinicAppModel.class, PetclinicAppPanel.class)
 						.domain(Petclinic.DOMAIN)
-						.version(PetclinicAppModel.VERSION)
 						.startupDialog(false)
 						.defaultLookAndFeel(Arc.class)
 						.defaultUser(User.parse("scott:tiger"))
