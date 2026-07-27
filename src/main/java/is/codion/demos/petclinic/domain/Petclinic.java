@@ -60,7 +60,7 @@ public final class Petclinic extends DomainModel {
 	// end::vet_api[]
 
 	// tag::vet_impl[]
-	private EntityDefinition vet() {
+	EntityDefinition vet() {
 		return Vet.TYPE.as()
 						.attributes(
 										Vet.ID.as()
@@ -100,7 +100,7 @@ public final class Petclinic extends DomainModel {
 	// end::specialty_api[]
 
 	// tag::specialty_impl[]
-	private EntityDefinition specialty() {
+	EntityDefinition specialty() {
 		return Specialty.TYPE.as()
 						.attributes(
 										Specialty.ID.as()
@@ -132,7 +132,7 @@ public final class Petclinic extends DomainModel {
 	// end::vet_specialty_api[]
 
 	// tag::vet_specialty_impl[]
-	private EntityDefinition vetSpecialty() {
+	EntityDefinition vetSpecialty() {
 		return VetSpecialty.TYPE.as()
 						.attributes(
 										VetSpecialty.VET.as()
@@ -167,7 +167,7 @@ public final class Petclinic extends DomainModel {
 	// end::pet_type_api[]
 
 	// tag::pet_type_impl[]
-	private EntityDefinition petType() {
+	EntityDefinition petType() {
 		return PetType.TYPE.as()
 						.attributes(
 										PetType.ID.as()
@@ -206,7 +206,7 @@ public final class Petclinic extends DomainModel {
 	// end::owner_api[]
 
 	// tag::owner_impl[]
-	private EntityDefinition owner() {
+	EntityDefinition owner() {
 		return Owner.TYPE.as()
 						.attributes(
 										Owner.ID.as()
@@ -281,7 +281,7 @@ public final class Petclinic extends DomainModel {
 	// end::pet_api[]
 
 	// tag::pet_impl[]
-	private EntityDefinition pet() {
+	EntityDefinition pet() {
 		return Pet.TYPE.as()
 						.attributes(
 										Pet.ID.as()
@@ -340,7 +340,7 @@ public final class Petclinic extends DomainModel {
 	// end::visit_api[]
 
 	// tag::visit_impl[]
-	private EntityDefinition visit() {
+	EntityDefinition visit() {
 		return Visit.TYPE.as()
 						.attributes(
 										Visit.ID.as()
