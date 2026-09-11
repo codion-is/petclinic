@@ -121,7 +121,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 	public static void main(String[] args) throws CancelException {
 		Locale.setDefault(Locale.of("en", "EN"));
 		ValidationIndicator.INDICATOR_CLASS.set("is.codion.plugin.flatlaf.indicator.FlatLafValidationIndicator");
-		ReferentialIntegrityErrorHandling.REFERENTIAL_INTEGRITY_ERROR_HANDLING
+		ReferentialIntegrityErrorHandling.HANDLING
 						.set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
 		FlatLookAndFeelThemes.addAll();
 		FlatLookAndFeelIntelliJThemes.addAll();
