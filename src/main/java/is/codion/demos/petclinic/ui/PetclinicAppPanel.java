@@ -30,6 +30,7 @@ import is.codion.demos.petclinic.domain.Petclinic.Visit;
 import is.codion.demos.petclinic.model.PetclinicAppModel;
 import is.codion.demos.petclinic.model.VetSpecialtyEditModel;
 import is.codion.framework.db.EntityConnection;
+import is.codion.plugin.flatlaf.indicator.FlatValidationIndicator;
 import is.codion.plugin.flatlaf.intellij.FlatLookAndFeelIntelliJThemes;
 import is.codion.plugin.flatlaf.intellij.themes.arc.Arc;
 import is.codion.plugin.flatlaf.themes.FlatLookAndFeelThemes;
@@ -120,7 +121,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 
 	public static void main(String[] args) throws CancelException {
 		Locale.setDefault(Locale.of("en", "EN"));
-		ValidationIndicator.INDICATOR_CLASS.set("is.codion.plugin.flatlaf.indicator.FlatLafValidationIndicator");
+		ValidationIndicator.INDICATOR_CLASS.set(FlatValidationIndicator.class.getName());
 		ReferentialIntegrityErrorHandling.HANDLING
 						.set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
 		FlatLookAndFeelThemes.addAll();
