@@ -121,7 +121,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 
 	public static void main(String[] args) throws CancelException {
 		Locale.setDefault(Locale.of("en", "EN"));
-		ValidationIndicator.INDICATOR_CLASS.set(FlatValidationIndicator.class.getName());
+		ValidationIndicator.IMPLEMENTATION.set(FlatValidationIndicator.class.getName());
 		ReferentialIntegrityErrorHandling.HANDLING
 						.set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
 		FlatLookAndFeelThemes.addAll();

@@ -1,6 +1,6 @@
 [versions]
-codion = "0.18.87"
-h2 = "2.5.250"
+codion = "0.18.88"
+h2 = "2.5.252"
 
 [libraries]
 codion-framework-bom = { module = "is.codion:codion-framework-bom", version.ref = "codion" }
