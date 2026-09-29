@@ -119,6 +119,8 @@ jlink {
         "is.codion.framework.db.local," +
                 // The H2 database implementation
                 "is.codion.dbms.h2," +
+                // The H2 database driver
+                "com.h2database," +
                 // The Logback plugin
                 "is.codion.plugin.logback.proxy"
     )
