@@ -48,7 +48,7 @@ version = libs.versions.codion.get()
 java {
     toolchain {
         // Use the latest possible Java version
-        languageVersion.set(JavaLanguageVersion.of(26))
+        languageVersion.set(JavaLanguageVersion.of(27))
     }
 }
 
@@ -135,7 +135,7 @@ jlink {
             setResourceDir(file("src/main/icons"))
             installerType = "deb"
             installerOptions = listOf(
-                "--linux-shortcut"
+                "--linux-shortcut", "--license-file", "LICENSE"
             )
         }
         if (OperatingSystem.current().isWindows) {
