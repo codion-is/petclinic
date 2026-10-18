@@ -48,7 +48,7 @@ version = libs.versions.codion.get()
 java {
     toolchain {
         // Use the latest possible Java version
-        languageVersion.set(JavaLanguageVersion.of(27))
+        languageVersion.set(JavaLanguageVersion.of(26))
     }
 }
 
