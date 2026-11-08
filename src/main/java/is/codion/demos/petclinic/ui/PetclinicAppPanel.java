@@ -123,7 +123,7 @@ public final class PetclinicAppPanel extends EntityApplicationPanel<PetclinicApp
 		Locale.setDefault(Locale.of("en", "EN"));
 		ValidationIndicator.IMPLEMENTATION.set(FlatValidationIndicator.class.getName());
 		ReferentialIntegrityErrorHandling.HANDLING
-						.set(ReferentialIntegrityErrorHandling.DISPLAY_DEPENDENCIES);
+						.set(ReferentialIntegrityErrorHandling.DEPENDENCIES);
 		FlatLookAndFeelThemes.addAll();
 		FlatLookAndFeelIntelliJThemes.addAll();
 		EntityApplication.builder(PetclinicAppModel.class, PetclinicAppPanel.class)
